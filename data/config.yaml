@@ -1,0 +1,4 @@
+ballchasing:
+  api_key: $BALLCHASING_API_KEY
+  base_url: https://ballchasing.com/api/
+  timeout: 10
