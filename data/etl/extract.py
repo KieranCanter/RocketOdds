@@ -5,8 +5,9 @@ from pathlib import Path
 import yaml
 import json
 import gzip
-import re
-
+import time
+from datetime import datetime
+import pytz
 load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
 def load_config():
@@ -20,36 +21,39 @@ timeout = config["ballchasing"]["timeout"]
 ballchasing_api_key = os.getenv("BALLCHASING_API_KEY")
 
 def fetch_all_replays():
-    import requests
-import time
-
-def fetch_all_replays():
-    all_replays = []
     url = f"{base_url}/replays"
     headers = {"Authorization": ballchasing_api_key}
     params = {
         "playlist": {"unranked-duels", "unranked-doubles", "unranked-standard", "ranked-duels", "ranked-doubles", "ranked-solo-standard", "ranked-standard"},
+        "count": 200, # 200 = maximum count allowed by ballchasing, 400 replays/sec up to 100,000 replays/hr
         "sort-by": "replay-date",
+        "sort-dir": "desc"
     }
-    total_matches = 0
+
+    all_replays = []
     
-    while url:
+    for i in range(500): # Max 500 calls/hr
         # Make the request to the current URL
-        response = requests.get(f"{base_url}/replays", headers=headers, params=params, timeout=timeout)
+        response = requests.get(url, headers=headers, params=params, timeout=timeout)
         
         if response.status_code == 200:
             data = response.json()
-            replays = data.get('data', [])  # List of replays on the current page
+            replays = data.get('list', [])  # List of replays on the current page
             all_replays.extend(replays)
+            
+            print(f"Fetched {len(replays)} replays. Total so far: {len(all_replays)}")
+            if replays[0]['date_has_tz']:
+                date = datetime.fromisoformat(replays[0]['date']).astimezone(pytz.timezone('US/Eastern'))
+            else:
+                date = datetime.fromisoformat(replays[0]['date'].replace("Z", "+00:00")).astimezone(pytz.timezone('US/Eastern'))
+            print(f"Date of the first replay of the call: {date}\n")
             
             # Check if there is a "next" key for pagination
             url = data.get('next', None)  # If there is a "next" key, update the URL to the next page
-            pattern = r"'id': '[0-9a-zA-Z|-]{36}'"
-            matches = re.findall(pattern, str(data))
-            total_matches += len(matches)
-            print(f"Fetched {len(matches)} replays. Total so far: {total_matches}")
-            
-            # Sleep to stay within the rate limits (for example, 2 requests per second)
+            if not url:
+                break
+
+            # Sleep to stay within the 2 call/sec rate limit
             time.sleep(0.5)  # Adjust this sleep time based on your API rate limit
         else:
             print(f"Error fetching replays. Status Code: {response.status_code}")
@@ -57,24 +61,52 @@ def fetch_all_replays():
     
     return all_replays
 
-# Example of fetching all replays and printing the total count
-all_replays = fetch_all_replays()
-print(f"Total replays fetched: {len(all_replays)}")
-
-
-def fetch_replay_data():
+def fetch_replay_by_season(season):
+    url = f"{base_url}/replays"
     headers = {"Authorization": ballchasing_api_key}
     params = {
         "playlist": {"unranked-duels", "unranked-doubles", "unranked-standard", "ranked-duels", "ranked-doubles", "ranked-solo-standard", "ranked-standard"},
-        "count": 200,
-        "sort-by": "replay-date",
+        "count": 200, # 200 = maximum count allowed by ballchasing, 400 replays/sec up to 100,000 replays/hr
     }
-    response = requests.get(f"{base_url}/replays", headers=headers, params=params, timeout=timeout)
 
-    if response.status_code == 200:
-        return f"Success!\n{response.json()}"
-    else:
-        return f"Failed to fetch replay data: {response.status_code}\n{response.json()}"
+    all_replays = []
+    
+    for i in range(500): # Max 500 calls/hr
+        # Make the request to the current URL
+        response = requests.get(url, headers=headers, params=params, timeout=timeout)
+        
+        if response.status_code == 200:
+            data = response.json()
+            replays = data.get('list', [])  # List of replays on the current page
+            all_replays.extend(replays)
+            
+            print(f"Fetched {len(replays)} replays. Total so far: {len(all_replays)}")
+            if replays[0]['date_has_tz']:
+                date = datetime.fromisoformat(replays[0]['date']).astimezone(pytz.timezone('US/Eastern'))
+            else:
+                date = datetime.fromisoformat(replays[0]['date'].replace("Z", "+00:00")).astimezone(pytz.timezone('US/Eastern'))
+            print(f"Date of the first replay of the call: {date}\n")
+            
+            # Check if there is a "next" key for pagination
+            url = data.get('next', None)  # If there is a "next" key, update the URL to the next page
+            if not url:
+                break
+
+            # Sleep to stay within the 2 call/sec rate limit
+            time.sleep(0.5)  # Adjust this sleep time based on your API rate limit
+        else:
+            print(f"Error fetching replays. Status Code: {response.status_code}")
+            break
+    
+    return all_replays
 
 if __name__ == "__main__":
-    print(fetch_all_replays())
+    playlists = [ "unranked-duels", "unranked-doubles", "unranked-standard",
+        "ranked-duels", "ranked-doubles", "ranked-solo-standard", "ranked-standard"
+    ]
+
+    headers = {"Authorization": ballchasing_api_key}
+    response = requests.get(f"{base_url}/replays/442e44d6-9924-4e28-a8ef-6bbd7bccb380", headers=headers, timeout=timeout)
+    print(json.dumps(response.json(), indent=4))
+
+    #print(fetch_all_replays())
