@@ -1,12 +1,12 @@
 CREATE SCHEMA IF NOT EXISTS raw_data;
 
-CREATE TABLE uploaders (
+CREATE TABLE IF NOT EXISTS uploaders (
     steam_id VARCHAR(17) PRIMARY KEY,
     name TEXT NOT NULL,
     profile_url TEXT
 );
 
-CREATE TABLE replays (
+CREATE TABLE IF NOT EXISTS replays (
     replay_id UUID PRIMARY KEY,
     link TEXT NOT NULL,
     created TIMESTAMP NOT NULL,
@@ -28,14 +28,14 @@ CREATE TABLE replays (
     visibility TEXT CHECK (visibility IN ('public', 'unlisted', 'private'))
 );
 
-CREATE TABLE teams (
+CREATE TABLE IF NOT EXISTS teams (
     replay_id UUID REFERENCES replays(replay_id) ON DELETE CASCADE,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     team_name TEXT,
     PRIMARY KEY (replay_id, team_color)
 );
 
-CREATE TABLE team_ball_stats (
+CREATE TABLE IF NOT EXISTS team_ball_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
@@ -44,7 +44,7 @@ CREATE TABLE team_ball_stats (
     time_in_side REAL
 );
 
-CREATE TABLE team_core_stats (
+CREATE TABLE IF NOT EXISTS team_core_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
@@ -59,7 +59,7 @@ CREATE TABLE team_core_stats (
     shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100)
 );
 
-CREATE TABLE team_boost_stats (
+CREATE TABLE IF NOT EXISTS team_boost_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
@@ -88,7 +88,7 @@ CREATE TABLE team_boost_stats (
     time_boost_75_100 REAL
 );
 
-CREATE TABLE team_movement_stats (
+CREATE TABLE IF NOT EXISTS team_movement_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
@@ -104,7 +104,7 @@ CREATE TABLE team_movement_stats (
     count_powerslide SMALLINT
 );
 
-CREATE TABLE team_positioning_stats (
+CREATE TABLE IF NOT EXISTS team_positioning_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
@@ -118,7 +118,7 @@ CREATE TABLE team_positioning_stats (
     time_infront_ball REAL
 );
 
-CREATE TABLE team_demo_stats (
+CREATE TABLE IF NOT EXISTS team_demo_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
@@ -127,14 +127,14 @@ CREATE TABLE team_demo_stats (
     taken SMALLINT
 );
 
-CREATE TABLE players (
+CREATE TABLE IF NOT EXISTS players (
     player_id UUID PRIMARY KEY,
     display_name TEXT NOT NULL,
     steam_id VARCHAR(17) REFERENCES uploaders(steam_id),
     platform TEXT
 );
 
-CREATE TABLE replay_players (
+CREATE TABLE IF NOT EXISTS replay_players (
     player_id UUID REFERENCES players(player_id) ON DELETE CASCADE,
     replay_id UUID REFERENCES replays(replay_id) ON DELETE CASCADE,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
@@ -150,7 +150,7 @@ CREATE TABLE replay_players (
     steering_sensitivity REAL
 );
 
-CREATE TABLE player_camera_settings (
+CREATE TABLE IF NOT EXISTS player_camera_settings (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
@@ -164,7 +164,7 @@ CREATE TABLE player_camera_settings (
     transition_speed REAL
 );
 
-CREATE TABLE player_core_stats (
+CREATE TABLE IF NOT EXISTS player_core_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
@@ -179,7 +179,7 @@ CREATE TABLE player_core_stats (
     shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100)
 );
 
-CREATE TABLE player_boost_stats (
+CREATE TABLE IF NOT EXISTS player_boost_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
@@ -214,7 +214,7 @@ CREATE TABLE player_boost_stats (
     percent_boost_75_100 REAL CHECK (percent_boost_75_100 BETWEEN 0 AND 100)
 );
 
-CREATE TABLE player_movement_stats (
+CREATE TABLE IF NOT EXISTS player_movement_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
@@ -239,7 +239,7 @@ CREATE TABLE player_movement_stats (
     percent_high_air REAL CHECK (percent_high_air BETWEEN 0 AND 100)
 );
 
-CREATE TABLE player_positioning_stats (
+CREATE TABLE IF NOT EXISTS player_positioning_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
@@ -272,7 +272,7 @@ CREATE TABLE player_positioning_stats (
     percent_farthest_from_ball REAL CHECK (percent_farthest_from_ball BETWEEN 0 AND 100)
 );
 
-CREATE TABLE player_demo_stats (
+CREATE TABLE IF NOT EXISTS player_demo_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
