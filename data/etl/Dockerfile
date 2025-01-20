@@ -13,3 +13,4 @@ COPY . ./
 
 # Set entrypoint
 ENTRYPOINT ["python3", "etl/main.py"]
+CMD ["days_back=1", "--postgres", "--s3"]

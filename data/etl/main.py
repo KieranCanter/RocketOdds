@@ -54,6 +54,7 @@ if __name__ == "__main__":
         sys.exit(1)
     if not sys.argv[1].isdigit() or int(sys.argv[1]) < 1:
         print("Error: days_back must be a positive integer")
+        print("Usage: python3 main.py <days_back> [--postgres] [--s3]")
         sys.exit(1)
 
     days_back = int(sys.argv[1])
