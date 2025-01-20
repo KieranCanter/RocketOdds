@@ -4,7 +4,7 @@ from pathlib import Path
 import psycopg2
 import boto3
 
-load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+load_dotenv(dotenv_path=Path(__file__).parent.parent.parent / ".env")
 
 def load_to_postgres():
 

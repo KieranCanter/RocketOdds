@@ -6,10 +6,10 @@ import yaml
 import json
 import time
 
-load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+load_dotenv(dotenv_path=Path(__file__).parent.parent.parent / ".env")
 
 def load_config():
-    with open(Path(__file__).parent.parent / "config.yaml", "r") as file:
+    with open(Path(__file__).parent.parent.parent / "config.yaml", "r") as file:
         return yaml.safe_load(file)
     
 config = load_config()
