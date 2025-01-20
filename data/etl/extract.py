@@ -4,10 +4,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 import yaml
 import json
-import gzip
 import time
-from datetime import datetime, timedelta, timezone
-import pytz
 
 load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
@@ -22,6 +19,8 @@ timeout = config["ballchasing"]["timeout"]
 ballchasing_api_key = os.getenv("BALLCHASING_API_KEY")
 
 def fetch_replays(replay_date, playlist, rank):
+    print(f"Fetching replays for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json...")
+
     formatted_date_start = replay_date.strftime("%Y-%m-%dT00:00:00Z")
     formatted_date_end = replay_date.strftime("%Y-%m-%dT23:59:59Z")
 
@@ -67,9 +66,6 @@ def fetch_replays(replay_date, playlist, rank):
             replays = data.get('list', [])  # List of replays on the current page
             all_replays.extend(replays)
             
-            print(f"Fetched {len(replays)} replays. Total so far: {len(all_replays)}")
-            print(f"params: {params}")
-            
             # Check if there is a "next" key for pagination
             url = data.get('next', None)  # If there is a "next" key, update the URL to the next page
             if not url:
@@ -83,31 +79,10 @@ def fetch_replays(replay_date, playlist, rank):
             time.sleep(retry_after)
             # Dont break, retry same request
         else:
-            print(f"Error fetching replays. Status Code: {response.status_code}")
+            print(f"Error fetching replays for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.\
+                  Status Code: {response.status_code}")
             break
     
-    print(json.dumps(all_replays, indent=4))
+    print(f"Fetched {len(all_replays)} replays.")
+
     return all_replays
-
-if __name__ == "__main__":
-    playlists = [ "unranked-duels", "unranked-doubles", "unranked-standard",
-        "ranked-duels", "ranked-doubles", "ranked-solo-standard", "ranked-standard"
-    ]
-
-    ranks = ["unranked", "bronze-1", "bronze-2", "bronze-3", "silver-1", "silver-2", "silver-3", "gold-1", "gold-2", "gold-3", "platinum-1", "platinum-2", "platinum-3", "diamond-1", "diamond-2", "diamond-3", "champion-1", "champion-2", "champion-3", "grand-champion-1", "grand-champion-2", "grand-champion-3", "supersonic-legend"]
-
-    replay_date = datetime.today()
-    time_period_days = 1
-
-    all_replays = []
-    
-    for days_back in range(time_period_days):
-        replay_date = datetime.today() - timedelta(days=days_back)
-        for playlist in playlists:
-            if playlist.startswith("unranked"):
-                all_replays.extend(fetch_replays(replay_date, playlist, "unranked"))
-            else:
-                for rank in ranks:
-                    all_replays.extend(fetch_replays(replay_date, playlist, rank))
-
-    print(json.dumps(all_replays, indent=4))
