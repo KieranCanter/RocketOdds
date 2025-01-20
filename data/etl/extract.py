@@ -83,6 +83,6 @@ def fetch_replays(replay_date, playlist, rank):
                   Status Code: {response.status_code}")
             break
     
-    print(f"Fetched {len(all_replays)} replays.")
+    print(f"Fetched {len(all_replays)} replays")
 
     return all_replays
