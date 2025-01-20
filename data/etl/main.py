@@ -2,6 +2,8 @@
 # Run ETL pipeline
 ###
 
+import sys
+
 # Extract imports
 from extract import fetch_replays
 from datetime import datetime, timedelta
@@ -12,7 +14,7 @@ from transform import compress_replays_for_s3
 # Load imports
 from load import load_to_postgres, load_to_s3
 
-def pipeline():
+def pipeline(upload_to_postgres: bool, upload_to_s3: bool) -> None:
     ###
     # Step 1: Extract Data from Ballchasing API
     ###
@@ -35,17 +37,32 @@ def pipeline():
             if playlist.startswith("unranked"):
                 replays = fetch_replays(replay_date, playlist, "unranked")
                 total_replays += len(replays)
-                compressed_replays = compress_replays_for_s3(replays)
-                load_to_s3(compressed_replays, replay_date, playlist, "unranked")
+                if upload_to_s3:
+                    compressed_replays = compress_replays_for_s3(replays)
+                    load_to_s3(compressed_replays, replay_date, playlist, "unranked")
             else:
                 for rank in ranks:
                     replays = fetch_replays(replay_date, playlist, rank)
                     total_replays += len(replays)
-                    compressed_replays = compress_replays_for_s3(replays)
-                    load_to_s3(compressed_replays, replay_date, playlist, rank)
+                    if upload_to_s3:
+                        compressed_replays = compress_replays_for_s3(replays)
+                        load_to_s3(compressed_replays, replay_date, playlist, rank)
     
     print(f"Finished fetching: fetched {total_replays} replays.")
 
 
 if __name__ == "__main__":
-    pipeline()
+    if 1 < len(sys.argv) > 3:
+        print("Usage: python3 main.py [--postgres] [--s3]")
+        sys.exit(1)
+
+    upload_to_postgres = False
+    upload_to_s3 = False
+
+    if "--postgres" in sys.argv:
+        upload_to_postgres = True
+
+    if "--s3" in sys.argv:
+        upload_to_s3 = True
+    
+    pipeline(upload_to_postgres=upload_to_postgres, upload_to_s3=upload_to_s3)
