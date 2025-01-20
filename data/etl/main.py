@@ -48,8 +48,12 @@ def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> No
 
 
 if __name__ == "__main__":
-    if 1 < len(sys.argv) > 4:
+    if not (2 <= len(sys.argv) <= 4):
+        print("Error: Invalid number of arguments")
         print("Usage: python3 main.py <days_back> [--postgres] [--s3]")
+        sys.exit(1)
+    if not sys.argv[1].isdigit() or int(sys.argv[1]) < 1:
+        print("Error: days_back must be a positive integer")
         sys.exit(1)
 
     days_back = int(sys.argv[1])
@@ -63,15 +67,15 @@ if __name__ == "__main__":
     if "--s3" in sys.argv:
         upload_to_s3 = True
     
-    print(f"Running pipeline for {days_back} days back")
+    print(f"Running pipeline for {days_back} {'days' if days_back > 1 else 'day'} back")
     if upload_to_postgres and upload_to_s3:
-        print("Uploading to Postgres and S3")
+        print("Uploading to Postgres and S3\n")
     elif upload_to_postgres:
-        print("Uploading to Postgres")
+        print("Uploading to Postgres\n")
     elif upload_to_s3:
-        print("Uploading to S3")
+        print("Uploading to S3\n")
     else:
-        print("Not uploading to any destination")
+        print("Not uploading to Postgres or S3\n")
     
     pipeline(days_back=days_back, upload_to_postgres=upload_to_postgres, upload_to_s3=upload_to_s3)
 
