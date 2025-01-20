@@ -3,4 +3,4 @@
 **/__pycache__/
 
 # Environment variables
-/data/.env
+.env
