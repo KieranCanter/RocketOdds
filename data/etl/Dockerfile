@@ -12,5 +12,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . ./
 
 # Set entrypoint
-ENTRYPOINT ["python3", "etl/main.py"]
-CMD ["days_back=1", "--postgres", "--s3"]
+ENTRYPOINT ["python3", "main.py"]
+CMD ["1"]
