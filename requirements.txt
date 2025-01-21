@@ -1,1 +1,4 @@
 # All dependencies
+
+# ETL Pipeline
+pip install -r data/etl/requirements.txt
