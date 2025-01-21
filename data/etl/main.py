@@ -18,31 +18,47 @@ def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> No
     ###
     # Step 1: Extract Data from Ballchasing API
     ###
-    playlists = [ "unranked-duels", "unranked-doubles", "unranked-standard", "unranked-chaos",
-            "ranked-duels", "ranked-doubles", "ranked-standard"
-        ]
+    playlists = [ 
+        "unranked-duels", "unranked-doubles", "unranked-standard", "unranked-chaos",
+        "ranked-duels", "ranked-doubles", "ranked-standard"
+    ]
 
-    ranks = ["unranked", "bronze-1", "bronze-2", "bronze-3", "silver-1", "silver-2", "silver-3", "gold-1", "gold-2", "gold-3", "platinum-1", "platinum-2", "platinum-3", "diamond-1", "diamond-2", "diamond-3", "champion-1", "champion-2", "champion-3", "grand-champion-1", "grand-champion-2", "grand-champion-3", "supersonic-legend"]
+    ranks = [
+        "unranked",
+        "bronze-1", "bronze-2", "bronze-3",
+        "silver-1", "silver-2", "silver-3",
+        "gold-1", "gold-2", "gold-3",
+        "platinum-1", "platinum-2", "platinum-3",
+        "diamond-1", "diamond-2", "diamond-3",
+        "champion-1", "champion-2", "champion-3",
+        "grand-champion-1", "grand-champion-2", "grand-champion-3",
+        "supersonic-legend"
+    ]
 
     replay_date = datetime.today()
 
     total_replays = 0
     for days_back in range(days_back):
         replay_date = datetime.today() - timedelta(days=days_back)
-        for playlist in playlists:
-            if playlist.startswith("unranked"):
-                replays = fetch_replays(replay_date, playlist, "unranked")
+
+        for playlist in playlists:    
+            ranks_list = ["unranked"] if playlist.startswith("unranked") else ranks
+
+            for rank in ranks_list:
+                replays = fetch_replays(replay_date, playlist, rank)
                 total_replays += len(replays)
+                
+                ###
+                # Step 2: Transform Data for Postgres
+                ###
+                # TODO: any proper transformations needed to load into postgres
+
+                ###
+                # Step 3: Load Data into Postgres and S3
+                ###
                 if upload_to_s3:
                     compressed_replays = compress_replays_for_s3(replays)
-                    load_to_s3(compressed_replays, replay_date, playlist, "unranked")
-            else:
-                for rank in ranks:
-                    replays = fetch_replays(replay_date, playlist, rank)
-                    total_replays += len(replays)
-                    if upload_to_s3:
-                        compressed_replays = compress_replays_for_s3(replays)
-                        load_to_s3(compressed_replays, replay_date, playlist, rank)
+                    load_to_s3(compressed_replays, replay_date, playlist, rank)
     
     print(f"Finished fetching: fetched {total_replays} replays.")
 
