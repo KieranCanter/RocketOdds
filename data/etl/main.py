@@ -60,7 +60,7 @@ def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> No
                     compressed_replays = compress_replays_for_s3(replays)
                     load_to_s3(compressed_replays, replay_date, playlist, rank)
     
-    print(f"Finished fetching: fetched {total_replays} replays.")
+    print(f"Finished fetching: fetched {total_replays} replays\n")
 
 
 if __name__ == "__main__":
