@@ -2,3 +2,6 @@
 
 # ETL Pipeline
 pip install -r data/etl/requirements.txt
+
+# DB
+pip install -r data/db/requirements.txt
