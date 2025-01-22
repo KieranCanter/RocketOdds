@@ -2,14 +2,14 @@ CREATE SCHEMA IF NOT EXISTS raw_data;
 
 CREATE TABLE IF NOT EXISTS uploaders (
     steam_id VARCHAR(17) PRIMARY KEY,
-    name TEXT NOT NULL,
+    uploader_name TEXT NOT NULL,
     profile_url TEXT
 );
 
 CREATE TABLE IF NOT EXISTS replays (
     replay_id UUID PRIMARY KEY,
     link TEXT NOT NULL,
-    created TIMESTAMP NOT NULL,
+    created TIMESTAMP WITH TIME ZONE NOT NULL,
     uploader_id VARCHAR(17) REFERENCES uploaders(steam_id),
     rocket_league_id TEXT,
     match_guid TEXT UNIQUE,
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS replays (
     overtime BOOLEAN,
     overtime_seconds SMALLINT,
     season SMALLINT,
-    match_date TIMESTAMP,
+    match_date TIMESTAMP WITH TIME ZONE NOT NULL,
     date_has_timezone BOOLEAN,
     visibility TEXT CHECK (visibility IN ('public', 'unlisted', 'private'))
 );
