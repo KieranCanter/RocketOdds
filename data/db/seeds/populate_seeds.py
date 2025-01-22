@@ -24,12 +24,23 @@ class BallchasingSeeder:
         else:
             raise Exception(f"Failed to fetch replay: {response.status_code}")
 
-    def _write_sql(self, filename: str, sql_statements: list[str], append: bool = False) -> None:
+    def _write_sql(self, filename: str, sql_statements: list[str]) -> None:
         filepath = self.output_dir / filename
-        with open(filepath, 'w') as f:
-            if not append:
-                f.write('-- Generated seed data from select Ballchasing replays\n\n')
-            f.write('\n'.join(sql_statements))
+        with open(filepath, 'a') as f:
+            # Find the common leading whitespace for each statement
+            cleaned_statements = []
+            for stmt in sql_statements:
+                lines = stmt.splitlines()
+                # Find the minimum indentation level (excluding empty lines)
+                min_indent = min(len(line) - len(line.lstrip()) for line in lines if line.strip())
+                # Remove only the common indentation
+                cleaned = '\n'.join(
+                    line[min_indent:] if line.strip() else ''
+                    for line in lines
+                )
+                cleaned_statements.append(cleaned)
+            
+            f.write('\n'.join(cleaned_statements))
             f.write('\n')
 
     def generate_sql_files(self, replay_data):
@@ -43,11 +54,19 @@ class BallchasingSeeder:
 
     def generate_uploaders_sql(self, replay_data):
         sql = []
-        uploader = replay_data['uploader']
+        uploader_values = {
+            'steam_id': replay_data['uploader']['steam_id'],
+            'name': replay_data['uploader']['name'],
+            'profile_url': replay_data['uploader']['profile_url']
+        }
         
         sql.append(f"""
             INSERT INTO uploaders (steam_id, name, profile_url) 
-            VALUES ({uploader['steam_id']}, {uploader['name']}, {uploader['profile_url']});
+            VALUES (
+                {uploader_values['steam_id']},
+                {uploader_values['name']},
+                {uploader_values['profile_url']}
+            );
         """)
 
         self._write_sql('V1_seed_uploaders.sql', sql)
@@ -114,8 +133,11 @@ class BallchasingSeeder:
             
             sql.append(f"""
                 INSERT INTO teams (replay_id, team_color, team_name)
-                VALUES
-                ({replay_id}, {team_color}, {team_name});
+                VALUES (
+                    {replay_id},
+                    {team_color},
+                    {team_name}
+                );
             """)
 
             self.generate_team_stats_sql(replay_data, team_color)
@@ -243,11 +265,11 @@ class BallchasingSeeder:
         """)
 
         self._write_sql('V4_seed_team_stats.sql', team_ball_stats_sql)
-        self._write_sql('V4_seed_team_stats.sql', team_core_stats_sql, append=True)
-        self._write_sql('V4_seed_team_stats.sql', team_boost_stats_sql, append=True)
-        self._write_sql('V4_seed_team_stats.sql', team_movement_stats_sql, append=True)
-        self._write_sql('V4_seed_team_stats.sql', team_positioning_stats_sql, append=True)
-        self._write_sql('V4_seed_team_stats.sql', team_demo_stats_sql, append=True)
+        self._write_sql('V4_seed_team_stats.sql', team_core_stats_sql)
+        self._write_sql('V4_seed_team_stats.sql', team_boost_stats_sql)
+        self._write_sql('V4_seed_team_stats.sql', team_movement_stats_sql)
+        self._write_sql('V4_seed_team_stats.sql', team_positioning_stats_sql)
+        self._write_sql('V4_seed_team_stats.sql', team_demo_stats_sql)
 
 
     def generate_players_sql(self, replay_data):
@@ -463,11 +485,11 @@ class BallchasingSeeder:
         """)
 
         self._write_sql('V7_seed_player_stats.sql', player_settings_sql)
-        self._write_sql('V7_seed_player_stats.sql', player_core_stats_sql, append=True)
-        self._write_sql('V7_seed_player_stats.sql', player_boost_stats_sql, append=True)
-        self._write_sql('V7_seed_player_stats.sql', player_movement_stats_sql, append=True)
-        self._write_sql('V7_seed_player_stats.sql', player_positioning_stats_sql, append=True)
-        self._write_sql('V7_seed_player_stats.sql', player_demo_stats_sql, append=True)
+        self._write_sql('V7_seed_player_stats.sql', player_core_stats_sql)
+        self._write_sql('V7_seed_player_stats.sql', player_boost_stats_sql)
+        self._write_sql('V7_seed_player_stats.sql', player_movement_stats_sql)
+        self._write_sql('V7_seed_player_stats.sql', player_positioning_stats_sql)
+        self._write_sql('V7_seed_player_stats.sql', player_demo_stats_sql)
 
 
 if __name__ == '__main__':
@@ -475,6 +497,21 @@ if __name__ == '__main__':
     BALLCHASING_API_KEY = os.getenv("BALLCHASING_API_KEY")
     seeder = BallchasingSeeder(BALLCHASING_API_KEY)
     
+    # Clear all seed files before starting
+    seed_files = [
+        'V1_seed_uploaders.sql',
+        'V2_seed_replays.sql',
+        'V3_seed_teams.sql',
+        'V4_seed_team_stats.sql',
+        'V5_seed_players.sql',
+        'V6_seed_replay_players.sql',
+        'V7_seed_player_stats.sql'
+    ]
+
+    for file in seed_files:
+        with open(seeder.output_dir / file, 'w') as f:
+            f.write('')
+
     # Hardcoded replays to generate seed data
     replay_ids = [
         '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
@@ -485,5 +522,13 @@ if __name__ == '__main__':
     ]
     
     for replay_id in replay_ids:
+        for file in seed_files:
+            with open(seeder.output_dir / file, 'a') as f:
+                f.write('-- Seed data for replay: ' + replay_id + '\n')
+
         replay_data = seeder.fetch_replay(replay_id)
         seeder.generate_sql_files(replay_data)
+
+        for file in seed_files:
+            with open(seeder.output_dir / file, 'a') as f:
+                f.write('\n')
