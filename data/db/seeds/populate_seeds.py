@@ -487,11 +487,12 @@ if __name__ == '__main__':
 
     # Hardcoded replays to generate seed data
     replay_ids = [
-        '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
-        '32341018-395a-446d-a3a7-cc213598cf7f',
-        '2852f730-8d9d-4658-b7cd-77bff44cde15',
-        'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
-        'a4676587-9373-401b-9de1-5ea48839f574'
+        '9d37f8dd-3598-49b7-967c-9a013ecf5f74', # Ranked 1v1
+        '32341018-395a-446d-a3a7-cc213598cf7f', # Ranked 2v2
+        '2852f730-8d9d-4658-b7cd-77bff44cde15', # Ranked 3v3
+        'fc54e2d6-1c9e-4479-9169-e4d02b185c13', # Unranked 4v4
+        'a4676587-9373-401b-9de1-5ea48839f574', # Unranked 3v3
+        '238ca3d7-3b3d-4680-a53b-79516e9066ac', # Ranked 2v2 (duplicate players)
     ]
     
     for replay_id in replay_ids:
