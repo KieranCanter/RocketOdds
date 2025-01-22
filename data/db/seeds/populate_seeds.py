@@ -96,7 +96,7 @@ class BallchasingSeeder:
             INSERT INTO replays (
                 replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
                 title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
-                season, match_date, date_has_timezone, visibility) 
+                season, match_date, visibility) 
             VALUES (
                 '{replay_data['id']}',
                 '{replay_data['link']}',
@@ -114,7 +114,6 @@ class BallchasingSeeder:
                 {replay_data.get('overtime_seconds', -1)},
                 {replay_data['season']},
                 '{self._convert_time_to_sql_est(replay_data['date'])}',
-                {str(replay_data['date_has_timezone']).lower()},
                 '{replay_data['visibility']}'
             );
         """)

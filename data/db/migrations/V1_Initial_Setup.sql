@@ -23,7 +23,6 @@ CREATE TABLE IF NOT EXISTS replays (
     overtime_seconds SMALLINT,
     season SMALLINT,
     match_date TIMESTAMP WITH TIME ZONE NOT NULL,
-    date_has_timezone BOOLEAN,
     visibility TEXT CHECK (visibility IN ('public', 'unlisted', 'private'))
 );
 
