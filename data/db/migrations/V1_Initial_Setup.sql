@@ -15,14 +15,12 @@ CREATE TABLE IF NOT EXISTS replays (
     match_guid TEXT UNIQUE,
     title TEXT,
     map_code TEXT,
-    match_type TEXT,
-    team_size SMALLINT CHECK (team_size BETWEEN 1 AND 4),
+    team_size SMALLINT CHECK (team_size BETWEEN 0 AND 4),
     playlist_id TEXT,
     duration SMALLINT,
     overtime BOOLEAN,
     overtime_seconds SMALLINT,
     season SMALLINT,
-    season_type TEXT,
     match_date TIMESTAMP,
     date_has_timezone BOOLEAN,
     visibility TEXT CHECK (visibility IN ('public', 'unlisted', 'private'))
@@ -147,10 +145,9 @@ CREATE TABLE IF NOT EXISTS replay_players (
     car_name TEXT,
     start_time REAL,
     end_time REAL,
-    steering_sensitivity REAL
 );
 
-CREATE TABLE IF NOT EXISTS player_camera_settings (
+CREATE TABLE IF NOT EXISTS player_settings (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
@@ -161,7 +158,8 @@ CREATE TABLE IF NOT EXISTS player_camera_settings (
     distance SMALLINT,
     stiffness REAL,
     swivel_speed REAL,
-    transition_speed REAL
+    transition_speed REAL,
+    steering_sensitivity REAL
 );
 
 CREATE TABLE IF NOT EXISTS player_core_stats (
@@ -231,9 +229,9 @@ CREATE TABLE IF NOT EXISTS player_movement_stats (
     count_powerslide INT,
     avg_powerslide_duration REAL,
     avg_speed_percentage REAL CHECK (avg_speed_percentage BETWEEN 0 AND 100),
-    percent_supersonic_speed REAL CHECK (percent_supersonic_speed BETWEEN 0 AND 100),
-    percent_boost_speed REAL CHECK (percent_boost_speed BETWEEN 0 AND 100),
     percent_slow_speed REAL CHECK (percent_slow_speed BETWEEN 0 AND 100),
+    percent_boost_speed REAL CHECK (percent_boost_speed BETWEEN 0 AND 100),
+    percent_supersonic_speed REAL CHECK (percent_supersonic_speed BETWEEN 0 AND 100),
     percent_ground REAL CHECK (percent_ground BETWEEN 0 AND 100),
     percent_low_air REAL CHECK (percent_low_air BETWEEN 0 AND 100),
     percent_high_air REAL CHECK (percent_high_air BETWEEN 0 AND 100)
@@ -257,6 +255,7 @@ CREATE TABLE IF NOT EXISTS player_positioning_stats (
     time_infront_ball REAL,
     time_most_back REAL,
     time_most_forward REAL,
+    goals_against_while_last_defender SMALLINT,
     time_closest_to_ball REAL,
     time_farthest_from_ball REAL,
     percent_defensive_third REAL CHECK (percent_defensive_third BETWEEN 0 AND 100),
