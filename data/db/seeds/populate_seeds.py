@@ -2,6 +2,9 @@ import requests
 from pathlib import Path
 import os
 import yaml
+from dotenv import load_dotenv
+
+load_dotenv(dotenv_path=Path(__file__).parent.parent.parent.parent / ".env")
 
 class BallchasingSeeder:
 
