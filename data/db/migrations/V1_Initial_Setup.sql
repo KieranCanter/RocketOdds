@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS replays (
     match_guid TEXT UNIQUE,
     title TEXT,
     map_code TEXT,
+    map_name TEXT,
     team_size SMALLINT CHECK (team_size BETWEEN -1 AND 4),
     playlist_id TEXT,
     duration SMALLINT,
