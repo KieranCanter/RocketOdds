@@ -37,10 +37,9 @@ class BallchasingSeeder:
         self.generate_uploaders_sql(replay_data)
         self.generate_replays_sql(replay_data)
         self.generate_teams_sql(replay_data)
-        self.generate_team_stats_sql(replay_data)
+        # team_stats is generated in the teams_sql function
         self.generate_players_sql(replay_data)
-        self.generate_replay_players_sql(replay_data)
-        self.generate_player_stats_sql(replay_data)
+        # replay_players and player_stats are generated in the players_sql function
 
     def generate_uploaders_sql(self, replay_data):
         sql = []
@@ -117,9 +116,11 @@ class BallchasingSeeder:
                 ({replay_id}, {team_color}, {team_name});
             """)
 
+            self.generate_team_stats_sql(replay_data, team_color)
+
         self._write_sql('V3_seed_teams.sql', sql)
     
-    def generate_team_stats_sql(self, replay_data):
+    def generate_team_stats_sql(self, replay_data, team_color):
         team_ball_stats_sql = []
         team_core_stats_sql = []
         team_boost_stats_sql = []
@@ -128,117 +129,116 @@ class BallchasingSeeder:
         team_demo_stats_sql = []
         replay_id = replay_data['id']
 
-        for team_color in ['blue', 'orange']:
-            team_data = replay_data[team_color]['stats']
+        team_data = replay_data[team_color]['stats']
             
-            team_ball_stats_sql.append(f"""
-                INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
-                VALUES (
-                    {replay_id},
-                    {team_color},
-                    {team_data['ball']['possession_time']},
-                    {team_data['ball']['time_in_side']}
-                );
-            """)
+        team_ball_stats_sql.append(f"""
+            INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
+            VALUES (
+                {replay_id},
+                {team_color},
+                {team_data['ball']['possession_time']},
+                {team_data['ball']['time_in_side']}
+            );
+        """)
 
-            team_core_stats_sql.append(f"""
-                INSERT INTO team_core_stats (
-                    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
-                    shooting_percentage) 
-                VALUES (
-                    {replay_id},
-                    {team_color},
-                    {team_data['core']['shots']},
-                    {team_data['core']['shots_against']},
-                    {team_data['core']['goals']},
-                    {team_data['core']['goals_against']},
-                    {team_data['core']['saves']},
-                    {team_data['core']['assists']},
-                    {team_data['core']['score']},
-                    {team_data['core']['shooting_percentage']}
-                );
-            """)
+        team_core_stats_sql.append(f"""
+            INSERT INTO team_core_stats (
+                replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+                shooting_percentage) 
+            VALUES (
+                {replay_id},
+                {team_color},
+                {team_data['core']['shots']},
+                {team_data['core']['shots_against']},
+                {team_data['core']['goals']},
+                {team_data['core']['goals_against']},
+                {team_data['core']['saves']},
+                {team_data['core']['assists']},
+                {team_data['core']['score']},
+                {team_data['core']['shooting_percentage']}
+            );
+        """)
 
-            team_boost_stats_sql.append(f"""
-                INSERT INTO team_boost_stats (
-                    replay_id, team_color, bpm, bcpm, avg_amount, amount_collected, amount_stolen, 
-                    amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
-                    count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
-                    amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
-                    time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
-                VALUES (
-                    {replay_id},
-                    {team_color},
-                    {team_data['boost']['bpm']},
-                    {team_data['boost']['bcpm']},
-                    {team_data['boost']['avg_amount']},
-                    {team_data['boost']['amount_collected']},
-                    {team_data['boost']['amount_stolen']},
-                    {team_data['boost']['amount_collected_big']},
-                    {team_data['boost']['amount_stolen_big']},
-                    {team_data['boost']['amount_collected_small']},
-                    {team_data['boost']['amount_stolen_small']},
-                    {team_data['boost']['count_collected_big']},
-                    {team_data['boost']['count_stolen_big']},
-                    {team_data['boost']['count_collected_small']},
-                    {team_data['boost']['count_stolen_small']},
-                    {team_data['boost']['amount_overfill']},
-                    {team_data['boost']['amount_overfill_stolen']},
-                    {team_data['boost']['amount_used_while_supersonic']},
-                    {team_data['boost']['time_zero_boost']},
-                    {team_data['boost']['time_full_boost']},
-                    {team_data['boost']['time_boost_0_25']},
-                    {team_data['boost']['time_boost_25_50']},
-                    {team_data['boost']['time_boost_50_75']},
-                    {team_data['boost']['time_boost_75_100']}
-                );
-            """)
+        team_boost_stats_sql.append(f"""
+            INSERT INTO team_boost_stats (
+                replay_id, team_color, bpm, bcpm, avg_amount, amount_collected, amount_stolen, 
+                amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
+                count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
+                amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
+                time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
+            VALUES (
+                {replay_id},
+                {team_color},
+                {team_data['boost']['bpm']},
+                {team_data['boost']['bcpm']},
+                {team_data['boost']['avg_amount']},
+                {team_data['boost']['amount_collected']},
+                {team_data['boost']['amount_stolen']},
+                {team_data['boost']['amount_collected_big']},
+                {team_data['boost']['amount_stolen_big']},
+                {team_data['boost']['amount_collected_small']},
+                {team_data['boost']['amount_stolen_small']},
+                {team_data['boost']['count_collected_big']},
+                {team_data['boost']['count_stolen_big']},
+                {team_data['boost']['count_collected_small']},
+                {team_data['boost']['count_stolen_small']},
+                {team_data['boost']['amount_overfill']},
+                {team_data['boost']['amount_overfill_stolen']},
+                {team_data['boost']['amount_used_while_supersonic']},
+                {team_data['boost']['time_zero_boost']},
+                {team_data['boost']['time_full_boost']},
+                {team_data['boost']['time_boost_0_25']},
+                {team_data['boost']['time_boost_25_50']},
+                {team_data['boost']['time_boost_50_75']},
+                {team_data['boost']['time_boost_75_100']}
+            );
+        """)
 
-            team_movement_stats_sql.append(f"""
-                INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_supersonic_speed, 
-                    time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
-                    count_powerslide) 
-                VALUES (
-                    {replay_id},
-                    {team_color},
-                    {team_data['movement']['total_distance']},
-                    {team_data['movement']['time_supersonic_speed']},
-                    {team_data['movement']['time_boost_speed']},
-                    {team_data['movement']['time_slow_speed']},
-                    {team_data['movement']['time_ground']},
-                    {team_data['movement']['time_low_air']},
-                    {team_data['movement']['time_high_air']},
-                    {team_data['movement']['time_powerslide']},
-                    {team_data['movement']['count_powerslide']}
-                );
-            """)
+        team_movement_stats_sql.append(f"""
+            INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_supersonic_speed, 
+                time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
+                count_powerslide) 
+            VALUES (
+                {replay_id},
+                {team_color},
+                {team_data['movement']['total_distance']},
+                {team_data['movement']['time_supersonic_speed']},
+                {team_data['movement']['time_boost_speed']},
+                {team_data['movement']['time_slow_speed']},
+                {team_data['movement']['time_ground']},
+                {team_data['movement']['time_low_air']},
+                {team_data['movement']['time_high_air']},
+                {team_data['movement']['time_powerslide']},
+                {team_data['movement']['count_powerslide']}
+            );
+        """)
 
-            team_positioning_stats_sql.append(f"""
-                INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third, time_neutral_third, 
-                    time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
-                    time_infront_ball) 
-                VALUES (
-                    {replay_id},
-                    {team_color},
-                    {team_data['positioning']['time_defensive_third']},
-                    {team_data['positioning']['time_neutral_third']},
-                    {team_data['positioning']['time_offensive_third']},
-                    {team_data['positioning']['time_defensive_half']},
-                    {team_data['positioning']['time_offensive_half']},
-                    {team_data['positioning']['time_behind_ball']},
-                    {team_data['positioning']['time_infront_ball']}
-                );
-            """)
+        team_positioning_stats_sql.append(f"""
+            INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third, time_neutral_third, 
+                time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
+                time_infront_ball) 
+            VALUES (
+                {replay_id},
+                {team_color},
+                {team_data['positioning']['time_defensive_third']},
+                {team_data['positioning']['time_neutral_third']},
+                {team_data['positioning']['time_offensive_third']},
+                {team_data['positioning']['time_defensive_half']},
+                {team_data['positioning']['time_offensive_half']},
+                {team_data['positioning']['time_behind_ball']},
+                {team_data['positioning']['time_infront_ball']}
+            );
+        """)
 
-            team_demo_stats_sql.append(f"""
-                INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
-                VALUES (
-                    {replay_id},
-                    {team_color},
-                    {team_data['demo']['inflicted']},
-                    {team_data['demo']['taken']}
-                );
-            """)
+        team_demo_stats_sql.append(f"""
+            INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
+            VALUES (
+                {replay_id},
+                {team_color},
+                {team_data['demo']['inflicted']},
+                {team_data['demo']['taken']}
+            );
+        """)
 
         self._write_sql('V4_seed_team_stats.sql', team_ball_stats_sql)
         self._write_sql('V4_seed_team_stats.sql', team_core_stats_sql, append=True)
