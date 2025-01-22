@@ -255,7 +255,7 @@ class BallchasingSeeder:
         for team_color in ['blue', 'orange']:
             team_data = replay_data[team_color]['players']
             for player in team_data:
-                if player['id']['platform'] == 'steam':
+                if player['id'].get('platform', '') == 'steam':
                     steam_id = player['id']['id']
                 else:
                     steam_id = ""
