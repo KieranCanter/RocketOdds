@@ -36,7 +36,8 @@ class BallchasingSeeder:
         # Create separate SQL files for each table
         self.generate_uploaders_sql(replay_data)
         self.generate_replays_sql(replay_data)
-        self.generate_teams_sql(replay_data)
+        if replay_data['team_size'] > 1:
+            self.generate_teams_sql(replay_data)
         # team_stats is generated in the teams_sql function
         self.generate_players_sql(replay_data)
         # replay_players and player_stats are generated in the players_sql function
@@ -255,7 +256,7 @@ class BallchasingSeeder:
         for team_color in ['blue', 'orange']:
             team_data = replay_data[team_color]['players']
             for player in team_data:
-                if player['id'].get('platform', '') == 'steam':
+                if player['id']['platform'] == 'steam':
                     steam_id = player['id']['id']
                 else:
                     steam_id = ""
