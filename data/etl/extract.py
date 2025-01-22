@@ -3,7 +3,6 @@ import requests
 from dotenv import load_dotenv
 from pathlib import Path
 import yaml
-import json
 import time
 
 load_dotenv(dotenv_path=Path(__file__).parent.parent.parent / ".env")
@@ -14,9 +13,9 @@ def load_config():
     
 config = load_config()
 
-base_url = config["ballchasing"]["base_url"]
-timeout = config["ballchasing"]["timeout"]
-ballchasing_api_key = os.getenv("BALLCHASING_API_KEY")
+BASE_URL = config["ballchasing"]["base_url"]
+TIMEOUT = config["ballchasing"]["timeout"]
+BALLCHASING_API_KEY = os.getenv("BALLCHASING_API_KEY")
 
 def fetch_replays(replay_date, playlist, rank):
     print(f"Fetching replays for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json...")
@@ -24,8 +23,8 @@ def fetch_replays(replay_date, playlist, rank):
     formatted_date_start = replay_date.strftime("%Y-%m-%dT00:00:00Z")
     formatted_date_end = replay_date.strftime("%Y-%m-%dT23:59:59Z")
 
-    url = f"{base_url}/replays"
-    headers = {"Authorization": ballchasing_api_key}
+    url = f"{BASE_URL}/replays"
+    headers = {"Authorization": BALLCHASING_API_KEY}
     params = {
         "playlist": playlist,
         "min-rank": rank,
@@ -57,7 +56,7 @@ def fetch_replays(replay_date, playlist, rank):
             time.sleep(0.5 - elapsed)
 
         # Make the request to the current URL
-        response = requests.get(url, headers=headers, params=params, timeout=timeout)
+        response = requests.get(url, headers=headers, params=params, timeout=TIMEOUT)
         hourly_request_count += 1
         last_request_time = time.time()
         
@@ -80,7 +79,7 @@ def fetch_replays(replay_date, playlist, rank):
             # Dont break, retry same request
         else:
             print(f"Error fetching replays for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.\
-                  Status Code: {response.status_code}")
+                Status Code: {response.status_code}")
             break
     
     print(f"Fetched {len(all_replays)} replays")
