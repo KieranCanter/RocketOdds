@@ -10,7 +10,7 @@ class BallchasingSeeder:
         self.headers = {'Authorization': api_key}
         self.output_dir = Path(__file__).parent
         
-        config = yaml.safe_load(open(Path(__file__).parent.parent.parent / "config.yaml", "r"))
+        config = yaml.safe_load(open(Path(__file__).parent.parent.parent.parent / "config.yaml", "r"))
         self.BASE_URL = config["ballchasing"]["base_url"]
         self.TIMEOUT = config["ballchasing"]["timeout"]
 
