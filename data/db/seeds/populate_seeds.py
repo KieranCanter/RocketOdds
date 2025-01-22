@@ -36,8 +36,7 @@ class BallchasingSeeder:
         # Create separate SQL files for each table
         self.generate_uploaders_sql(replay_data)
         self.generate_replays_sql(replay_data)
-        if replay_data['team_size'] > 1:
-            self.generate_teams_sql(replay_data)
+        self.generate_teams_sql(replay_data)
         # team_stats is generated in the teams_sql function
         self.generate_players_sql(replay_data)
         # replay_players and player_stats are generated in the players_sql function
@@ -58,13 +57,14 @@ class BallchasingSeeder:
 
         replay_values = {
             'replay_id': replay_data['id'],
-            'link': f"https://ballchasing.com/api/replays/{replay_data['id']}",
+            'link': replay_data['link'],
             'created': replay_data['created'],
             'uploader_id': replay_data['uploader']['steam_id'],
             'rocket_league_id': replay_data['rocket_league_id'],
             'match_guid': replay_data['match_guid'],
             'title': replay_data.get('title', 'Untitled').replace("'", "''"),  # Escape single quotes
             'map_code': replay_data['map_code'],
+            'map_name': replay_data.get('map_name', ''),
             'team_size': replay_data.get('team_size', -1),
             'playlist_id': replay_data['playlist_id'],
             'duration': int(replay_data.get('duration', -1)),
@@ -79,7 +79,7 @@ class BallchasingSeeder:
         sql.append(f"""
             INSERT INTO replays (
                 replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
-                title, map_code, team_size, playlist_id, duration, overtime, overtime_seconds, 
+                title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
                 season, match_date, date_has_timezone, visibility) 
             VALUES (
                 {replay_values['replay_id']},
@@ -90,6 +90,7 @@ class BallchasingSeeder:
                 {replay_values['match_guid']},
                 {replay_values['title']},
                 {replay_values['map_code']},
+                {replay_values['map_name']},
                 {replay_values['team_size']},
                 {replay_values['playlist_id']},
                 {replay_values['duration']},
@@ -138,7 +139,7 @@ class BallchasingSeeder:
                 {replay_id},
                 {team_color},
                 {team_data['ball']['possession_time']},
-                {team_data['ball']['time_in_side']}
+                {team_data['ball'].get('time_in_side', -1)}
             );
         """)
 
@@ -252,17 +253,20 @@ class BallchasingSeeder:
     def generate_players_sql(self, replay_data):
         sql = []
         replay_id = replay_data['id']
-
+        
         for team_color in ['blue', 'orange']:
-            team_data = replay_data[team_color]['players']
-            for player in team_data:
-                if player['id']['platform'] == 'steam':
-                    steam_id = player['id']['id']
-                else:
-                    steam_id = ""
+            for player in replay_data[team_color]['players']:
+                # Add defensive checking for the id structure
+                platform = player['id'].get('platform', '')  # Use get() with default value
+                player_id_value = player['id'].get('id', '')  # Fallback to string representation
+                
                 sql.append(f"""
-                    INSERT INTO players (player_id, display_name, steam_id, platform)
-                    VALUES ({player['id']['id']}, {player['name']}, {steam_id}, {player['id']['platform']});
+                    INSERT INTO players (player_id, platform, name) 
+                    VALUES (
+                        {player_id_value},
+                        {platform},
+                        {player['name']}
+                    );
                 """)
 
                 self.generate_replay_players_sql(replay_id, player, team_color)
@@ -277,7 +281,7 @@ class BallchasingSeeder:
             INSERT INTO replay_players (player_id, replay_id, team_color, rank_id, rank_tier, rank_division, 
                 mvp, car_id, car_name, start_time, end_time) 
             VALUES (
-                {player_data['id']['id']},
+                {player_data['id'].get('id', '')},
                 {replay_id},
                 {team_color},
                 {'Unranked' if player_data.get('rank', 'Unranked') == 'Unranked' else player_data['rank']['id']},
@@ -306,7 +310,7 @@ class BallchasingSeeder:
             INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
                 swivel_speed, transition_speed, steering_sensitivity) 
             VALUES (
-                {player_data['id']['id']},
+                {player_data['id'].get('id', '')},
                 {replay_id},
                 {player_data['camera']['fov']},
                 {player_data['camera']['height']},
@@ -323,7 +327,7 @@ class BallchasingSeeder:
             INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
                 assists, score, shooting_percentage) 
             VALUES (
-                {player_data['id']['id']},
+                {player_data['id'].get('id', '')},
                 {replay_id},
                 {player_stats['core']['shots']},
                 {player_stats['core']['shots_against']},
@@ -344,7 +348,7 @@ class BallchasingSeeder:
                 time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
                 time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
             VALUES (
-                {player_data['id']['id']},
+                {player_data['id'].get('id', '')},
                 {replay_id},
                 {player_stats['boost']['bpm']},
                 {player_stats['boost']['bcpm']},
@@ -383,7 +387,7 @@ class BallchasingSeeder:
                 count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
                 percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
             VALUES (
-                {player_data['id']['id']},
+                {player_data['id'].get('id', '')},
                 {replay_id},
                 {player_stats['movement']['avg_speed']},
                 {player_stats['movement']['total_distance']},
@@ -416,7 +420,7 @@ class BallchasingSeeder:
                 percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
                 percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
             VALUES (
-                {player_data['id']['id']},
+                {player_data['id'].get('id', '')},
                 {replay_id},
                 {player_stats['positioning']['avg_distance_to_ball']},
                 {player_stats['positioning']['avg_distance_to_ball_possession']},
@@ -451,7 +455,7 @@ class BallchasingSeeder:
         player_demo_stats_sql.append(f"""
             INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
             VALUES (
-                {player_data['id']['id']},
+                {player_data['id'].get('id', '')},
                 {replay_id},
                 {player_stats['demo']['inflicted']},
                 {player_stats['demo']['taken']}
