@@ -41,7 +41,6 @@ class BallchasingSeeder:
                 cleaned_statements.append(cleaned)
             
             f.write('\n'.join(cleaned_statements))
-            f.write('\n')
 
     def generate_sql_files(self, replay_data):
         # Create separate SQL files for each table
@@ -54,18 +53,13 @@ class BallchasingSeeder:
 
     def generate_uploaders_sql(self, replay_data):
         sql = []
-        uploader_values = {
-            'steam_id': replay_data['uploader']['steam_id'],
-            'name': replay_data['uploader']['name'],
-            'profile_url': replay_data['uploader']['profile_url']
-        }
         
         sql.append(f"""
-            INSERT INTO uploaders (steam_id, name, profile_url) 
+            INSERT INTO uploaders (steam_id, uploader_name, profile_url) 
             VALUES (
-                {uploader_values['steam_id']},
-                {uploader_values['name']},
-                {uploader_values['profile_url']}
+                '{replay_data['uploader']['steam_id']}',
+                '{replay_data['uploader']['name'].replace("'", "''")}',
+                '{replay_data['uploader']['profile_url']}'
             );
         """)
 
@@ -74,51 +68,30 @@ class BallchasingSeeder:
     def generate_replays_sql(self, replay_data):
         sql = []
 
-        replay_values = {
-            'replay_id': replay_data['id'],
-            'link': replay_data['link'],
-            'created': replay_data['created'],
-            'uploader_id': replay_data['uploader']['steam_id'],
-            'rocket_league_id': replay_data['rocket_league_id'],
-            'match_guid': replay_data['match_guid'],
-            'title': replay_data.get('title', 'Untitled').replace("'", "''"),  # Escape single quotes
-            'map_code': replay_data['map_code'],
-            'map_name': replay_data.get('map_name', ''),
-            'team_size': replay_data.get('team_size', -1),
-            'playlist_id': replay_data['playlist_id'],
-            'duration': int(replay_data.get('duration', -1)),
-            'overtime': replay_data.get('overtime', False),
-            'overtime_seconds': replay_data.get('overtime_seconds', -1),
-            'season': replay_data.get('season', -1),
-            'match_date': replay_data.get('date', 'Undated'),
-            'date_has_timezone': replay_data.get('date_has_timezone', False),
-            'visibility': replay_data.get('visibility', 'public')
-        }
-
         sql.append(f"""
             INSERT INTO replays (
                 replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
                 title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
                 season, match_date, date_has_timezone, visibility) 
             VALUES (
-                {replay_values['replay_id']},
-                {replay_values['link']},
-                {replay_values['created']},
-                {replay_values['uploader_id']},
-                {replay_values['rocket_league_id']},
-                {replay_values['match_guid']},
-                {replay_values['title']},
-                {replay_values['map_code']},
-                {replay_values['map_name']},
-                {replay_values['team_size']},
-                {replay_values['playlist_id']},
-                {replay_values['duration']},
-                {str(replay_values['overtime']).lower()},
-                {replay_values['overtime_seconds']},
-                {replay_values['season']},
-                {replay_values['match_date']},
-                {str(replay_values['date_has_timezone']).lower()},
-                {replay_values['visibility']}
+                {replay_data['id']},
+                {replay_data['link']},
+                {replay_data['created']},
+                {replay_data['uploader']['steam_id']},
+                {replay_data['rocket_league_id']},
+                {replay_data['match_guid']},
+                {replay_data['title']},
+                {replay_data['map_code']},
+                {replay_data['map_name']},
+                {replay_data.get('team_size', -1)},
+                {replay_data['playlist_id']},
+                {replay_data.get('duration', -1)},
+                {str(replay_data['overtime']).lower()},
+                {replay_data.get('overtime_seconds', -1)},
+                {replay_data['season']},
+                {replay_data['date']},
+                {str(replay_data['date_has_timezone']).lower()},
+                {replay_data['visibility']}
             );
         """)
 
@@ -531,4 +504,4 @@ if __name__ == '__main__':
 
         for file in seed_files:
             with open(seeder.output_dir / file, 'a') as f:
-                f.write('\n')
+                f.write('\n' + '-- End seed data for replay: ' + replay_id + '\n\n\n\n')
