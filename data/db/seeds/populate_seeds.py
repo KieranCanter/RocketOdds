@@ -65,12 +65,12 @@ class BallchasingSeeder:
             'match_guid': replay_data['match_guid'],
             'title': replay_data.get('title', 'Untitled').replace("'", "''"),  # Escape single quotes
             'map_code': replay_data['map_code'],
-            'team_size': replay_data.get('team_size', 0),
+            'team_size': replay_data.get('team_size', -1),
             'playlist_id': replay_data['playlist_id'],
-            'duration': int(replay_data.get('duration', 0)),
+            'duration': int(replay_data.get('duration', -1)),
             'overtime': replay_data.get('overtime', False),
-            'overtime_seconds': replay_data.get('overtime_seconds', 0),
-            'season': replay_data.get('season', 0),
+            'overtime_seconds': replay_data.get('overtime_seconds', -1),
+            'season': replay_data.get('season', -1),
             'match_date': replay_data.get('date', 'Undated'),
             'date_has_timezone': replay_data.get('date_has_timezone', False),
             'visibility': replay_data.get('visibility', 'public')
@@ -261,7 +261,7 @@ class BallchasingSeeder:
                     steam_id = "NULL"
                 sql.append(f"""
                     INSERT INTO players (player_id, display_name, steam_id, platform)
-                    VALUES ({player['id']['id']}, {player['name']}, {steam_id}, {player['platform']});
+                    VALUES ({player['id']['id']}, {player['name']}, {steam_id}, {player['id']['platform']});
                 """)
 
                 self.generate_replay_players_sql(replay_id, player, team_color)
@@ -322,7 +322,7 @@ class BallchasingSeeder:
             INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
                 assists, score, shooting_percentage) 
             VALUES (
-                {player_stats['id']['id']},
+                {player_data['id']['id']},
                 {replay_id},
                 {player_stats['core']['shots']},
                 {player_stats['core']['shots_against']},
@@ -343,7 +343,7 @@ class BallchasingSeeder:
                 time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
                 time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
             VALUES (
-                {player_stats['id']['id']},
+                {player_data['id']['id']},
                 {replay_id},
                 {player_stats['boost']['bpm']},
                 {player_stats['boost']['bcpm']},
@@ -382,7 +382,7 @@ class BallchasingSeeder:
                 count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
                 percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
             VALUES (
-                {player_stats['id']['id']},
+                {player_data['id']['id']},
                 {replay_id},
                 {player_stats['movement']['avg_speed']},
                 {player_stats['movement']['total_distance']},
@@ -415,12 +415,12 @@ class BallchasingSeeder:
                 percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
                 percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
             VALUES (
-                {player_stats['id']['id']},
+                {player_data['id']['id']},
                 {replay_id},
                 {player_stats['positioning']['avg_distance_to_ball']},
                 {player_stats['positioning']['avg_distance_to_ball_possession']},
                 {player_stats['positioning']['avg_distance_to_ball_no_possession']},
-                {player_stats['positioning']['avg_distance_to_mates']},
+                {player_stats['positioning'].get('avg_distance_to_mates', -1)},
                 {player_stats['positioning']['time_defensive_third']},
                 {player_stats['positioning']['time_neutral_third']},
                 {player_stats['positioning']['time_offensive_third']},
@@ -450,7 +450,7 @@ class BallchasingSeeder:
         player_demo_stats_sql.append(f"""
             INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
             VALUES (
-                {player_stats['id']['id']},
+                {player_data['id']['id']},
                 {replay_id},
                 {player_stats['demo']['inflicted']},
                 {player_stats['demo']['taken']}
