@@ -3,6 +3,8 @@ from pathlib import Path
 import os
 import yaml
 from dotenv import load_dotenv
+from datetime import datetime
+import pytz
 
 load_dotenv(dotenv_path=Path(__file__).parent.parent.parent.parent / ".env")
 
@@ -42,6 +44,28 @@ class BallchasingSeeder:
             
             f.write('\n'.join(cleaned_statements))
 
+    # Convert datetime to EST timezone in SQL-valid format 'YYYY-MM-DD HH:MM:SS EST'
+    def _convert_time_to_sql_est(self, datetime_str, is_created_date=False):
+        if is_created_date:
+            if 'Z' in datetime_str:  # UTC time
+                stripped_datetime = datetime.strptime(datetime_str, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=pytz.UTC)
+            else:  # Time with timezone offset
+                stripped_datetime = datetime.strptime(datetime_str[:-6], '%Y-%m-%dT%H:%M:%S.%f')
+                hours_offset = int(datetime_str[-6:-3])  # Get the hours offset
+                stripped_datetime = stripped_datetime.replace(tzinfo=pytz.FixedOffset(hours_offset * 60))  # Convert offset to minutes
+        else:
+            if 'Z' in datetime_str:  # UTC time
+                stripped_datetime = datetime.strptime(datetime_str, '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=pytz.UTC)
+            else:  # Time with timezone offset
+                stripped_datetime = datetime.strptime(datetime_str[:-6], '%Y-%m-%dT%H:%M:%S')
+                hours_offset = int(datetime_str[-6:-3])  # Get the hours offset
+                stripped_datetime = stripped_datetime.replace(tzinfo=pytz.FixedOffset(hours_offset * 60))  # Convert offset to minutes
+    
+        # Convert to EST
+        est_datetime = stripped_datetime.astimezone(pytz.timezone('America/New_York'))
+        formatted_datetime = est_datetime.strftime('%Y-%m-%d %H:%M:%S EST')
+        return formatted_datetime
+
     def generate_sql_files(self, replay_data):
         # Create separate SQL files for each table
         self.generate_uploaders_sql(replay_data)
@@ -74,24 +98,24 @@ class BallchasingSeeder:
                 title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
                 season, match_date, date_has_timezone, visibility) 
             VALUES (
-                {replay_data['id']},
-                {replay_data['link']},
-                {replay_data['created']},
-                {replay_data['uploader']['steam_id']},
-                {replay_data['rocket_league_id']},
-                {replay_data['match_guid']},
-                {replay_data['title']},
-                {replay_data['map_code']},
-                {replay_data['map_name']},
+                '{replay_data['id']}',
+                '{replay_data['link']}',
+                '{self._convert_time_to_sql_est(replay_data['created'], is_created_date=True)}',
+                '{replay_data['uploader']['steam_id']}',
+                '{replay_data['rocket_league_id']}',
+                '{replay_data['match_guid']}',
+                '{replay_data['title']}',
+                '{replay_data['map_code']}',
+                '{replay_data['map_name']}',
                 {replay_data.get('team_size', -1)},
-                {replay_data['playlist_id']},
+                '{replay_data['playlist_id']}',
                 {replay_data.get('duration', -1)},
                 {str(replay_data['overtime']).lower()},
                 {replay_data.get('overtime_seconds', -1)},
                 {replay_data['season']},
-                {replay_data['date']},
+                '{self._convert_time_to_sql_est(replay_data['date'])}',
                 {str(replay_data['date_has_timezone']).lower()},
-                {replay_data['visibility']}
+                '{replay_data['visibility']}'
             );
         """)
 
