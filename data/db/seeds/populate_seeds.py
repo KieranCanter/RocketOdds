@@ -258,7 +258,7 @@ class BallchasingSeeder:
                 if player['id']['platform'] == 'steam':
                     steam_id = player['id']['id']
                 else:
-                    steam_id = "NULL"
+                    steam_id = ""
                 sql.append(f"""
                     INSERT INTO players (player_id, display_name, steam_id, platform)
                     VALUES ({player['id']['id']}, {player['name']}, {steam_id}, {player['id']['platform']});
@@ -284,7 +284,7 @@ class BallchasingSeeder:
                 {-1 if player_data.get('rank', 'Unranked') == 'Unranked' else player_data['rank']['division']},
                 {str(player_data.get('mvp', False)).lower()},
                 {player_data['car_id']},
-                {player_data['car_name']},
+                {player_data.get('car_name', '')},
                 {player_data['start_time']},
                 {player_data['end_time']},
             );
