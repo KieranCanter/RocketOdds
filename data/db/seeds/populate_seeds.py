@@ -430,7 +430,7 @@ class BallchasingSeeder:
                 {player_stats['positioning']['time_infront_ball']},
                 {player_stats['positioning']['time_most_back']},
                 {player_stats['positioning']['time_most_forward']},
-                {player_stats['positioning']['goals_against_while_last_defender']},
+                {player_stats['positioning'].get('goals_against_while_last_defender', -1)},
                 {player_stats['positioning']['time_closest_to_ball']},
                 {player_stats['positioning']['time_farthest_from_ball']},
                 {player_stats['positioning']['percent_defensive_third']},
