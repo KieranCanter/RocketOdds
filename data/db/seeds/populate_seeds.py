@@ -78,7 +78,10 @@ class BallchasingSeeder:
                 '{replay_data['uploader']['steam_id']}',
                 '{replay_data['uploader']['name'].replace("'", "''")}',
                 '{replay_data['uploader']['profile_url']}'
-            );
+            )
+            ON CONFLICT (steam_id) DO UPDATE 
+            SET uploader_name = EXCLUDED.uploader_name,
+                profile_url = EXCLUDED.profile_url;
         """)
 
         self._write_sql('V1_seed_uploaders.sql', sql)
@@ -92,23 +95,23 @@ class BallchasingSeeder:
                 title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
                 season, match_date, visibility) 
             VALUES (
-                '{replay_data['id']}',
-                '{replay_data['link']}',
-                '{self._convert_time_to_sql_est(replay_data['created'], is_created_date=True)}',
-                '{replay_data['uploader']['steam_id']}',
-                '{replay_data['rocket_league_id']}',
-                '{replay_data['match_guid']}',
-                '{replay_data['title'].replace("'", "''")}',
-                '{replay_data['map_code']}',
-                '{replay_data['map_name'].replace("'", "''")}',
-                {replay_data.get('team_size', -1)},
-                '{replay_data['playlist_id']}',
-                {replay_data.get('duration', -1)},
-                {str(replay_data['overtime']).lower()},
-                {replay_data.get('overtime_seconds', -1)},
-                {replay_data['season']},
-                '{self._convert_time_to_sql_est(replay_data['date'])}',
-                '{replay_data['visibility']}'
+                '{replay_data.get('id')}',
+                '{replay_data.get('link')}',
+                '{self._convert_time_to_sql_est(replay_data.get('created'), is_created_date=True)}',
+                '{replay_data.get('uploader', {}).get('steam_id', 'NULL')}',
+                '{replay_data.get('rocket_league_id', 'NULL')}',
+                '{replay_data.get('match_guid', 'NULL')}',
+                '{replay_data.get('title', '').replace("'", "''")}',
+                '{replay_data.get('map_code', 'NULL')}',
+                '{replay_data.get('map_name', '').replace("'", "''")}',
+                {replay_data.get('team_size', 'NULL')},
+                '{replay_data.get('playlist_id', 'NULL')}',
+                {replay_data.get('duration', 'NULL')},
+                {str(replay_data.get('overtime', False)).lower()},
+                {replay_data.get('overtime_seconds', 0)},
+                {replay_data.get('season', 'NULL')},
+                '{self._convert_time_to_sql_est(replay_data.get('date'))}',
+                '{replay_data.get('visibility', 'NULL')}'
             );
         """)
 
@@ -119,14 +122,14 @@ class BallchasingSeeder:
         replay_id = replay_data['id']
         
         for team_color in ['blue', 'orange']:
-            team_name = replay_data[team_color].get('name', 'Unnamed Team')
+            team_name = replay_data[team_color].get('name', 'NULL')
             
             sql.append(f"""
                 INSERT INTO teams (replay_id, team_color, team_name)
                 VALUES (
-                    {replay_id},
-                    {team_color},
-                    {team_name}
+                    '{replay_id}',
+                    '{team_color}',
+                    '{team_name.replace("'", "''")}'
                 );
             """)
 
@@ -148,10 +151,10 @@ class BallchasingSeeder:
         team_ball_stats_sql.append(f"""
             INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
             VALUES (
-                {replay_id},
-                {team_color},
-                {team_data['ball']['possession_time']},
-                {team_data['ball'].get('time_in_side', -1)}
+                '{replay_id}',
+                '{team_color}',
+                {team_data['ball'].get('possession_time', 'NULL')},
+                {team_data['ball'].get('time_in_side', 'NULL')}
             );
         """)
 
@@ -160,16 +163,16 @@ class BallchasingSeeder:
                 replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
                 shooting_percentage) 
             VALUES (
-                {replay_id},
-                {team_color},
-                {team_data['core']['shots']},
-                {team_data['core']['shots_against']},
-                {team_data['core']['goals']},
-                {team_data['core']['goals_against']},
-                {team_data['core']['saves']},
-                {team_data['core']['assists']},
-                {team_data['core']['score']},
-                {team_data['core']['shooting_percentage']}
+                '{replay_id}',
+                '{team_color}',
+                {team_data['core'].get('shots', 'NULL')},
+                {team_data['core'].get('shots_against', 'NULL')},
+                {team_data['core'].get('goals', 'NULL')},
+                {team_data['core'].get('goals_against', 'NULL')},
+                {team_data['core'].get('saves', 'NULL')},
+                {team_data['core'].get('assists', 'NULL')},
+                {team_data['core'].get('score', 'NULL')},
+                {team_data['core'].get('shooting_percentage', 'NULL')}
             );
         """)
 
@@ -181,30 +184,30 @@ class BallchasingSeeder:
                 amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
                 time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
             VALUES (
-                {replay_id},
-                {team_color},
-                {team_data['boost']['bpm']},
-                {team_data['boost']['bcpm']},
-                {team_data['boost']['avg_amount']},
-                {team_data['boost']['amount_collected']},
-                {team_data['boost']['amount_stolen']},
-                {team_data['boost']['amount_collected_big']},
-                {team_data['boost']['amount_stolen_big']},
-                {team_data['boost']['amount_collected_small']},
-                {team_data['boost']['amount_stolen_small']},
-                {team_data['boost']['count_collected_big']},
-                {team_data['boost']['count_stolen_big']},
-                {team_data['boost']['count_collected_small']},
-                {team_data['boost']['count_stolen_small']},
-                {team_data['boost']['amount_overfill']},
-                {team_data['boost']['amount_overfill_stolen']},
-                {team_data['boost']['amount_used_while_supersonic']},
-                {team_data['boost']['time_zero_boost']},
-                {team_data['boost']['time_full_boost']},
-                {team_data['boost']['time_boost_0_25']},
-                {team_data['boost']['time_boost_25_50']},
-                {team_data['boost']['time_boost_50_75']},
-                {team_data['boost']['time_boost_75_100']}
+                '{replay_id}',
+                '{team_color}',
+                {team_data['boost'].get('bpm', 'NULL')},
+                {team_data['boost'].get('bcpm', 'NULL')},
+                {team_data['boost'].get('avg_amount', 'NULL')},
+                {team_data['boost'].get('amount_collected', 'NULL')},
+                {team_data['boost'].get('amount_stolen', 'NULL')},
+                {team_data['boost'].get('amount_collected_big', 'NULL')},
+                {team_data['boost'].get('amount_stolen_big', 'NULL')},
+                {team_data['boost'].get('amount_collected_small', 'NULL')},
+                {team_data['boost'].get('amount_stolen_small', 'NULL')},
+                {team_data['boost'].get('count_collected_big', 'NULL')},
+                {team_data['boost'].get('count_stolen_big', 'NULL')},
+                {team_data['boost'].get('count_collected_small', 'NULL')},
+                {team_data['boost'].get('count_stolen_small', 'NULL')},
+                {team_data['boost'].get('amount_overfill', 'NULL')},
+                {team_data['boost'].get('amount_overfill_stolen', 'NULL')},
+                {team_data['boost'].get('amount_used_while_supersonic', 'NULL')},
+                {team_data['boost'].get('time_zero_boost', 'NULL')},
+                {team_data['boost'].get('time_full_boost', 'NULL')},
+                {team_data['boost'].get('time_boost_0_25', 'NULL')},
+                {team_data['boost'].get('time_boost_25_50', 'NULL')},
+                {team_data['boost'].get('time_boost_50_75', 'NULL')},
+                {team_data['boost'].get('time_boost_75_100', 'NULL')}
             );
         """)
 
@@ -213,17 +216,17 @@ class BallchasingSeeder:
                 time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
                 count_powerslide) 
             VALUES (
-                {replay_id},
-                {team_color},
-                {team_data['movement']['total_distance']},
-                {team_data['movement']['time_supersonic_speed']},
-                {team_data['movement']['time_boost_speed']},
-                {team_data['movement']['time_slow_speed']},
-                {team_data['movement']['time_ground']},
-                {team_data['movement']['time_low_air']},
-                {team_data['movement']['time_high_air']},
-                {team_data['movement']['time_powerslide']},
-                {team_data['movement']['count_powerslide']}
+                '{replay_id}',
+                '{team_color}',
+                {team_data['movement'].get('total_distance', 'NULL')},
+                {team_data['movement'].get('time_supersonic_speed', 'NULL')},
+                {team_data['movement'].get('time_boost_speed', 'NULL')},
+                {team_data['movement'].get('time_slow_speed', 'NULL')},
+                {team_data['movement'].get('time_ground', 'NULL')},
+                {team_data['movement'].get('time_low_air', 'NULL')},
+                {team_data['movement'].get('time_high_air', 'NULL')},
+                {team_data['movement'].get('time_powerslide', 'NULL')},
+                {team_data['movement'].get('count_powerslide', 'NULL')}
             );
         """)
 
@@ -232,25 +235,25 @@ class BallchasingSeeder:
                 time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
                 time_infront_ball) 
             VALUES (
-                {replay_id},
-                {team_color},
-                {team_data['positioning']['time_defensive_third']},
-                {team_data['positioning']['time_neutral_third']},
-                {team_data['positioning']['time_offensive_third']},
-                {team_data['positioning']['time_defensive_half']},
-                {team_data['positioning']['time_offensive_half']},
-                {team_data['positioning']['time_behind_ball']},
-                {team_data['positioning']['time_infront_ball']}
+                '{replay_id}',
+                '{team_color}',
+                {team_data['positioning'].get('time_defensive_third', 'NULL')},
+                {team_data['positioning'].get('time_neutral_third', 'NULL')},
+                {team_data['positioning'].get('time_offensive_third', 'NULL')},
+                {team_data['positioning'].get('time_defensive_half', 'NULL')},
+                {team_data['positioning'].get('time_offensive_half', 'NULL')},
+                {team_data['positioning'].get('time_behind_ball', 'NULL')},
+                {team_data['positioning'].get('time_infront_ball', 'NULL')}
             );
         """)
 
         team_demo_stats_sql.append(f"""
             INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
             VALUES (
-                {replay_id},
-                {team_color},
-                {team_data['demo']['inflicted']},
-                {team_data['demo']['taken']}
+                '{replay_id}',
+                '{team_color}',
+                {team_data['demo'].get('inflicted', 'NULL')},
+                {team_data['demo'].get('taken', 'NULL')}
             );
         """)
 
@@ -268,18 +271,27 @@ class BallchasingSeeder:
         
         for team_color in ['blue', 'orange']:
             for player in replay_data[team_color]['players']:
-                # Add defensive checking for the id structure
-                platform = player['id'].get('platform', '')  # Use get() with default value
-                player_id_value = player['id'].get('id', '')  # Fallback to string representation
+                platform_id = player['id'].get('id')
+                platform = player['id'].get('platform')
                 
-                sql.append(f"""
-                    INSERT INTO players (player_id, platform, name) 
-                    VALUES (
-                        {player_id_value},
-                        {platform},
-                        {player['name']}
-                    );
-                """)
+                if not platform_id or not platform:
+                    sql.append(f"""
+                        INSERT INTO players (display_name) 
+                        VALUES (
+                            '{player['name'].replace("'", "''")}'
+                        )
+                    """)
+                else:
+                    sql.append(f"""
+                        INSERT INTO players (platform_id, platform, display_name) 
+                        VALUES (
+                            '{platform_id}',
+                            '{platform}',
+                            '{player['name'].replace("'", "''")}'
+                        )
+                        ON CONFLICT (player_id, platform) DO UPDATE 
+                        SET display_name = EXCLUDED.display_name
+                    """)
 
                 self.generate_replay_players_sql(replay_id, player, team_color)
                 self.generate_player_stats_sql(replay_id, player)
@@ -289,21 +301,40 @@ class BallchasingSeeder:
     def generate_replay_players_sql(self, replay_id, player_data, team_color):
         sql = []
 
+        # Getting player_id from players table
+        platform_id = player_data['id'].get('id')
+        platform = player_data['id'].get('platform')
+
+        if not platform_id or not platform:
+            # For anonymous players, we need to reference their UUID by display name
+            player_id = f"""(
+                    SELECT player_id FROM players 
+                    WHERE display_name = '{player_data['name'].replace("'", "''")}' 
+                    AND platform_id IS NULL AND platform IS NULL
+                )"""
+        else:
+            # For identified players, we can reference their UUID by player_id and platform
+            player_id = f"""(
+                    SELECT player_id FROM players 
+                    WHERE platform_id = '{platform_id}' 
+                    AND platform = '{platform}'
+                )"""
+
         sql.append(f"""
             INSERT INTO replay_players (player_id, replay_id, team_color, rank_id, rank_tier, rank_division, 
                 mvp, car_id, car_name, start_time, end_time) 
             VALUES (
-                {player_data['id'].get('id', '')},
-                {replay_id},
-                {team_color},
-                {'Unranked' if player_data.get('rank', 'Unranked') == 'Unranked' else player_data['rank']['id']},
-                {-1 if player_data.get('rank', 'Unranked') == 'Unranked' else player_data['rank']['tier']},
-                {-1 if player_data.get('rank', 'Unranked') == 'Unranked' else player_data['rank']['division']},
+                {player_id},
+                '{replay_id}',
+                '{team_color}',
+                '{player_data.get('rank', {}).get('id', 'Unranked')}',
+                '{player_data.get('rank', {}).get('tier', 'NULL')}',
+                '{player_data.get('rank', {}).get('division', 'NULL')}',
                 {str(player_data.get('mvp', False)).lower()},
-                {player_data['car_id']},
-                {player_data.get('car_name', '')},
-                {player_data['start_time']},
-                {player_data['end_time']},
+                {player_data.get('car_id', 'NULL')},
+                '{player_data.get('car_name', 'NULL')}',
+                {player_data.get('start_time', 'NULL')},
+                {player_data.get('end_time', 'NULL')}
             );
         """)
 
