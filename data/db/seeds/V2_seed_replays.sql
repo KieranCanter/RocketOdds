@@ -3,7 +3,7 @@
 INSERT INTO replays (
     replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
-    season, match_date, date_has_timezone, visibility) 
+    season, match_date, visibility) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     'https://ballchasing.com/api/replays/9d37f8dd-3598-49b7-967c-9a013ecf5f74',
@@ -18,10 +18,9 @@ VALUES (
     'ranked-duels',
     370,
     false,
-    -1,
+    0,
     17,
     '2025-01-21 23:29:08 EST',
-    true,
     'public'
 );
 
@@ -34,7 +33,7 @@ VALUES (
 INSERT INTO replays (
     replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
-    season, match_date, date_has_timezone, visibility) 
+    season, match_date, visibility) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
     'https://ballchasing.com/api/replays/32341018-395a-446d-a3a7-cc213598cf7f',
@@ -49,10 +48,9 @@ VALUES (
     'ranked-doubles',
     350,
     false,
-    -1,
+    0,
     17,
     '2025-01-21 23:33:14 EST',
-    true,
     'public'
 );
 
@@ -65,7 +63,7 @@ VALUES (
 INSERT INTO replays (
     replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
-    season, match_date, date_has_timezone, visibility) 
+    season, match_date, visibility) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     'https://ballchasing.com/api/replays/2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -80,10 +78,9 @@ VALUES (
     'ranked-standard',
     391,
     false,
-    -1,
+    0,
     17,
     '2025-01-21 08:05:56 EST',
-    true,
     'public'
 );
 
@@ -96,7 +93,7 @@ VALUES (
 INSERT INTO replays (
     replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
-    season, match_date, date_has_timezone, visibility) 
+    season, match_date, visibility) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     'https://ballchasing.com/api/replays/fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -111,10 +108,9 @@ VALUES (
     'unranked-chaos',
     335,
     false,
-    -1,
+    0,
     17,
     '2025-01-15 10:17:05 EST',
-    true,
     'public'
 );
 
@@ -127,7 +123,7 @@ VALUES (
 INSERT INTO replays (
     replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
-    season, match_date, date_has_timezone, visibility) 
+    season, match_date, visibility) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     'https://ballchasing.com/api/replays/a4676587-9373-401b-9de1-5ea48839f574',
@@ -142,10 +138,9 @@ VALUES (
     'unranked-standard',
     19,
     false,
-    -1,
+    0,
     17,
     '2025-01-21 23:29:43 EST',
-    true,
     'public'
 );
 
@@ -158,7 +153,7 @@ VALUES (
 INSERT INTO replays (
     replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
-    season, match_date, date_has_timezone, visibility) 
+    season, match_date, visibility) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     'https://ballchasing.com/api/replays/238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -173,10 +168,9 @@ VALUES (
     'ranked-doubles',
     304,
     false,
-    -1,
+    0,
     17,
     '2025-01-21 23:06:18 EST',
-    true,
     'public'
 );
 

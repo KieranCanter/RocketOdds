@@ -2,8 +2,8 @@
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    blue,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'blue',
     116.79,
     193.26
 );
@@ -12,8 +12,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    blue,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'blue',
     7,
     8,
     3,
@@ -31,8 +31,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    blue,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'blue',
     419,
     402.80545,
     45.86,
@@ -61,8 +61,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    blue,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'blue',
     503844,
     63.93,
     127.92,
@@ -78,8 +78,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    blue,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'blue',
     183.08,
     111.43,
     72.25,
@@ -91,16 +91,16 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    blue,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'blue',
     0,
     1
 );
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    orange,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'orange',
     155.56,
     141.16
 );
@@ -109,8 +109,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    orange,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'orange',
     8,
     7,
     4,
@@ -128,8 +128,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    orange,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'orange',
     493,
     511.9058,
     46.13,
@@ -158,8 +158,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    orange,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'orange',
     494864,
     47.99,
     140.32,
@@ -175,8 +175,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    orange,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'orange',
     147.53,
     99.9,
     122.23,
@@ -188,8 +188,8 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
-    orange,
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
+    'orange',
     1,
     0
 );
@@ -202,8 +202,8 @@ VALUES (
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    blue,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'blue',
     85.02,
     187.5
 );
@@ -212,8 +212,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    blue,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'blue',
     7,
     7,
     6,
@@ -231,8 +231,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    blue,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'blue',
     533,
     586.83154,
     94.130005,
@@ -261,8 +261,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    blue,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'blue',
     792665,
     26.48,
     207.32999,
@@ -278,8 +278,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    blue,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'blue',
     389.54,
     193.59,
     115.44,
@@ -291,16 +291,16 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    blue,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'blue',
     3,
     0
 );
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    orange,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'orange',
     145.61,
     119.11
 );
@@ -309,8 +309,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    orange,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'orange',
     7,
     7,
     3,
@@ -328,8 +328,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    orange,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'orange',
     766,
     819.04175,
     91.51,
@@ -358,8 +358,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    orange,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'orange',
     859959,
     48.800003,
     262.26,
@@ -375,8 +375,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    orange,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'orange',
     298.47998,
     188.45999,
     198.28,
@@ -388,8 +388,8 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    32341018-395a-446d-a3a7-cc213598cf7f,
-    orange,
+    '32341018-395a-446d-a3a7-cc213598cf7f',
+    'orange',
     0,
     3
 );
@@ -402,8 +402,8 @@ VALUES (
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    blue,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'blue',
     116.86,
     147.44
 );
@@ -412,8 +412,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    blue,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'blue',
     11,
     3,
     8,
@@ -431,8 +431,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    blue,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'blue',
     834,
     855.9566,
     150.95,
@@ -461,8 +461,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    blue,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'blue',
     1351330,
     77.130005,
     384.22998,
@@ -478,8 +478,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    blue,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'blue',
     514.48,
     306.76,
     313.13,
@@ -491,16 +491,16 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    blue,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'blue',
     2,
     1
 );
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    orange,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'orange',
     91.68,
     197.68
 );
@@ -509,8 +509,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    orange,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'orange',
     3,
     11,
     1,
@@ -528,8 +528,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    orange,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'orange',
     619,
     586.7862,
     120.369995,
@@ -558,8 +558,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    orange,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'orange',
     1042174,
     35.97,
     257.59,
@@ -575,8 +575,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    orange,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'orange',
     592.59,
     222.4,
     173.18,
@@ -588,8 +588,8 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
-    orange,
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
+    'orange',
     1,
     2
 );
@@ -602,8 +602,8 @@ VALUES (
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    blue,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'blue',
     165.47,
     178.9
 );
@@ -612,8 +612,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    blue,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'blue',
     6,
     6,
     1,
@@ -631,8 +631,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    blue,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'blue',
     1260,
     1342.7896,
     269.98,
@@ -661,8 +661,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    blue,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'blue',
     1667819,
     103.56999,
     420.31,
@@ -678,8 +678,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    blue,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'blue',
     705.43005,
     393.65,
     242.33,
@@ -691,16 +691,16 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    blue,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'blue',
     3,
     0
 );
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    orange,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'orange',
     134.96,
     141.61
 );
@@ -709,8 +709,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    orange,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'orange',
     6,
     6,
     2,
@@ -728,8 +728,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    orange,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'orange',
     810,
     711.74133,
     230.44,
@@ -758,8 +758,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    orange,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'orange',
     1408222,
     53.77,
     334.16,
@@ -775,8 +775,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    orange,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'orange',
     809.88,
     284.23,
     237.58,
@@ -788,8 +788,8 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
-    orange,
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
+    'orange',
     0,
     3
 );
@@ -802,8 +802,8 @@ VALUES (
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    blue,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'blue',
     3.64,
     19.37
 );
@@ -812,8 +812,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    blue,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'blue',
     0,
     1,
     0,
@@ -831,8 +831,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    blue,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'blue',
     1319,
     619.4258,
     117.53,
@@ -861,8 +861,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    blue,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'blue',
     43079,
     0,
     11.559999,
@@ -878,8 +878,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    blue,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'blue',
     50.9,
     6.1000004,
     0,
@@ -891,26 +891,26 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    blue,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'blue',
     0,
     0
 );
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    orange,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'orange',
     7.14,
-    -1
+    NULL
 );
 
 INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    orange,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'orange',
     1,
     0,
     0,
@@ -928,8 +928,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    orange,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'orange',
     1172,
     1605.3756,
     187.35,
@@ -958,8 +958,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    orange,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'orange',
     71121,
     5.02,
     20.25,
@@ -975,8 +975,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    orange,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'orange',
     26.880001,
     18.66,
     12.5199995,
@@ -988,8 +988,8 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    a4676587-9373-401b-9de1-5ea48839f574,
-    orange,
+    'a4676587-9373-401b-9de1-5ea48839f574',
+    'orange',
     0,
     0
 );
@@ -1002,8 +1002,8 @@ VALUES (
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    blue,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'blue',
     114.72,
     181.53
 );
@@ -1012,8 +1012,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    blue,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'blue',
     2,
     6,
     1,
@@ -1031,8 +1031,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    blue,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'blue',
     530,
     489.03143,
     106.55,
@@ -1061,8 +1061,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    blue,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'blue',
     730219,
     30.599998,
     184.26999,
@@ -1078,8 +1078,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    blue,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'blue',
     343.14,
     191.70999,
     67.1,
@@ -1091,16 +1091,16 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    blue,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'blue',
     3,
     1
 );
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    orange,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'orange',
     124.12,
     99.86
 );
@@ -1109,8 +1109,8 @@ INSERT INTO team_core_stats (
     replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    orange,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'orange',
     6,
     2,
     4,
@@ -1128,8 +1128,8 @@ INSERT INTO team_boost_stats (
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, time_full_boost, 
     time_boost_0_25, time_boost_25_50, time_boost_50_75, time_boost_75_100) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    orange,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'orange',
     661,
     679.63574,
     106.130005,
@@ -1158,8 +1158,8 @@ INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_sup
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    orange,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'orange',
     768497,
     34.629997,
     230.07,
@@ -1175,8 +1175,8 @@ INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third,
     time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
     time_infront_ball) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    orange,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'orange',
     226.52,
     213.93,
     159.32999,
@@ -1188,8 +1188,8 @@ VALUES (
 
 INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
 VALUES (
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
-    orange,
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
+    'orange',
     1,
     3
 );
