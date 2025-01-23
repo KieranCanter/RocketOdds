@@ -126,10 +126,18 @@ CREATE TABLE IF NOT EXISTS team_demo_stats (
 );
 
 CREATE TABLE IF NOT EXISTS players (
-    player_id UUID PRIMARY KEY,
-    display_name TEXT NOT NULL,
-    steam_id VARCHAR(17) REFERENCES uploaders(steam_id),
-    platform TEXT
+    player_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    platform_id TEXT,
+    display_name TEXT,
+    platform TEXT,
+    UNIQUE (player_id, platform) WHERE player_id IS NOT NULL AND platform IS NOT NULL,
+    FOREIGN KEY (player_id) REFERENCES uploaders(steam_id) 
+        WHERE platform = 'steam',
+    CHECK (
+        (platform = 'steam' AND player_id ~ '^[0-9]{17}$') OR 
+        platform != 'steam' OR 
+        platform IS NULL
+    )
 );
 
 CREATE TABLE IF NOT EXISTS replay_players (
