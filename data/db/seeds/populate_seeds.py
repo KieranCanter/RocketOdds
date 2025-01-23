@@ -289,7 +289,7 @@ class BallchasingSeeder:
                             '{platform}',
                             '{player['name'].replace("'", "''")}'
                         )
-                        ON CONFLICT (player_id, platform) DO UPDATE 
+                        ON CONFLICT (platform_id, platform) DO UPDATE 
                         SET display_name = EXCLUDED.display_name
                     """)
 
