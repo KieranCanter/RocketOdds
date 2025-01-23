@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS team_core_stats (
     saves SMALLINT,
     assists SMALLINT,
     score INT,
-    shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100)
+    shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN -1 AND 100)
 );
 
 CREATE TABLE IF NOT EXISTS team_boost_stats (
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS player_core_stats (
     saves SMALLINT,
     assists SMALLINT,
     score INT,
-    shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100)
+    shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN -1 AND 100)
 );
 
 CREATE TABLE IF NOT EXISTS player_boost_stats (
@@ -199,17 +199,17 @@ CREATE TABLE IF NOT EXISTS player_boost_stats (
     amount_overfill_stolen INT,
     amount_used_while_supersonic INT,
     time_zero_boost REAL,
-    percent_zero_boost REAL CHECK (percent_zero_boost BETWEEN 0 AND 100),
+    percent_zero_boost REAL CHECK (percent_zero_boost BETWEEN -1 AND 100),
     time_full_boost REAL,
-    percent_full_boost REAL CHECK (percent_full_boost BETWEEN 0 AND 100),
+    percent_full_boost REAL CHECK (percent_full_boost BETWEEN -1 AND 100),
     time_boost_0_25 REAL,
     time_boost_25_50 REAL,
     time_boost_50_75 REAL,
     time_boost_75_100 REAL,
-    percent_boost_0_25 REAL CHECK (percent_boost_0_25 BETWEEN 0 AND 100),
-    percent_boost_25_50 REAL CHECK (percent_boost_25_50 BETWEEN 0 AND 100),
-    percent_boost_50_75 REAL CHECK (percent_boost_50_75 BETWEEN 0 AND 100),
-    percent_boost_75_100 REAL CHECK (percent_boost_75_100 BETWEEN 0 AND 100)
+    percent_boost_0_25 REAL CHECK (percent_boost_0_25 BETWEEN -1 AND 100),
+    percent_boost_25_50 REAL CHECK (percent_boost_25_50 BETWEEN -1 AND 100),
+    percent_boost_50_75 REAL CHECK (percent_boost_50_75 BETWEEN -1 AND 100),
+    percent_boost_75_100 REAL CHECK (percent_boost_75_100 BETWEEN -1 AND 100)
 );
 
 CREATE TABLE IF NOT EXISTS player_movement_stats (
@@ -228,13 +228,13 @@ CREATE TABLE IF NOT EXISTS player_movement_stats (
     time_powerslide REAL,
     count_powerslide INT,
     avg_powerslide_duration REAL,
-    avg_speed_percentage REAL CHECK (avg_speed_percentage BETWEEN 0 AND 100),
-    percent_slow_speed REAL CHECK (percent_slow_speed BETWEEN 0 AND 100),
-    percent_boost_speed REAL CHECK (percent_boost_speed BETWEEN 0 AND 100),
-    percent_supersonic_speed REAL CHECK (percent_supersonic_speed BETWEEN 0 AND 100),
-    percent_ground REAL CHECK (percent_ground BETWEEN 0 AND 100),
-    percent_low_air REAL CHECK (percent_low_air BETWEEN 0 AND 100),
-    percent_high_air REAL CHECK (percent_high_air BETWEEN 0 AND 100)
+    avg_speed_percentage REAL CHECK (avg_speed_percentage BETWEEN -1 AND 100),
+    percent_slow_speed REAL CHECK (percent_slow_speed BETWEEN -1 AND 100),
+    percent_boost_speed REAL CHECK (percent_boost_speed BETWEEN -1 AND 100),
+    percent_supersonic_speed REAL CHECK (percent_supersonic_speed BETWEEN -1 AND 100),
+    percent_ground REAL CHECK (percent_ground BETWEEN -1 AND 100),
+    percent_low_air REAL CHECK (percent_low_air BETWEEN -1 AND 100),
+    percent_high_air REAL CHECK (percent_high_air BETWEEN -1 AND 100)
 );
 
 CREATE TABLE IF NOT EXISTS player_positioning_stats (
@@ -258,17 +258,17 @@ CREATE TABLE IF NOT EXISTS player_positioning_stats (
     goals_against_while_last_defender SMALLINT,
     time_closest_to_ball REAL,
     time_farthest_from_ball REAL,
-    percent_defensive_third REAL CHECK (percent_defensive_third BETWEEN 0 AND 100),
-    percent_neutral_third REAL CHECK (percent_neutral_third BETWEEN 0 AND 100),
-    percent_offensive_third REAL CHECK (percent_offensive_third BETWEEN 0 AND 100),
-    percent_defensive_half REAL CHECK (percent_defensive_half BETWEEN 0 AND 100),
-    percent_offensive_half REAL CHECK (percent_offensive_half BETWEEN 0 AND 100),
-    percent_behind_ball REAL CHECK (percent_behind_ball BETWEEN 0 AND 100),
-    percent_infront_ball REAL CHECK (percent_infront_ball BETWEEN 0 AND 100),
-    percent_most_back REAL CHECK (percent_most_back BETWEEN 0 AND 100),
-    percent_most_forward REAL CHECK (percent_most_forward BETWEEN 0 AND 100),
-    percent_closest_to_ball REAL CHECK (percent_closest_to_ball BETWEEN 0 AND 100),
-    percent_farthest_from_ball REAL CHECK (percent_farthest_from_ball BETWEEN 0 AND 100)
+    percent_defensive_third REAL CHECK (percent_defensive_third BETWEEN -1 AND 100),
+    percent_neutral_third REAL CHECK (percent_neutral_third BETWEEN -1 AND 100),
+    percent_offensive_third REAL CHECK (percent_offensive_third BETWEEN -1 AND 100),
+    percent_defensive_half REAL CHECK (percent_defensive_half BETWEEN -1 AND 100),
+    percent_offensive_half REAL CHECK (percent_offensive_half BETWEEN -1 AND 100),
+    percent_behind_ball REAL CHECK (percent_behind_ball BETWEEN -1 AND 100),
+    percent_infront_ball REAL CHECK (percent_infront_ball BETWEEN -1 AND 100),
+    percent_most_back REAL CHECK (percent_most_back BETWEEN -1 AND 100),
+    percent_most_forward REAL CHECK (percent_most_forward BETWEEN -1 AND 100),
+    percent_closest_to_ball REAL CHECK (percent_closest_to_ball BETWEEN -1 AND 100),
+    percent_farthest_from_ball REAL CHECK (percent_farthest_from_ball BETWEEN -1 AND 100)
 );
 
 CREATE TABLE IF NOT EXISTS player_demo_stats (
