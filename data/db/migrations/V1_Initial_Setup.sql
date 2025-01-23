@@ -130,8 +130,8 @@ CREATE TABLE IF NOT EXISTS players (
     platform_id TEXT,
     display_name TEXT,
     platform TEXT,
-    UNIQUE (player_id, platform) WHERE player_id IS NOT NULL AND platform IS NOT NULL,
-    FOREIGN KEY (player_id) REFERENCES uploaders(steam_id) 
+    UNIQUE (platform_id, platform) WHERE platform_id IS NOT NULL AND platform IS NOT NULL,
+    FOREIGN KEY (platform_id) REFERENCES uploaders(steam_id) 
         WHERE platform = 'steam',
     CHECK (
         (platform = 'steam' AND player_id ~ '^[0-9]{17}$') OR 
