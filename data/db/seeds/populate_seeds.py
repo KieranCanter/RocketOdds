@@ -46,21 +46,15 @@ class BallchasingSeeder:
 
     # Convert datetime to EST timezone in SQL-valid format 'YYYY-MM-DD HH:MM:SS EST'
     def _convert_time_to_sql_est(self, datetime_str, is_created_date=False):
-        if is_created_date:
-            if 'Z' in datetime_str:  # UTC time
-                stripped_datetime = datetime.strptime(datetime_str, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=pytz.UTC)
-            else:  # Time with timezone offset
-                stripped_datetime = datetime.strptime(datetime_str[:-6], '%Y-%m-%dT%H:%M:%S.%f')
-                hours_offset = int(datetime_str[-6:-3])  # Get the hours offset
-                stripped_datetime = stripped_datetime.replace(tzinfo=pytz.FixedOffset(hours_offset * 60))  # Convert offset to minutes
-        else:
-            if 'Z' in datetime_str:  # UTC time
-                stripped_datetime = datetime.strptime(datetime_str, '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=pytz.UTC)
-            else:  # Time with timezone offset
-                stripped_datetime = datetime.strptime(datetime_str[:-6], '%Y-%m-%dT%H:%M:%S')
-                hours_offset = int(datetime_str[-6:-3])  # Get the hours offset
-                stripped_datetime = stripped_datetime.replace(tzinfo=pytz.FixedOffset(hours_offset * 60))  # Convert offset to minutes
-    
+        format_str = '%Y-%m-%dT%H:%M:%S.%f' if is_created_date else '%Y-%m-%dT%H:%M:%S'
+        
+        if 'Z' in datetime_str:  # UTC time
+            stripped_datetime = datetime.strptime(datetime_str.replace('Z', ''), format_str).replace(tzinfo=pytz.UTC)
+        else:  # Time with timezone offset
+            stripped_datetime = datetime.strptime(datetime_str[:-6], format_str)
+            hours_offset = int(datetime_str[-6:-3])  # Get the hours offset
+            stripped_datetime = stripped_datetime.replace(tzinfo=pytz.FixedOffset(hours_offset * 60))
+        
         # Convert to EST
         est_datetime = stripped_datetime.astimezone(pytz.timezone('America/New_York'))
         formatted_datetime = est_datetime.strftime('%Y-%m-%d %H:%M:%S EST')
@@ -104,9 +98,9 @@ class BallchasingSeeder:
                 '{replay_data['uploader']['steam_id']}',
                 '{replay_data['rocket_league_id']}',
                 '{replay_data['match_guid']}',
-                '{replay_data['title']}',
+                '{replay_data['title'].replace("'", "''")}',
                 '{replay_data['map_code']}',
-                '{replay_data['map_name']}',
+                '{replay_data['map_name'].replace("'", "''")}',
                 {replay_data.get('team_size', -1)},
                 '{replay_data['playlist_id']}',
                 {replay_data.get('duration', -1)},
