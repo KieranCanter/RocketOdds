@@ -147,6 +147,13 @@ class BallchasingSeeder:
         replay_id = replay_data['id']
 
         team_data = replay_data[team_color]['stats']
+
+        start_sql = [f"""
+            -- Team stats for the {team_color} team
+        """]
+        end_sql = [f"""
+            -- End of team stats for the {team_color} team
+        """]
             
         team_ball_stats_sql.append(f"""
             INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
@@ -257,12 +264,14 @@ class BallchasingSeeder:
             );
         """)
 
+        self._write_sql('V4_seed_team_stats.sql', start_sql)
         self._write_sql('V4_seed_team_stats.sql', team_ball_stats_sql)
         self._write_sql('V4_seed_team_stats.sql', team_core_stats_sql)
         self._write_sql('V4_seed_team_stats.sql', team_boost_stats_sql)
         self._write_sql('V4_seed_team_stats.sql', team_movement_stats_sql)
         self._write_sql('V4_seed_team_stats.sql', team_positioning_stats_sql)
         self._write_sql('V4_seed_team_stats.sql', team_demo_stats_sql)
+        self._write_sql('V4_seed_team_stats.sql', end_sql)
 
 
     def generate_players_sql(self, replay_data):
@@ -349,20 +358,51 @@ class BallchasingSeeder:
         player_demo_stats_sql = []
         player_stats = player_data['stats']
 
+        # Getting player_id from players table
+        platform_id = player_data['id'].get('id')
+        platform = player_data['id'].get('platform')
+
+        if not platform_id or not platform:
+            # For anonymous players, we need to reference their UUID by display name
+            player_id = f"""(
+                    SELECT player_id FROM players 
+                    WHERE display_name = '{player_data['name'].replace("'", "''")}' 
+                    AND platform_id IS NULL AND platform IS NULL
+                )"""
+            start_sql = [f"""
+                -- Player settings for an unnamed user
+            """]
+            end_sql = [f"""
+                -- End of player settings for an unnamed user
+            """]
+        else:
+            # For identified players, we can reference their UUID by player_id and platform
+            player_id = f"""(
+                    SELECT player_id FROM players 
+                    WHERE platform_id = '{platform_id}' 
+                    AND platform = '{platform}'
+                )"""
+            start_sql = [f"""
+                -- Player settings for id: {platform_id} on {platform}
+            """]
+            end_sql = [f"""
+                -- End of player settings for id: {platform_id} on {platform}
+            """]
+
         player_settings_sql.append(f"""
             INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
                 swivel_speed, transition_speed, steering_sensitivity) 
             VALUES (
-                {player_data['id'].get('id', '')},
-                {replay_id},
-                {player_data['camera']['fov']},
-                {player_data['camera']['height']},
-                {player_data['camera']['pitch']},
-                {player_data['camera']['distance']},
-                {player_data['camera']['stiffness']},
-                {player_data['camera']['swivel_speed']},
-                {player_data['camera']['transition_speed']},
-                {player_data['steering_sensitivity']}
+                '{player_id}',
+                '{replay_id}',
+                {player_data['camera'].get('fov', 'NULL')},
+                {player_data['camera'].get('height', 'NULL')},
+                {player_data['camera'].get('pitch', 'NULL')},
+                {player_data['camera'].get('distance', 'NULL')},
+                {player_data['camera'].get('stiffness', 'NULL')},
+                {player_data['camera'].get('swivel_speed', 'NULL')},
+                {player_data['camera'].get('transition_speed', 'NULL')},
+                {player_data.get('steering_sensitivity', 'NULL')}
             );
         """)
 
@@ -370,16 +410,16 @@ class BallchasingSeeder:
             INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
                 assists, score, shooting_percentage) 
             VALUES (
-                {player_data['id'].get('id', '')},
-                {replay_id},
-                {player_stats['core']['shots']},
-                {player_stats['core']['shots_against']},
-                {player_stats['core']['goals']},
-                {player_stats['core']['goals_against']},
-                {player_stats['core']['saves']},
-                {player_stats['core']['assists']},
-                {player_stats['core']['score']},
-                {player_stats['core']['shooting_percentage']}
+                '{player_id}',
+                '{replay_id}',
+                {player_stats['core'].get('shots', 'NULL')},
+                {player_stats['core'].get('shots_against', 'NULL')},
+                {player_stats['core'].get('goals', 'NULL')},
+                {player_stats['core'].get('goals_against', 'NULL')},
+                {player_stats['core'].get('saves', 'NULL')},
+                {player_stats['core'].get('assists', 'NULL')},
+                {player_stats['core'].get('score', 'NULL')},
+                {player_stats['core'].get('shooting_percentage', 'NULL')}
             );
         """)
 
@@ -391,36 +431,36 @@ class BallchasingSeeder:
                 time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
                 time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
             VALUES (
-                {player_data['id'].get('id', '')},
-                {replay_id},
-                {player_stats['boost']['bpm']},
-                {player_stats['boost']['bcpm']},
-                {player_stats['boost']['avg_amount']},
-                {player_stats['boost']['amount_collected']},
-                {player_stats['boost']['amount_stolen']},
-                {player_stats['boost']['amount_collected_big']},
-                {player_stats['boost']['amount_stolen_big']},
-                {player_stats['boost']['amount_collected_small']},
-                {player_stats['boost']['amount_stolen_small']},
-                {player_stats['boost']['count_collected_big']},
-                {player_stats['boost']['count_stolen_big']},
-                {player_stats['boost']['count_collected_small']},
-                {player_stats['boost']['count_stolen_small']},
-                {player_stats['boost']['amount_overfill']},
-                {player_stats['boost']['amount_overfill_stolen']},
-                {player_stats['boost']['amount_used_while_supersonic']},
-                {player_stats['boost']['time_zero_boost']},
-                {player_stats['boost']['percent_zero_boost']},
-                {player_stats['boost']['time_full_boost']},
-                {player_stats['boost']['percent_full_boost']},
-                {player_stats['boost']['time_boost_0_25']},
-                {player_stats['boost']['time_boost_25_50']},
-                {player_stats['boost']['time_boost_50_75']},
-                {player_stats['boost']['time_boost_75_100']},
-                {player_stats['boost']['percent_boost_0_25']},
-                {player_stats['boost']['percent_boost_25_50']},
-                {player_stats['boost']['percent_boost_50_75']},
-                {player_stats['boost']['percent_boost_75_100']}
+                '{player_id}',
+                '{replay_id}',
+                {player_stats['boost'].get('bpm', 'NULL')},
+                {player_stats['boost'].get('bcpm', 'NULL')},
+                {player_stats['boost'].get('avg_amount', 'NULL')},
+                {player_stats['boost'].get('amount_collected', 'NULL')},
+                {player_stats['boost'].get('amount_stolen', 'NULL')},
+                {player_stats['boost'].get('amount_collected_big', 'NULL')},
+                {player_stats['boost'].get('amount_stolen_big', 'NULL')},
+                {player_stats['boost'].get('amount_collected_small', 'NULL')},
+                {player_stats['boost'].get('amount_stolen_small', 'NULL')},
+                {player_stats['boost'].get('count_collected_big', 'NULL')},
+                {player_stats['boost'].get('count_stolen_big', 'NULL')},
+                {player_stats['boost'].get('count_collected_small', 'NULL')},
+                {player_stats['boost'].get('count_stolen_small', 'NULL')},
+                {player_stats['boost'].get('amount_overfill', 'NULL')},
+                {player_stats['boost'].get('amount_overfill_stolen', 'NULL')},
+                {player_stats['boost'].get('amount_used_while_supersonic', 'NULL')},
+                {player_stats['boost'].get('time_zero_boost', 'NULL')},
+                {player_stats['boost'].get('percent_zero_boost', 'NULL')},
+                {player_stats['boost'].get('time_full_boost', 'NULL')},
+                {player_stats['boost'].get('percent_full_boost', 'NULL')},
+                {player_stats['boost'].get('time_boost_0_25', 'NULL')},
+                {player_stats['boost'].get('time_boost_25_50', 'NULL')},
+                {player_stats['boost'].get('time_boost_50_75', 'NULL')},
+                {player_stats['boost'].get('time_boost_75_100', 'NULL')},
+                {player_stats['boost'].get('percent_boost_0_25', 'NULL')},
+                {player_stats['boost'].get('percent_boost_25_50', 'NULL')},
+                {player_stats['boost'].get('percent_boost_50_75', 'NULL')},
+                {player_stats['boost'].get('percent_boost_75_100', 'NULL')}
             );
         """)
 
@@ -430,8 +470,8 @@ class BallchasingSeeder:
                 count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
                 percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
             VALUES (
-                {player_data['id'].get('id', '')},
-                {replay_id},
+                '{player_id}',
+                '{replay_id}',
                 {player_stats['movement']['avg_speed']},
                 {player_stats['movement']['total_distance']},
                 {player_stats['movement']['time_supersonic_speed']},
@@ -463,8 +503,8 @@ class BallchasingSeeder:
                 percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
                 percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
             VALUES (
-                {player_data['id'].get('id', '')},
-                {replay_id},
+                '{player_id}',
+                '{replay_id}',
                 {player_stats['positioning']['avg_distance_to_ball']},
                 {player_stats['positioning']['avg_distance_to_ball_possession']},
                 {player_stats['positioning']['avg_distance_to_ball_no_possession']},
@@ -498,19 +538,21 @@ class BallchasingSeeder:
         player_demo_stats_sql.append(f"""
             INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
             VALUES (
-                {player_data['id'].get('id', '')},
-                {replay_id},
+                '{player_id}',
+                '{replay_id}',
                 {player_stats['demo']['inflicted']},
                 {player_stats['demo']['taken']}
             );
         """)
 
+        self._write_sql('V7_seed_player_stats.sql', start_sql)
         self._write_sql('V7_seed_player_stats.sql', player_settings_sql)
         self._write_sql('V7_seed_player_stats.sql', player_core_stats_sql)
         self._write_sql('V7_seed_player_stats.sql', player_boost_stats_sql)
         self._write_sql('V7_seed_player_stats.sql', player_movement_stats_sql)
         self._write_sql('V7_seed_player_stats.sql', player_positioning_stats_sql)
         self._write_sql('V7_seed_player_stats.sql', player_demo_stats_sql)
+        self._write_sql('V7_seed_player_stats.sql', end_sql)
 
 
 if __name__ == '__main__':
