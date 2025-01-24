@@ -1,10 +1,16 @@
 -- Seed data for replay: 9d37f8dd-3598-49b7-967c-9a013ecf5f74
 
+-- Player settings for id: 63cd259f7edb442188c3059a2da869f4 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    63cd259f7edb442188c3059a2da869f4,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     110,
     100,
     -3,
@@ -18,8 +24,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    63cd259f7edb442188c3059a2da869f4,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     7,
     8,
     3,
@@ -37,8 +47,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    63cd259f7edb442188c3059a2da869f4,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     419,
     402.80545,
     45.86,
@@ -74,8 +88,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    63cd259f7edb442188c3059a2da869f4,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     1494,
     503844,
     63.93,
@@ -105,8 +123,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    63cd259f7edb442188c3059a2da869f4,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     1747,
     1571,
     1852,
@@ -138,17 +160,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    63cd259f7edb442188c3059a2da869f4,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     0,
     1
 );
 
+-- End of player settings for id: 63cd259f7edb442188c3059a2da869f4 on epic
+
+-- Player settings for id: 6ee67185658f4f819a72564d44ac5010 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    6ee67185658f4f819a72564d44ac5010,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     110,
     110,
     -5,
@@ -162,8 +196,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    6ee67185658f4f819a72564d44ac5010,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     8,
     7,
     4,
@@ -181,8 +219,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    6ee67185658f4f819a72564d44ac5010,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     493,
     511.9058,
     46.13,
@@ -218,8 +260,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    6ee67185658f4f819a72564d44ac5010,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     1453,
     494864,
     47.99,
@@ -249,8 +295,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    6ee67185658f4f819a72564d44ac5010,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     1294,
     975,
     1653,
@@ -282,11 +332,17 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    6ee67185658f4f819a72564d44ac5010,
-    9d37f8dd-3598-49b7-967c-9a013ecf5f74,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
+        AND platform = 'epic'
+    )',
+    '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     1,
     0
 );
+
+-- End of player settings for id: 6ee67185658f4f819a72564d44ac5010 on epic
 
 -- End seed data for replay: 9d37f8dd-3598-49b7-967c-9a013ecf5f74
 
@@ -294,11 +350,17 @@ VALUES (
 
 -- Seed data for replay: 32341018-395a-446d-a3a7-cc213598cf7f
 
+-- Player settings for id: c23ef2acb4214ca5b76de99337ec1dd0 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    c23ef2acb4214ca5b76de99337ec1dd0,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     110,
     110,
     -6,
@@ -312,8 +374,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    c23ef2acb4214ca5b76de99337ec1dd0,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     5,
     7,
     4,
@@ -331,8 +397,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    c23ef2acb4214ca5b76de99337ec1dd0,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     244,
     260.7728,
     48.15,
@@ -368,8 +438,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    c23ef2acb4214ca5b76de99337ec1dd0,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     1303,
     408744,
     11.55,
@@ -399,8 +473,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    c23ef2acb4214ca5b76de99337ec1dd0,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     2590,
     2511,
     2570,
@@ -432,17 +510,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    c23ef2acb4214ca5b76de99337ec1dd0,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     3,
     0
 );
 
+-- End of player settings for id: c23ef2acb4214ca5b76de99337ec1dd0 on epic
+
+-- Player settings for id: eeac7105aca64272b5964be1fc6e1d54 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    eeac7105aca64272b5964be1fc6e1d54,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     105,
     100,
     -3,
@@ -456,8 +546,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    eeac7105aca64272b5964be1fc6e1d54,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     2,
     7,
     2,
@@ -475,8 +569,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    eeac7105aca64272b5964be1fc6e1d54,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     289,
     326.05875,
     45.98,
@@ -512,8 +610,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    eeac7105aca64272b5964be1fc6e1d54,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     1222,
     383921,
     14.93,
@@ -543,8 +645,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    eeac7105aca64272b5964be1fc6e1d54,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     2341,
     2530,
     2201,
@@ -576,17 +682,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    eeac7105aca64272b5964be1fc6e1d54,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     0,
     0
 );
 
+-- End of player settings for id: eeac7105aca64272b5964be1fc6e1d54 on epic
+
+-- Player settings for id: 90b737843ba343c2b02a3a530ffdf825 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     110,
     110,
     -4,
@@ -600,8 +718,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     5,
     7,
     2,
@@ -619,8 +741,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     419,
     479.07263,
     48.9,
@@ -656,8 +782,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     1403,
     425795,
     21.85,
@@ -687,8 +817,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     2297,
     1996,
     2676,
@@ -720,17 +854,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     0,
     2
 );
 
+-- End of player settings for id: 90b737843ba343c2b02a3a530ffdf825 on epic
+
+-- Player settings for id: 995a75abf4184485ad59186cd79a3497 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     110,
     110,
     -4,
@@ -744,8 +890,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     2,
     7,
     1,
@@ -763,8 +913,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     347,
     339.9691,
     42.61,
@@ -800,8 +954,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     1399,
     434164,
     26.95,
@@ -831,8 +989,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     2501,
     2490,
     2548,
@@ -864,11 +1026,17 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    32341018-395a-446d-a3a7-cc213598cf7f,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '32341018-395a-446d-a3a7-cc213598cf7f',
     0,
     1
 );
+
+-- End of player settings for id: 995a75abf4184485ad59186cd79a3497 on epic
 
 -- End seed data for replay: 32341018-395a-446d-a3a7-cc213598cf7f
 
@@ -876,11 +1044,17 @@ VALUES (
 
 -- Seed data for replay: 2852f730-8d9d-4658-b7cd-77bff44cde15
 
+-- Player settings for id: 21e5bc487bd841c99066de9d40674541 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    21e5bc487bd841c99066de9d40674541,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     90,
     100,
     -3,
@@ -894,8 +1068,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    21e5bc487bd841c99066de9d40674541,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     4,
     3,
     4,
@@ -913,8 +1091,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    21e5bc487bd841c99066de9d40674541,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     195,
     240.31223,
     49.21,
@@ -950,8 +1132,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    21e5bc487bd841c99066de9d40674541,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1301,
     452729,
     13.63,
@@ -981,8 +1167,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    21e5bc487bd841c99066de9d40674541,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     2664,
     2553,
     3124,
@@ -1014,17 +1204,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    21e5bc487bd841c99066de9d40674541,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1,
     1
 );
 
+-- End of player settings for id: 21e5bc487bd841c99066de9d40674541 on epic
+
+-- Player settings for id: d995e51af0010900 on xbox
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    d995e51af0010900,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'd995e51af0010900' 
+        AND platform = 'xbox'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     110,
     80,
     -4,
@@ -1038,8 +1240,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    d995e51af0010900,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'd995e51af0010900' 
+        AND platform = 'xbox'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     3,
     3,
     2,
@@ -1057,8 +1263,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    d995e51af0010900,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'd995e51af0010900' 
+        AND platform = 'xbox'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     286,
     269.54163,
     45.44,
@@ -1094,8 +1304,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    d995e51af0010900,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'd995e51af0010900' 
+        AND platform = 'xbox'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1439,
     393228,
     26.62,
@@ -1125,8 +1339,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    d995e51af0010900,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'd995e51af0010900' 
+        AND platform = 'xbox'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     3480,
     3481,
     3668,
@@ -1158,17 +1376,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    d995e51af0010900,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'd995e51af0010900' 
+        AND platform = 'xbox'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     0,
     0
 );
 
+-- End of player settings for id: d995e51af0010900 on xbox
+
+-- Player settings for id: ea31badbb9344cb2829ba70d930534b0 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    ea31badbb9344cb2829ba70d930534b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     110,
     90,
     -5,
@@ -1182,8 +1412,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    ea31badbb9344cb2829ba70d930534b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     4,
     3,
     2,
@@ -1201,8 +1435,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    ea31badbb9344cb2829ba70d930534b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     353,
     346.10275,
     56.3,
@@ -1238,8 +1476,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    ea31badbb9344cb2829ba70d930534b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1435,
     505373,
     36.88,
@@ -1269,8 +1511,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    ea31badbb9344cb2829ba70d930534b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     2647,
     2575,
     3002,
@@ -1302,17 +1548,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    ea31badbb9344cb2829ba70d930534b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
+        AND platform = 'epic'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1,
     0
 );
 
+-- End of player settings for id: ea31badbb9344cb2829ba70d930534b0 on epic
+
+-- Player settings for id: RenzokukenX88 on ps4
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    RenzokukenX88,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'RenzokukenX88' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     90,
     100,
     -3,
@@ -1326,8 +1584,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    RenzokukenX88,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'RenzokukenX88' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     2,
     11,
     1,
@@ -1345,8 +1607,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    RenzokukenX88,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'RenzokukenX88' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     153,
     181.7183,
     48.3,
@@ -1382,8 +1648,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    RenzokukenX88,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'RenzokukenX88' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1266,
     311030,
     5.88,
@@ -1413,8 +1683,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    RenzokukenX88,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'RenzokukenX88' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     2953,
     2890,
     2992,
@@ -1446,17 +1720,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    RenzokukenX88,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'RenzokukenX88' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     0,
     0
 );
 
+-- End of player settings for id: RenzokukenX88 on ps4
+
+-- Player settings for id: E100_C on ps4
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    E100_C,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'E100_C' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     110,
     90,
     -4,
@@ -1470,8 +1756,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    E100_C,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'E100_C' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     0,
     11,
     0,
@@ -1489,8 +1779,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    E100_C,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'E100_C' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     213,
     220.55725,
     37.18,
@@ -1526,8 +1820,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    E100_C,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'E100_C' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1255,
     354685,
     14.24,
@@ -1557,8 +1855,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    E100_C,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'E100_C' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     2827,
     2716,
     2877,
@@ -1590,17 +1892,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    E100_C,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'E100_C' 
+        AND platform = 'ps4'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     0,
     1
 );
 
+-- End of player settings for id: E100_C on ps4
+
+-- Player settings for id: ac7992de05de78b0 on psynet
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    ac7992de05de78b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ac7992de05de78b0' 
+        AND platform = 'psynet'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     90,
     100,
     -3,
@@ -1614,8 +1928,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    ac7992de05de78b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ac7992de05de78b0' 
+        AND platform = 'psynet'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1,
     11,
     0,
@@ -1633,8 +1951,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    ac7992de05de78b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ac7992de05de78b0' 
+        AND platform = 'psynet'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     253,
     184.51064,
     34.89,
@@ -1670,8 +1992,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    ac7992de05de78b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ac7992de05de78b0' 
+        AND platform = 'psynet'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1161,
     376459,
     15.85,
@@ -1701,8 +2027,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    ac7992de05de78b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ac7992de05de78b0' 
+        AND platform = 'psynet'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     2583,
     2711,
     2575,
@@ -1734,11 +2064,17 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    ac7992de05de78b0,
-    2852f730-8d9d-4658-b7cd-77bff44cde15,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ac7992de05de78b0' 
+        AND platform = 'psynet'
+    )',
+    '2852f730-8d9d-4658-b7cd-77bff44cde15',
     1,
     1
 );
+
+-- End of player settings for id: ac7992de05de78b0 on psynet
 
 -- End seed data for replay: 2852f730-8d9d-4658-b7cd-77bff44cde15
 
@@ -1746,11 +2082,17 @@ VALUES (
 
 -- Seed data for replay: fc54e2d6-1c9e-4479-9169-e4d02b185c13
 
+-- Player settings for id: Deadline642 on ps4
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    Deadline642,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Deadline642' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     90,
     100,
     -3,
@@ -1764,8 +2106,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    Deadline642,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Deadline642' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1,
     6,
     0,
@@ -1783,8 +2129,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    Deadline642,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Deadline642' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     157,
     180.79095,
     64.5,
@@ -1820,8 +2170,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    Deadline642,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Deadline642' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1187,
     376032,
     6.99,
@@ -1851,8 +2205,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    Deadline642,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Deadline642' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     2970,
     3124,
     2795,
@@ -1884,17 +2242,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    Deadline642,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Deadline642' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1,
     0
 );
 
+-- End of player settings for id: Deadline642 on ps4
+
+-- Player settings for id: 76561198311926297 on steam
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    76561198311926297,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198311926297' 
+        AND platform = 'steam'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     110,
     100,
     -4,
@@ -1908,8 +2278,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    76561198311926297,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198311926297' 
+        AND platform = 'steam'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     3,
     6,
     1,
@@ -1927,8 +2301,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    76561198311926297,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198311926297' 
+        AND platform = 'steam'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     232,
     222.46921,
     50.35,
@@ -1964,8 +2342,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    76561198311926297,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198311926297' 
+        AND platform = 'steam'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1231,
     392573,
     14.81,
@@ -1995,8 +2377,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    76561198311926297,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198311926297' 
+        AND platform = 'steam'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     2589,
     2610,
     2575,
@@ -2028,17 +2414,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    76561198311926297,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198311926297' 
+        AND platform = 'steam'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1,
     0
 );
 
+-- End of player settings for id: 76561198311926297 on steam
+
+-- Player settings for id: Lolo1313s on ps4
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    Lolo1313s,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Lolo1313s' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     110,
     100,
     -3,
@@ -2052,8 +2450,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    Lolo1313s,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Lolo1313s' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     6,
     0,
@@ -2071,8 +2473,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    Lolo1313s,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Lolo1313s' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     389,
     391.56604,
     48.53,
@@ -2108,8 +2514,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    Lolo1313s,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Lolo1313s' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1341,
     363843,
     22.5,
@@ -2139,8 +2549,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    Lolo1313s,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Lolo1313s' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     3021,
     2982,
     3068,
@@ -2172,17 +2586,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    Lolo1313s,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Lolo1313s' 
+        AND platform = 'ps4'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     0
 );
 
+-- End of player settings for id: Lolo1313s on ps4
+
+-- Player settings for id: 837048efe5e14624821daa30d2beaccc on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    837048efe5e14624821daa30d2beaccc,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
+        AND platform = 'epic'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     110,
     110,
     -6,
@@ -2196,8 +2622,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    837048efe5e14624821daa30d2beaccc,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
+        AND platform = 'epic'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     2,
     6,
     0,
@@ -2215,8 +2645,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    837048efe5e14624821daa30d2beaccc,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
+        AND platform = 'epic'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     378,
     390.8493,
     47.61,
@@ -2252,8 +2686,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    837048efe5e14624821daa30d2beaccc,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
+        AND platform = 'epic'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1526,
     478261,
     58.1,
@@ -2283,8 +2721,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    837048efe5e14624821daa30d2beaccc,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
+        AND platform = 'epic'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     2651,
     2299,
     3046,
@@ -2316,17 +2758,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    837048efe5e14624821daa30d2beaccc,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
+        AND platform = 'epic'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1,
     0
 );
 
+-- End of player settings for id: 837048efe5e14624821daa30d2beaccc on epic
+
+-- Player settings for an unnamed user
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     90,
     100,
     -3,
@@ -2340,8 +2794,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     6,
     0,
@@ -2359,8 +2817,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     104,
     157.11407,
     58.99,
@@ -2396,8 +2858,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1136,
     57110,
     1.17,
@@ -2427,8 +2893,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     3133,
     3526,
     2978,
@@ -2460,17 +2930,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     0
 );
 
+-- End of player settings for an unnamed user
+
+-- Player settings for id: 15febf35f7010900 on xbox
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    15febf35f7010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '15febf35f7010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     100,
     110,
     -9,
@@ -2484,8 +2966,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    15febf35f7010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '15febf35f7010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     2,
     6,
     2,
@@ -2503,8 +2989,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    15febf35f7010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '15febf35f7010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     256,
     277.85495,
     51.92,
@@ -2540,8 +3030,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    15febf35f7010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '15febf35f7010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1392,
     414156,
     31.17,
@@ -2571,8 +3065,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    15febf35f7010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '15febf35f7010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     3074,
     2771,
     3342,
@@ -2604,17 +3102,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    15febf35f7010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '15febf35f7010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     0
 );
 
+-- End of player settings for id: 15febf35f7010900 on xbox
+
+-- Player settings for id: ff6dbfe7fb010900 on xbox
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    ff6dbfe7fb010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ff6dbfe7fb010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     110,
     110,
     -3,
@@ -2628,8 +3138,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    ff6dbfe7fb010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ff6dbfe7fb010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1,
     6,
     0,
@@ -2647,8 +3161,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    ff6dbfe7fb010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ff6dbfe7fb010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     98,
     140.77985,
     60.95,
@@ -2684,8 +3202,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    ff6dbfe7fb010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ff6dbfe7fb010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     974,
     274982,
     9.76,
@@ -2715,8 +3237,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    ff6dbfe7fb010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ff6dbfe7fb010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     3777,
     4032,
     3594,
@@ -2748,17 +3274,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    ff6dbfe7fb010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'ff6dbfe7fb010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     1
 );
 
+-- End of player settings for id: ff6dbfe7fb010900 on xbox
+
+-- Player settings for id: 58620a77f8010900 on xbox
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    58620a77f8010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '58620a77f8010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     110,
     110,
     -3,
@@ -2772,8 +3310,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    58620a77f8010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '58620a77f8010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     3,
     6,
     0,
@@ -2791,8 +3333,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    58620a77f8010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '58620a77f8010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     126,
     149.30074,
     57.42,
@@ -2828,8 +3374,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    58620a77f8010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '58620a77f8010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1313,
     410567,
     11.94,
@@ -2859,8 +3409,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    58620a77f8010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '58620a77f8010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     2685,
     2593,
     2779,
@@ -2892,17 +3446,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    58620a77f8010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '58620a77f8010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     2
 );
 
+-- End of player settings for id: 58620a77f8010900 on xbox
+
+-- Player settings for an unnamed user
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     90,
     100,
     -3,
@@ -2916,8 +3482,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     6,
     0,
@@ -2935,8 +3505,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     147,
     103.55456,
     15.13,
@@ -2972,8 +3546,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1079,
     50353,
     0.57,
@@ -3003,8 +3581,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     2320,
     2462,
     2031,
@@ -3036,17 +3618,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    ,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     0
 );
 
+-- End of player settings for an unnamed user
+
+-- Player settings for id: 8d43d872fa010900 on xbox
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    8d43d872fa010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '8d43d872fa010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     110,
     110,
     -3,
@@ -3060,8 +3654,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    8d43d872fa010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '8d43d872fa010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     6,
     0,
@@ -3079,8 +3677,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    8d43d872fa010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '8d43d872fa010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     183,
     40.251213,
     45.02,
@@ -3116,8 +3718,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    8d43d872fa010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '8d43d872fa010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     1086,
     258164,
     0.33,
@@ -3147,8 +3753,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    8d43d872fa010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '8d43d872fa010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     6270,
     6114,
     6425,
@@ -3180,11 +3790,17 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    8d43d872fa010900,
-    fc54e2d6-1c9e-4479-9169-e4d02b185c13,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '8d43d872fa010900' 
+        AND platform = 'xbox'
+    )',
+    'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     0,
     0
 );
+
+-- End of player settings for id: 8d43d872fa010900 on xbox
 
 -- End seed data for replay: fc54e2d6-1c9e-4479-9169-e4d02b185c13
 
@@ -3192,11 +3808,17 @@ VALUES (
 
 -- Seed data for replay: a4676587-9373-401b-9de1-5ea48839f574
 
+-- Player settings for id: 76561198058831591 on steam
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    76561198058831591,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198058831591' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     110,
     80,
     -7,
@@ -3210,8 +3832,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    76561198058831591,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198058831591' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     1,
     0,
@@ -3229,8 +3855,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    76561198058831591,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198058831591' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     129,
     311.5455,
     41.41,
@@ -3266,8 +3896,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    76561198058831591,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198058831591' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     1180,
     14885,
     0,
@@ -3297,8 +3931,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    76561198058831591,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198058831591' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     3723,
     4885,
     3700,
@@ -3330,17 +3968,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    76561198058831591,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198058831591' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0
 );
 
+-- End of player settings for id: 76561198058831591 on steam
+
+-- Player settings for an unnamed user
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    ,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Shepard' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     90,
     100,
     -3,
@@ -3354,8 +4004,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    ,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Shepard' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     1,
     0,
@@ -3373,8 +4027,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    ,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Shepard' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     222,
     0,
     18.82,
@@ -3410,8 +4068,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    ,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Shepard' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     675,
     4080,
     0,
@@ -3441,8 +4103,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    ,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Shepard' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     4324,
     5199,
     2482,
@@ -3474,17 +4140,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    ,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE display_name = 'Shepard' 
+        AND platform_id IS NULL AND platform IS NULL
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0
 );
 
+-- End of player settings for an unnamed user
+
+-- Player settings for id: 76561198145737268 on steam
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    76561198145737268,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198145737268' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     110,
     130,
     -4,
@@ -3498,8 +4176,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    76561198145737268,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198145737268' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     1,
     0,
@@ -3517,8 +4199,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    76561198145737268,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198145737268' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     370,
     307.88025,
     45.14,
@@ -3554,8 +4240,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    76561198145737268,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198145737268' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     942,
     14629,
     0,
@@ -3585,8 +4275,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    76561198145737268,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198145737268' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     2353,
     3425,
     1864,
@@ -3618,17 +4312,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    76561198145737268,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '76561198145737268' 
+        AND platform = 'steam'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0
 );
 
+-- End of player settings for id: 76561198145737268 on steam
+
+-- Player settings for id: Classicrunns99 on ps4
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    Classicrunns99,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Classicrunns99' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     110,
     170,
     0,
@@ -3642,8 +4348,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    Classicrunns99,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Classicrunns99' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     1,
     0,
@@ -3661,8 +4371,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    Classicrunns99,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Classicrunns99' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     598,
     0,
     12.16,
@@ -3698,8 +4412,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    Classicrunns99,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Classicrunns99' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     1216,
     9485,
     0,
@@ -3729,8 +4447,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    Classicrunns99,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Classicrunns99' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     1684,
     0,
     1374,
@@ -3762,17 +4484,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    Classicrunns99,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'Classicrunns99' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0
 );
 
+-- End of player settings for id: Classicrunns99 on ps4
+
+-- Player settings for id: BrttBrck on ps4
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    BrttBrck,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'BrttBrck' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     110,
     100,
     -3,
@@ -3786,8 +4520,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    BrttBrck,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'BrttBrck' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     1,
     0,
     0,
@@ -3805,8 +4543,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    BrttBrck,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'BrttBrck' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     533,
     788.02686,
     49.95,
@@ -3842,8 +4584,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    BrttBrck,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'BrttBrck' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     1513,
     23488,
     2,
@@ -3873,8 +4619,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    BrttBrck,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'BrttBrck' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     2156,
     1322,
     2564,
@@ -3906,17 +4656,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    BrttBrck,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'BrttBrck' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0
 );
 
+-- End of player settings for id: BrttBrck on ps4
+
+-- Player settings for id: pat-_attak on ps4
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    pat-_attak,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'pat-_attak' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     110,
     100,
     -3,
@@ -3930,8 +4692,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    pat-_attak,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'pat-_attak' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0,
     0,
@@ -3949,8 +4715,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    pat-_attak,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'pat-_attak' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     333,
     384.8503,
     64.41,
@@ -3986,8 +4756,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    pat-_attak,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'pat-_attak' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     1659,
     25334,
     2.58,
@@ -4017,8 +4791,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    pat-_attak,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'pat-_attak' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     4194,
     5572,
     3308,
@@ -4050,17 +4828,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    pat-_attak,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'pat-_attak' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0
 );
 
+-- End of player settings for id: pat-_attak on ps4
+
+-- Player settings for id: GUNSLINGER8978 on ps4
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    GUNSLINGER8978,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'GUNSLINGER8978' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     110,
     100,
     -3,
@@ -4074,8 +4864,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    GUNSLINGER8978,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'GUNSLINGER8978' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0,
     0,
@@ -4093,8 +4887,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    GUNSLINGER8978,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'GUNSLINGER8978' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     306,
     432.49844,
     72.99,
@@ -4130,8 +4928,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    GUNSLINGER8978,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'GUNSLINGER8978' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     1450,
     22299,
     0.44,
@@ -4161,8 +4963,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    GUNSLINGER8978,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'GUNSLINGER8978' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     3983,
     5645,
     1675,
@@ -4194,11 +5000,17 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    GUNSLINGER8978,
-    a4676587-9373-401b-9de1-5ea48839f574,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = 'GUNSLINGER8978' 
+        AND platform = 'ps4'
+    )',
+    'a4676587-9373-401b-9de1-5ea48839f574',
     0,
     0
 );
+
+-- End of player settings for id: GUNSLINGER8978 on ps4
 
 -- End seed data for replay: a4676587-9373-401b-9de1-5ea48839f574
 
@@ -4206,11 +5018,17 @@ VALUES (
 
 -- Seed data for replay: 238ca3d7-3b3d-4680-a53b-79516e9066ac
 
+-- Player settings for id: 256cfc97f6010900 on xbox
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    256cfc97f6010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '256cfc97f6010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     100,
     100,
     -3,
@@ -4224,8 +5042,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    256cfc97f6010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '256cfc97f6010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     1,
     6,
     0,
@@ -4243,8 +5065,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    256cfc97f6010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '256cfc97f6010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     234,
     228.0629,
     57.19,
@@ -4280,8 +5106,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    256cfc97f6010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '256cfc97f6010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     1243,
     349210,
     13.8,
@@ -4311,8 +5141,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    256cfc97f6010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '256cfc97f6010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     2444,
     2174,
     2557,
@@ -4344,17 +5178,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    256cfc97f6010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '256cfc97f6010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     1,
     1
 );
 
+-- End of player settings for id: 256cfc97f6010900 on xbox
+
+-- Player settings for id: 9bbbb232f7010900 on xbox
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    9bbbb232f7010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '9bbbb232f7010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     110,
     110,
     -4,
@@ -4368,8 +5214,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    9bbbb232f7010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '9bbbb232f7010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     1,
     6,
     1,
@@ -4387,8 +5237,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    9bbbb232f7010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '9bbbb232f7010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     296,
     260.96854,
     49.36,
@@ -4424,8 +5278,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    9bbbb232f7010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '9bbbb232f7010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     1338,
     381009,
     16.8,
@@ -4455,8 +5313,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    9bbbb232f7010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '9bbbb232f7010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     2846,
     2747,
     2954,
@@ -4488,17 +5350,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    9bbbb232f7010900,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '9bbbb232f7010900' 
+        AND platform = 'xbox'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     2,
     0
 );
 
+-- End of player settings for id: 9bbbb232f7010900 on xbox
+
+-- Player settings for id: 90b737843ba343c2b02a3a530ffdf825 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     110,
     110,
     -4,
@@ -4512,8 +5386,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     3,
     2,
     2,
@@ -4531,8 +5409,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     397,
     401.28308,
     60.57,
@@ -4568,8 +5450,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     1459,
     411738,
     23.14,
@@ -4599,8 +5485,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     2271,
     2123,
     2442,
@@ -4632,17 +5522,29 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    90b737843ba343c2b02a3a530ffdf825,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     1,
     1
 );
 
+-- End of player settings for id: 90b737843ba343c2b02a3a530ffdf825 on epic
+
+-- Player settings for id: 995a75abf4184485ad59186cd79a3497 on epic
+
 INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     110,
     110,
     -4,
@@ -4656,8 +5558,12 @@ VALUES (
 INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     3,
     2,
     2,
@@ -4675,8 +5581,12 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     264,
     278.35263,
     45.56,
@@ -4712,8 +5622,12 @@ INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distan
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     1279,
     356759,
     11.49,
@@ -4743,8 +5657,12 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     2466,
     2594,
     2235,
@@ -4776,11 +5694,17 @@ VALUES (
 
 INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
-    995a75abf4184485ad59186cd79a3497,
-    238ca3d7-3b3d-4680-a53b-79516e9066ac,
+    '(
+        SELECT player_id FROM players 
+        WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
+        AND platform = 'epic'
+    )',
+    '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     0,
     2
 );
+
+-- End of player settings for id: 995a75abf4184485ad59186cd79a3497 on epic
 
 -- End seed data for replay: 238ca3d7-3b3d-4680-a53b-79516e9066ac
 

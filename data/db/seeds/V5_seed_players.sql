@@ -6,7 +6,7 @@ VALUES (
     'epic',
     'ImSouperGreat'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -16,7 +16,7 @@ VALUES (
     'epic',
     'RayRedReddingtn'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 -- End seed data for replay: 9d37f8dd-3598-49b7-967c-9a013ecf5f74
@@ -31,7 +31,7 @@ VALUES (
     'epic',
     'Broden1616'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -41,7 +41,7 @@ VALUES (
     'epic',
     'jakthesnak34'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -51,7 +51,7 @@ VALUES (
     'epic',
     'CypticBlade'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -61,7 +61,7 @@ VALUES (
     'epic',
     'Slay Only'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 -- End seed data for replay: 32341018-395a-446d-a3a7-cc213598cf7f
@@ -76,7 +76,7 @@ VALUES (
     'epic',
     'Mazorinee'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -86,7 +86,7 @@ VALUES (
     'xbox',
     'Landon142542'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -96,7 +96,7 @@ VALUES (
     'epic',
     'frogofbread'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -106,7 +106,7 @@ VALUES (
     'ps4',
     'RenzokukenX88'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -116,7 +116,7 @@ VALUES (
     'ps4',
     'E100_C'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -126,7 +126,7 @@ VALUES (
     'psynet',
     'luis'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 -- End seed data for replay: 2852f730-8d9d-4658-b7cd-77bff44cde15
@@ -141,7 +141,7 @@ VALUES (
     'ps4',
     'Deadline642'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -151,7 +151,7 @@ VALUES (
     'steam',
     'normatif.'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -161,7 +161,7 @@ VALUES (
     'ps4',
     'Lolo1313s'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -171,7 +171,7 @@ VALUES (
     'epic',
     'TheOnlyG77'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -187,7 +187,7 @@ VALUES (
     'xbox',
     'Ropsycko'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -197,7 +197,7 @@ VALUES (
     'xbox',
     'ArTSNIP'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -207,7 +207,7 @@ VALUES (
     'xbox',
     'RedFireFRgames'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -223,7 +223,7 @@ VALUES (
     'xbox',
     'Erwan5164'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 -- End seed data for replay: fc54e2d6-1c9e-4479-9169-e4d02b185c13
@@ -238,7 +238,7 @@ VALUES (
     'steam',
     'Coach Twig'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -254,7 +254,7 @@ VALUES (
     'steam',
     'Turbronator'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -264,7 +264,7 @@ VALUES (
     'ps4',
     'Classicrunns99'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -274,7 +274,7 @@ VALUES (
     'ps4',
     'BrttBrck'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -284,7 +284,7 @@ VALUES (
     'ps4',
     'pat-_attak'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -294,7 +294,7 @@ VALUES (
     'ps4',
     'GUNSLINGER8978'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 -- End seed data for replay: a4676587-9373-401b-9de1-5ea48839f574
@@ -309,7 +309,7 @@ VALUES (
     'xbox',
     'Chupacabra7299'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -319,7 +319,7 @@ VALUES (
     'xbox',
     'STR Shmoopy'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -329,7 +329,7 @@ VALUES (
     'epic',
     'CypticBlade'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 
@@ -339,7 +339,7 @@ VALUES (
     'epic',
     'Slay Only'
 )
-ON CONFLICT (player_id, platform) DO UPDATE 
+ON CONFLICT (platform_id, platform) DO UPDATE 
 SET display_name = EXCLUDED.display_name
 
 -- End seed data for replay: 238ca3d7-3b3d-4680-a53b-79516e9066ac

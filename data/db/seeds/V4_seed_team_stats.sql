@@ -1,5 +1,7 @@
 -- Seed data for replay: 9d37f8dd-3598-49b7-967c-9a013ecf5f74
 
+-- Team stats for the blue team
+
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
@@ -96,6 +98,10 @@ VALUES (
     0,
     1
 );
+
+-- End of team stats for the blue team
+
+-- Team stats for the orange team
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
@@ -194,11 +200,15 @@ VALUES (
     0
 );
 
+-- End of team stats for the orange team
+
 -- End seed data for replay: 9d37f8dd-3598-49b7-967c-9a013ecf5f74
 
 
 
 -- Seed data for replay: 32341018-395a-446d-a3a7-cc213598cf7f
+
+-- Team stats for the blue team
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
@@ -297,6 +307,10 @@ VALUES (
     0
 );
 
+-- End of team stats for the blue team
+
+-- Team stats for the orange team
+
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -394,11 +408,15 @@ VALUES (
     3
 );
 
+-- End of team stats for the orange team
+
 -- End seed data for replay: 32341018-395a-446d-a3a7-cc213598cf7f
 
 
 
 -- Seed data for replay: 2852f730-8d9d-4658-b7cd-77bff44cde15
+
+-- Team stats for the blue team
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
@@ -497,6 +515,10 @@ VALUES (
     1
 );
 
+-- End of team stats for the blue team
+
+-- Team stats for the orange team
+
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -594,11 +616,15 @@ VALUES (
     2
 );
 
+-- End of team stats for the orange team
+
 -- End seed data for replay: 2852f730-8d9d-4658-b7cd-77bff44cde15
 
 
 
 -- Seed data for replay: fc54e2d6-1c9e-4479-9169-e4d02b185c13
+
+-- Team stats for the blue team
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
@@ -697,6 +723,10 @@ VALUES (
     0
 );
 
+-- End of team stats for the blue team
+
+-- Team stats for the orange team
+
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -794,11 +824,15 @@ VALUES (
     3
 );
 
+-- End of team stats for the orange team
+
 -- End seed data for replay: fc54e2d6-1c9e-4479-9169-e4d02b185c13
 
 
 
 -- Seed data for replay: a4676587-9373-401b-9de1-5ea48839f574
+
+-- Team stats for the blue team
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
@@ -897,6 +931,10 @@ VALUES (
     0
 );
 
+-- End of team stats for the blue team
+
+-- Team stats for the orange team
+
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -994,11 +1032,15 @@ VALUES (
     0
 );
 
+-- End of team stats for the orange team
+
 -- End seed data for replay: a4676587-9373-401b-9de1-5ea48839f574
 
 
 
 -- Seed data for replay: 238ca3d7-3b3d-4680-a53b-79516e9066ac
+
+-- Team stats for the blue team
 
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
@@ -1097,6 +1139,10 @@ VALUES (
     1
 );
 
+-- End of team stats for the blue team
+
+-- Team stats for the orange team
+
 INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -1193,6 +1239,8 @@ VALUES (
     1,
     3
 );
+
+-- End of team stats for the orange team
 
 -- End seed data for replay: 238ca3d7-3b3d-4680-a53b-79516e9066ac
 

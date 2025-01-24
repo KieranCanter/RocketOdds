@@ -342,10 +342,10 @@ INSERT INTO replay_players (player_id, replay_id, team_color, rank_id, rank_tier
     mvp, car_id, car_name, start_time, end_time) 
 VALUES (
     (
-    SELECT player_id FROM players 
-    WHERE display_name = 'Sabretooth' 
-    AND platform_id IS NULL AND platform IS NULL
-),
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    ),
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     'blue',
     'Unranked',
@@ -422,10 +422,10 @@ INSERT INTO replay_players (player_id, replay_id, team_color, rank_id, rank_tier
     mvp, car_id, car_name, start_time, end_time) 
 VALUES (
     (
-    SELECT player_id FROM players 
-    WHERE display_name = 'Sabretooth' 
-    AND platform_id IS NULL AND platform IS NULL
-),
+        SELECT player_id FROM players 
+        WHERE display_name = 'Sabretooth' 
+        AND platform_id IS NULL AND platform IS NULL
+    ),
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     'orange',
     'Unranked',
@@ -488,10 +488,10 @@ INSERT INTO replay_players (player_id, replay_id, team_color, rank_id, rank_tier
     mvp, car_id, car_name, start_time, end_time) 
 VALUES (
     (
-    SELECT player_id FROM players 
-    WHERE display_name = 'Shepard' 
-    AND platform_id IS NULL AND platform IS NULL
-),
+        SELECT player_id FROM players 
+        WHERE display_name = 'Shepard' 
+        AND platform_id IS NULL AND platform IS NULL
+    ),
     'a4676587-9373-401b-9de1-5ea48839f574',
     'blue',
     'Unranked',
