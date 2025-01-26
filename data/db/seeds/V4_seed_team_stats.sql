@@ -11,12 +11,11 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     'blue',
-    False,
     7,
     8,
     3,

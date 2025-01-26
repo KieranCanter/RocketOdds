@@ -60,13 +60,6 @@ class BallchasingSeeder:
         formatted_datetime = est_datetime.strftime('%Y-%m-%d %H:%M:%S EST')
         return formatted_datetime
 
-    # Calculate if the team won the match
-    def _get_won_match(self, replay_data, team_color):
-        if replay_data['blue']['stats']['core']['goals'] > replay_data['orange']['stats']['core']['goals']:
-            return team_color == 'blue'
-        else:
-            return team_color == 'orange'
-
     def generate_sql_files(self, replay_data):
         # Create separate SQL files for each table
         self.generate_uploaders_sql(replay_data)
@@ -174,12 +167,11 @@ class BallchasingSeeder:
 
         team_core_stats_sql.append(f"""
             INSERT INTO team_core_stats (
-                replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
+                replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
                 shooting_percentage) 
             VALUES (
                 '{replay_id}',
                 '{team_color}',
-                {self._get_won_match(replay_data, team_color)},
                 {team_data['core'].get('shots', 'NULL')},
                 {team_data['core'].get('shots_against', 'NULL')},
                 {team_data['core'].get('goals', 'NULL')},
