@@ -11,11 +11,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     'blue',
+    False,
     7,
     8,
     3,
@@ -112,11 +113,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     'orange',
+    True,
     8,
     7,
     4,
@@ -219,11 +221,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
     'blue',
+    True,
     7,
     7,
     6,
@@ -320,11 +323,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
     'orange',
+    False,
     7,
     7,
     3,
@@ -427,11 +431,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     'blue',
+    True,
     11,
     3,
     8,
@@ -528,11 +533,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     'orange',
+    False,
     3,
     11,
     1,
@@ -635,11 +641,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     'blue',
+    False,
     6,
     6,
     1,
@@ -736,11 +743,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     'orange',
+    True,
     6,
     6,
     2,
@@ -843,11 +851,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     'blue',
+    False,
     0,
     1,
     0,
@@ -944,11 +953,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     'orange',
+    True,
     1,
     0,
     0,
@@ -1051,11 +1061,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     'blue',
+    False,
     2,
     6,
     1,
@@ -1152,11 +1163,12 @@ VALUES (
 );
 
 INSERT INTO team_core_stats (
-    replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+    replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
     shooting_percentage) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     'orange',
+    True,
     6,
     2,
     4,
