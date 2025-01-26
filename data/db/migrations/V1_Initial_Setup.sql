@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS team_core_stats (
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
     FOREIGN KEY (replay_id, team_color) REFERENCES teams(replay_id, team_color) ON DELETE CASCADE,
+    won_match BOOLEAN,
     shots SMALLINT,
     shots_against SMALLINT,
     goals SMALLINT,
