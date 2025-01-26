@@ -29,7 +29,7 @@ def load_to_s3(data, date, playlist, rank):
 
     filepath = f"{date.strftime('%Y')}/{date.strftime('%m')}/{date.strftime('%d')}/{playlist}/{date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json"
 
-    response = s3_client.put_object(Bucket="rocketodds-bucket", Key=filepath, Body=data, StorageClass="DEEP_ARCHIVE")
+    response = s3_client.put_object(Bucket="rocketodds-data", Key=filepath, Body=data, StorageClass="DEEP_ARCHIVE")
 
     if response["ResponseMetadata"]["HTTPStatusCode"] == 200:
         print(f"Successfully uploaded {filepath} to S3 with ETag: {response['ETag']}\n")
