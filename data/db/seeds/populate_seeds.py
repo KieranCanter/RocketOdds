@@ -60,6 +60,13 @@ class BallchasingSeeder:
         formatted_datetime = est_datetime.strftime('%Y-%m-%d %H:%M:%S EST')
         return formatted_datetime
 
+    # Calculate if the team won the match
+    def _get_won_match(self, replay_data, team_color):
+        if replay_data['blue']['stats']['core']['goals'] > replay_data['orange']['stats']['core']['goals']:
+            return team_color == 'blue'
+        else:
+            return team_color == 'orange'
+
     def generate_sql_files(self, replay_data):
         # Create separate SQL files for each table
         self.generate_uploaders_sql(replay_data)
@@ -107,7 +114,7 @@ class BallchasingSeeder:
                 {replay_data.get('team_size', 'NULL')},
                 '{replay_data.get('playlist_id', 'NULL')}',
                 {replay_data.get('duration', 'NULL')},
-                {str(replay_data.get('overtime', False)).lower()},
+                {replay_data.get('overtime', False)},
                 {replay_data.get('overtime_seconds', 0)},
                 {replay_data.get('season', 'NULL')},
                 '{self._convert_time_to_sql_est(replay_data.get('date'))}',
@@ -167,11 +174,12 @@ class BallchasingSeeder:
 
         team_core_stats_sql.append(f"""
             INSERT INTO team_core_stats (
-                replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
+                replay_id, team_color, won_match, shots, shots_against, goals, goals_against, saves, assists, score, 
                 shooting_percentage) 
             VALUES (
                 '{replay_id}',
                 '{team_color}',
+                {self._get_won_match(replay_data, team_color)},
                 {team_data['core'].get('shots', 'NULL')},
                 {team_data['core'].get('shots_against', 'NULL')},
                 {team_data['core'].get('goals', 'NULL')},
@@ -339,7 +347,7 @@ class BallchasingSeeder:
                 '{player_data.get('rank', {}).get('id', 'Unranked')}',
                 '{player_data.get('rank', {}).get('tier', 'NULL')}',
                 '{player_data.get('rank', {}).get('division', 'NULL')}',
-                {str(player_data.get('mvp', False)).lower()},
+                {player_data.get('mvp', False)},
                 {player_data.get('car_id', 'NULL')},
                 '{player_data.get('car_name', 'NULL')}',
                 {player_data.get('start_time', 'NULL')},
