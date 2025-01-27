@@ -1,12 +1,11 @@
 -- Seed data for replay: 9d37f8dd-3598-49b7-967c-9a013ecf5f74
 
 INSERT INTO ballchasing_data.replays (
-    replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
+    replay_id, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
     season, match_date, visibility) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
-    'https://ballchasing.com/api/replays/9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     '2025-01-21 23:27:02 EST',
     '76561199473147039',
     '070DD02A430651EFF0274EAD272EEC05',
@@ -31,12 +30,11 @@ VALUES (
 -- Seed data for replay: 32341018-395a-446d-a3a7-cc213598cf7f
 
 INSERT INTO ballchasing_data.replays (
-    replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
+    replay_id, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
     season, match_date, visibility) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
-    'https://ballchasing.com/api/replays/32341018-395a-446d-a3a7-cc213598cf7f',
     '2025-01-21 23:28:55 EST',
     '76561198182743805',
     '388E0A3F4A01150220D863805FA76C0C',
@@ -61,12 +59,11 @@ VALUES (
 -- Seed data for replay: 2852f730-8d9d-4658-b7cd-77bff44cde15
 
 INSERT INTO ballchasing_data.replays (
-    replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
+    replay_id, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
     season, match_date, visibility) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
-    'https://ballchasing.com/api/replays/2852f730-8d9d-4658-b7cd-77bff44cde15',
     '2025-01-21 08:06:01 EST',
     '76561199240326696',
     '9D2CA83E4685E48D4075CDB3232FD5E5',
@@ -91,12 +88,11 @@ VALUES (
 -- Seed data for replay: fc54e2d6-1c9e-4479-9169-e4d02b185c13
 
 INSERT INTO ballchasing_data.replays (
-    replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
+    replay_id, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
     season, match_date, visibility) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
-    'https://ballchasing.com/api/replays/fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     '2025-01-15 10:17:20 EST',
     '76561199082450226',
     'F67F99884E248B87619232AF521B8710',
@@ -121,12 +117,11 @@ VALUES (
 -- Seed data for replay: a4676587-9373-401b-9de1-5ea48839f574
 
 INSERT INTO ballchasing_data.replays (
-    replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
+    replay_id, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
     season, match_date, visibility) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
-    'https://ballchasing.com/api/replays/a4676587-9373-401b-9de1-5ea48839f574',
     '2025-01-21 23:29:31 EST',
     '76561198058831591',
     '3EF4CFE14F8054CFDC0F7BA79B4B0E57',
@@ -151,12 +146,11 @@ VALUES (
 -- Seed data for replay: 238ca3d7-3b3d-4680-a53b-79516e9066ac
 
 INSERT INTO ballchasing_data.replays (
-    replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
+    replay_id, created, uploader_id, rocket_league_id, match_guid, 
     title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
     season, match_date, visibility) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
-    'https://ballchasing.com/api/replays/238ca3d7-3b3d-4680-a53b-79516e9066ac',
     '2025-01-21 23:02:00 EST',
     '76561198182743805',
     '981992A04F01EA7EBB88F9BDCA1365E4',

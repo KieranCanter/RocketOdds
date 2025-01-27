@@ -7,7 +7,7 @@ VALUES (
     'ImSouperGreat'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -17,7 +17,7 @@ VALUES (
     'RayRedReddingtn'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 -- End seed data for replay: 9d37f8dd-3598-49b7-967c-9a013ecf5f74
 
@@ -32,7 +32,7 @@ VALUES (
     'Broden1616'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -42,7 +42,7 @@ VALUES (
     'jakthesnak34'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -52,7 +52,7 @@ VALUES (
     'CypticBlade'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -62,7 +62,7 @@ VALUES (
     'Slay Only'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 -- End seed data for replay: 32341018-395a-446d-a3a7-cc213598cf7f
 
@@ -77,7 +77,7 @@ VALUES (
     'Mazorinee'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -87,7 +87,7 @@ VALUES (
     'Landon142542'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -97,7 +97,7 @@ VALUES (
     'frogofbread'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -107,7 +107,7 @@ VALUES (
     'RenzokukenX88'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -117,7 +117,7 @@ VALUES (
     'E100_C'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -127,7 +127,7 @@ VALUES (
     'luis'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 -- End seed data for replay: 2852f730-8d9d-4658-b7cd-77bff44cde15
 
@@ -142,7 +142,7 @@ VALUES (
     'Deadline642'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -152,7 +152,7 @@ VALUES (
     'normatif.'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -162,7 +162,7 @@ VALUES (
     'Lolo1313s'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -172,13 +172,13 @@ VALUES (
     'TheOnlyG77'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (display_name) 
 VALUES (
     'Sabretooth'
-)
+);
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -188,7 +188,7 @@ VALUES (
     'Ropsycko'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -198,7 +198,7 @@ VALUES (
     'ArTSNIP'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -208,13 +208,13 @@ VALUES (
     'RedFireFRgames'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (display_name) 
 VALUES (
     'Sabretooth'
-)
+);
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -224,7 +224,7 @@ VALUES (
     'Erwan5164'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 -- End seed data for replay: fc54e2d6-1c9e-4479-9169-e4d02b185c13
 
@@ -239,13 +239,13 @@ VALUES (
     'Coach Twig'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (display_name) 
 VALUES (
     'Shepard'
-)
+);
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -255,7 +255,7 @@ VALUES (
     'Turbronator'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -265,7 +265,7 @@ VALUES (
     'Classicrunns99'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -275,7 +275,7 @@ VALUES (
     'BrttBrck'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -285,7 +285,7 @@ VALUES (
     'pat-_attak'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -295,7 +295,7 @@ VALUES (
     'GUNSLINGER8978'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 -- End seed data for replay: a4676587-9373-401b-9de1-5ea48839f574
 
@@ -310,7 +310,7 @@ VALUES (
     'Chupacabra7299'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -320,7 +320,7 @@ VALUES (
     'STR Shmoopy'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -330,7 +330,7 @@ VALUES (
     'CypticBlade'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
@@ -340,7 +340,7 @@ VALUES (
     'Slay Only'
 )
 ON CONFLICT (platform_id, platform) DO UPDATE 
-SET display_name = EXCLUDED.display_name
+SET display_name = EXCLUDED.display_name;
 
 -- End seed data for replay: 238ca3d7-3b3d-4680-a53b-79516e9066ac
 
