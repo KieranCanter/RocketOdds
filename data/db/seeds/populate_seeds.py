@@ -286,10 +286,13 @@ class BallchasingSeeder:
                 if not platform_id or not platform:
                     sql.append(f"""
                         INSERT INTO ballchasing_data.players (display_name) 
-                        VALUES ('{display_name}')
-                        ON CONFLICT (display_name) 
-                        WHERE platform_id IS NULL AND platform IS NULL
-                        DO UPDATE SET display_name = EXCLUDED.display_name;
+                        SELECT '{display_name}'
+                        WHERE NOT EXISTS (
+                            SELECT 1 FROM ballchasing_data.players 
+                            WHERE display_name = '{display_name}' 
+                            AND platform_id IS NULL 
+                            AND platform IS NULL
+                        );
                     """)
                 else:
                     sql.append(f"""
@@ -304,7 +307,7 @@ class BallchasingSeeder:
                     """)
 
                 self.generate_replay_players_sql(replay_id, player, team_color)
-                self.generate_player_stats_sql(replay_id, player)
+                self.generate_player_stats_sql(replay_id, player, team_color)
 
         self._write_sql('V5_seed_players.sql', sql)
 
@@ -350,7 +353,7 @@ class BallchasingSeeder:
 
         self._write_sql('V6_seed_replay_players.sql', sql)
 
-    def generate_player_stats_sql(self, replay_id, player_data):
+    def generate_player_stats_sql(self, replay_id, player_data, team_color):
         player_settings_sql = []
         player_core_stats_sql = []
         player_boost_stats_sql = []
@@ -391,11 +394,12 @@ class BallchasingSeeder:
             """]
 
         player_settings_sql.append(f"""
-            INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+            INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
                 swivel_speed, transition_speed, steering_sensitivity) 
             VALUES (
                 '{replay_id}',
                 {player_id},
+                '{team_color}',
                 {player_data['camera'].get('fov', 'NULL')},
                 {player_data['camera'].get('height', 'NULL')},
                 {player_data['camera'].get('pitch', 'NULL')},
@@ -408,11 +412,12 @@ class BallchasingSeeder:
         """)
 
         player_core_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+            INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
                 assists, score, shooting_percentage) 
             VALUES (
                 '{replay_id}',
                 {player_id},
+                '{team_color}',
                 {player_stats['core'].get('shots', 'NULL')},
                 {player_stats['core'].get('shots_against', 'NULL')},
                 {player_stats['core'].get('goals', 'NULL')},
@@ -425,7 +430,7 @@ class BallchasingSeeder:
         """)
 
         player_boost_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+            INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
                 amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
                 count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
                 amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -434,6 +439,7 @@ class BallchasingSeeder:
             VALUES (
                 '{replay_id}',
                 {player_id},
+                '{team_color}',
                 {player_stats['boost'].get('bpm', 'NULL')},
                 {player_stats['boost'].get('bcpm', 'NULL')},
                 {player_stats['boost'].get('avg_amount', 'NULL')},
@@ -466,13 +472,14 @@ class BallchasingSeeder:
         """)
 
         player_movement_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+            INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
                 time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
                 count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
                 percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
             VALUES (
                 '{replay_id}',
                 {player_id},
+                '{team_color}',
                 {player_stats['movement'].get('avg_speed', 'NULL')},
                 {player_stats['movement'].get('total_distance', 'NULL')},
                 {player_stats['movement'].get('time_supersonic_speed', 'NULL')},
@@ -495,17 +502,18 @@ class BallchasingSeeder:
         """)
 
         player_positioning_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-                avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-                time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-                time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-                goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+            INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+                avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+                avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+                time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+                time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
                 percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
                 percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
                 percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
             VALUES (
                 '{replay_id}',
                 {player_id},
+                '{team_color}',
                 {player_stats['positioning'].get('avg_distance_to_ball', 'NULL')},
                 {player_stats['positioning'].get('avg_distance_to_ball_possession', 'NULL')},
                 {player_stats['positioning'].get('avg_distance_to_ball_no_possession', 'NULL')},
@@ -537,10 +545,11 @@ class BallchasingSeeder:
         """)
 
         player_demo_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+            INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
             VALUES (
                 '{replay_id}',
                 {player_id},
+                '{team_color}',
                 {player_stats['demo'].get('inflicted', 'NULL')},
                 {player_stats['demo'].get('taken', 'NULL')}
             );

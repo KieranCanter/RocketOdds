@@ -2,7 +2,7 @@
 
 -- Player settings for id: 63cd259f7edb442188c3059a2da869f4 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
@@ -11,6 +11,7 @@ VALUES (
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     ),
+    'blue',
     110,
     100,
     -3,
@@ -21,7 +22,7 @@ VALUES (
     1.5
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
@@ -30,6 +31,7 @@ VALUES (
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     ),
+    'blue',
     7,
     8,
     3,
@@ -40,7 +42,7 @@ VALUES (
     42.857143
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -53,6 +55,7 @@ VALUES (
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     ),
+    'blue',
     419,
     402.80545,
     45.86,
@@ -83,7 +86,7 @@ VALUES (
     18.937645
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -94,6 +97,7 @@ VALUES (
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     ),
+    'blue',
     1494,
     503844,
     63.93,
@@ -114,11 +118,11 @@ VALUES (
     2.5903203
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -129,6 +133,7 @@ VALUES (
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     ),
+    'blue',
     1747,
     1571,
     1852,
@@ -158,7 +163,7 @@ VALUES (
     98.27691
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     (
@@ -166,6 +171,7 @@ VALUES (
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     ),
+    'blue',
     0,
     1
 );
@@ -174,7 +180,7 @@ VALUES (
 
 -- Player settings for id: 6ee67185658f4f819a72564d44ac5010 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
@@ -183,6 +189,7 @@ VALUES (
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     ),
+    'orange',
     110,
     110,
     -5,
@@ -193,7 +200,7 @@ VALUES (
     1.5
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
@@ -202,6 +209,7 @@ VALUES (
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     ),
+    'orange',
     8,
     7,
     4,
@@ -212,7 +220,7 @@ VALUES (
     50
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -225,6 +233,7 @@ VALUES (
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     ),
+    'orange',
     493,
     511.9058,
     46.13,
@@ -255,7 +264,7 @@ VALUES (
     25.245573
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -266,6 +275,7 @@ VALUES (
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     ),
+    'orange',
     1453,
     494864,
     47.99,
@@ -286,11 +296,11 @@ VALUES (
     2.410323
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -301,6 +311,7 @@ VALUES (
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     ),
+    'orange',
     1294,
     975,
     1653,
@@ -330,7 +341,7 @@ VALUES (
     98.30577
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '9d37f8dd-3598-49b7-967c-9a013ecf5f74',
     (
@@ -338,6 +349,7 @@ VALUES (
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     ),
+    'orange',
     1,
     0
 );
@@ -352,7 +364,7 @@ VALUES (
 
 -- Player settings for id: c23ef2acb4214ca5b76de99337ec1dd0 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -361,6 +373,7 @@ VALUES (
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     ),
+    'blue',
     110,
     110,
     -6,
@@ -371,7 +384,7 @@ VALUES (
     2
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -380,6 +393,7 @@ VALUES (
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     ),
+    'blue',
     5,
     7,
     4,
@@ -390,7 +404,7 @@ VALUES (
     80
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -403,6 +417,7 @@ VALUES (
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     ),
+    'blue',
     244,
     260.7728,
     48.15,
@@ -433,7 +448,7 @@ VALUES (
     24.52824
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -444,6 +459,7 @@ VALUES (
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     ),
+    'blue',
     1303,
     408744,
     11.55,
@@ -464,11 +480,11 @@ VALUES (
     1.5765636
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -479,6 +495,7 @@ VALUES (
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     ),
+    'blue',
     2590,
     2511,
     2570,
@@ -508,7 +525,7 @@ VALUES (
     52.735703
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
     (
@@ -516,6 +533,7 @@ VALUES (
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     ),
+    'blue',
     3,
     0
 );
@@ -524,7 +542,7 @@ VALUES (
 
 -- Player settings for id: eeac7105aca64272b5964be1fc6e1d54 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -533,6 +551,7 @@ VALUES (
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     ),
+    'blue',
     105,
     100,
     -3,
@@ -543,7 +562,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -552,6 +571,7 @@ VALUES (
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     ),
+    'blue',
     2,
     7,
     2,
@@ -562,7 +582,7 @@ VALUES (
     100
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -575,6 +595,7 @@ VALUES (
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     ),
+    'blue',
     289,
     326.05875,
     45.98,
@@ -605,7 +626,7 @@ VALUES (
     30.903238
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -616,6 +637,7 @@ VALUES (
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     ),
+    'blue',
     1222,
     383921,
     14.93,
@@ -636,11 +658,11 @@ VALUES (
     2.779446
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -651,6 +673,7 @@ VALUES (
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     ),
+    'blue',
     2341,
     2530,
     2201,
@@ -680,7 +703,7 @@ VALUES (
     47.418854
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
     (
@@ -688,6 +711,7 @@ VALUES (
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     ),
+    'blue',
     0,
     0
 );
@@ -696,7 +720,7 @@ VALUES (
 
 -- Player settings for id: 90b737843ba343c2b02a3a530ffdf825 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -705,6 +729,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     110,
     110,
     -4,
@@ -715,7 +740,7 @@ VALUES (
     1.1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -724,6 +749,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     5,
     7,
     2,
@@ -734,7 +760,7 @@ VALUES (
     40
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -747,6 +773,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     419,
     479.07263,
     48.9,
@@ -777,7 +804,7 @@ VALUES (
     32.809093
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -788,6 +815,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     1403,
     425795,
     21.85,
@@ -808,11 +836,11 @@ VALUES (
     2.546664
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -823,6 +851,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     2297,
     1996,
     2676,
@@ -852,7 +881,7 @@ VALUES (
     45.873257
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
     (
@@ -860,6 +889,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     0,
     2
 );
@@ -868,7 +898,7 @@ VALUES (
 
 -- Player settings for id: 995a75abf4184485ad59186cd79a3497 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -877,6 +907,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     110,
     110,
     -4,
@@ -887,7 +918,7 @@ VALUES (
     1.1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
@@ -896,6 +927,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     2,
     7,
     1,
@@ -906,7 +938,7 @@ VALUES (
     50
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -919,6 +951,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     347,
     339.9691,
     42.61,
@@ -949,7 +982,7 @@ VALUES (
     22.467962
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -960,6 +993,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     1399,
     434164,
     26.95,
@@ -980,11 +1014,11 @@ VALUES (
     2.2831843
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -995,6 +1029,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     2501,
     2490,
     2548,
@@ -1024,7 +1059,7 @@ VALUES (
     57.341576
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '32341018-395a-446d-a3a7-cc213598cf7f',
     (
@@ -1032,6 +1067,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     0,
     1
 );
@@ -1046,7 +1082,7 @@ VALUES (
 
 -- Player settings for id: 21e5bc487bd841c99066de9d40674541 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1055,6 +1091,7 @@ VALUES (
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     ),
+    'blue',
     90,
     100,
     -3,
@@ -1065,7 +1102,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1074,6 +1111,7 @@ VALUES (
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     ),
+    'blue',
     4,
     3,
     4,
@@ -1084,7 +1122,7 @@ VALUES (
     100
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1097,6 +1135,7 @@ VALUES (
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     ),
+    'blue',
     195,
     240.31223,
     49.21,
@@ -1127,7 +1166,7 @@ VALUES (
     40.02471
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -1138,6 +1177,7 @@ VALUES (
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     ),
+    'blue',
     1301,
     452729,
     13.63,
@@ -1158,11 +1198,11 @@ VALUES (
     1.9000905
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -1173,6 +1213,7 @@ VALUES (
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     ),
+    'blue',
     2664,
     2553,
     3124,
@@ -1202,7 +1243,7 @@ VALUES (
     32.384853
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     (
@@ -1210,6 +1251,7 @@ VALUES (
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     ),
+    'blue',
     1,
     1
 );
@@ -1218,7 +1260,7 @@ VALUES (
 
 -- Player settings for id: d995e51af0010900 on xbox
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1227,6 +1269,7 @@ VALUES (
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     110,
     80,
     -4,
@@ -1237,7 +1280,7 @@ VALUES (
     1.7
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1246,6 +1289,7 @@ VALUES (
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     3,
     3,
     2,
@@ -1256,7 +1300,7 @@ VALUES (
     66.666664
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1269,6 +1313,7 @@ VALUES (
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     286,
     269.54163,
     45.44,
@@ -1299,7 +1344,7 @@ VALUES (
     35.074505
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -1310,6 +1355,7 @@ VALUES (
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     1439,
     393228,
     26.62,
@@ -1330,11 +1376,11 @@ VALUES (
     1.783111
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -1345,6 +1391,7 @@ VALUES (
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     3480,
     3481,
     3668,
@@ -1374,7 +1421,7 @@ VALUES (
     41.49136
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     (
@@ -1382,6 +1429,7 @@ VALUES (
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     0,
     0
 );
@@ -1390,7 +1438,7 @@ VALUES (
 
 -- Player settings for id: ea31badbb9344cb2829ba70d930534b0 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1399,6 +1447,7 @@ VALUES (
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     ),
+    'blue',
     110,
     90,
     -5,
@@ -1409,7 +1458,7 @@ VALUES (
     1.75
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1418,6 +1467,7 @@ VALUES (
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     ),
+    'blue',
     4,
     3,
     2,
@@ -1428,7 +1478,7 @@ VALUES (
     50
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1441,6 +1491,7 @@ VALUES (
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     ),
+    'blue',
     353,
     346.10275,
     56.3,
@@ -1471,7 +1522,7 @@ VALUES (
     31.835014
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -1482,6 +1533,7 @@ VALUES (
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     ),
+    'blue',
     1435,
     505373,
     36.88,
@@ -1502,11 +1554,11 @@ VALUES (
     2.5567453
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -1517,6 +1569,7 @@ VALUES (
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     ),
+    'blue',
     2647,
     2575,
     3002,
@@ -1546,7 +1599,7 @@ VALUES (
     32.800045
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     (
@@ -1554,6 +1607,7 @@ VALUES (
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     ),
+    'blue',
     1,
     0
 );
@@ -1562,7 +1616,7 @@ VALUES (
 
 -- Player settings for id: RenzokukenX88 on ps4
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1571,6 +1625,7 @@ VALUES (
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     ),
+    'orange',
     90,
     100,
     -3,
@@ -1581,7 +1636,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1590,6 +1645,7 @@ VALUES (
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     ),
+    'orange',
     2,
     11,
     1,
@@ -1600,7 +1656,7 @@ VALUES (
     50
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1613,6 +1669,7 @@ VALUES (
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     ),
+    'orange',
     153,
     181.7183,
     48.3,
@@ -1643,7 +1700,7 @@ VALUES (
     17.130766
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -1654,6 +1711,7 @@ VALUES (
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     ),
+    'orange',
     1266,
     311030,
     5.88,
@@ -1674,11 +1732,11 @@ VALUES (
     2.2058313
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -1689,6 +1747,7 @@ VALUES (
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     ),
+    'orange',
     2953,
     2890,
     2992,
@@ -1718,7 +1777,7 @@ VALUES (
     39.441883
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     (
@@ -1726,6 +1785,7 @@ VALUES (
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     ),
+    'orange',
     0,
     0
 );
@@ -1734,7 +1794,7 @@ VALUES (
 
 -- Player settings for id: E100_C on ps4
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1743,6 +1803,7 @@ VALUES (
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     ),
+    'orange',
     110,
     90,
     -4,
@@ -1753,7 +1814,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1762,6 +1823,7 @@ VALUES (
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     ),
+    'orange',
     0,
     11,
     0,
@@ -1772,7 +1834,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1785,6 +1847,7 @@ VALUES (
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     ),
+    'orange',
     213,
     220.55725,
     37.18,
@@ -1815,7 +1878,7 @@ VALUES (
     17.377785
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -1826,6 +1889,7 @@ VALUES (
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     ),
+    'orange',
     1255,
     354685,
     14.24,
@@ -1846,11 +1910,11 @@ VALUES (
     2.1853426
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -1861,6 +1925,7 @@ VALUES (
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     ),
+    'orange',
     2827,
     2716,
     2877,
@@ -1890,7 +1955,7 @@ VALUES (
     43.415726
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     (
@@ -1898,6 +1963,7 @@ VALUES (
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     ),
+    'orange',
     0,
     1
 );
@@ -1906,7 +1972,7 @@ VALUES (
 
 -- Player settings for id: ac7992de05de78b0 on psynet
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1915,6 +1981,7 @@ VALUES (
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     ),
+    'orange',
     90,
     100,
     -3,
@@ -1925,7 +1992,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
@@ -1934,6 +2001,7 @@ VALUES (
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     ),
+    'orange',
     1,
     11,
     0,
@@ -1944,7 +2012,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1957,6 +2025,7 @@ VALUES (
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     ),
+    'orange',
     253,
     184.51064,
     34.89,
@@ -1987,7 +2056,7 @@ VALUES (
     17.095123
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -1998,6 +2067,7 @@ VALUES (
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     ),
+    'orange',
     1161,
     376459,
     15.85,
@@ -2018,11 +2088,11 @@ VALUES (
     1.0233766
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -2033,6 +2103,7 @@ VALUES (
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     ),
+    'orange',
     2583,
     2711,
     2575,
@@ -2062,7 +2133,7 @@ VALUES (
     48.494244
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '2852f730-8d9d-4658-b7cd-77bff44cde15',
     (
@@ -2070,6 +2141,7 @@ VALUES (
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     ),
+    'orange',
     1,
     1
 );
@@ -2084,7 +2156,7 @@ VALUES (
 
 -- Player settings for id: Deadline642 on ps4
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2093,6 +2165,7 @@ VALUES (
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     ),
+    'blue',
     90,
     100,
     -3,
@@ -2103,7 +2176,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2112,6 +2185,7 @@ VALUES (
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     ),
+    'blue',
     1,
     6,
     0,
@@ -2122,7 +2196,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2135,6 +2209,7 @@ VALUES (
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     ),
+    'blue',
     157,
     180.79095,
     64.5,
@@ -2165,7 +2240,7 @@ VALUES (
     43.655716
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -2176,6 +2251,7 @@ VALUES (
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     ),
+    'blue',
     1187,
     376032,
     6.99,
@@ -2196,11 +2272,11 @@ VALUES (
     0.26814446
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -2211,6 +2287,7 @@ VALUES (
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     ),
+    'blue',
     2970,
     3124,
     2795,
@@ -2240,7 +2317,7 @@ VALUES (
     28.464697
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -2248,6 +2325,7 @@ VALUES (
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     ),
+    'blue',
     1,
     0
 );
@@ -2256,7 +2334,7 @@ VALUES (
 
 -- Player settings for id: 76561198311926297 on steam
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2265,6 +2343,7 @@ VALUES (
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     ),
+    'blue',
     110,
     100,
     -4,
@@ -2275,7 +2354,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2284,6 +2363,7 @@ VALUES (
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     ),
+    'blue',
     3,
     6,
     1,
@@ -2294,7 +2374,7 @@ VALUES (
     33.333332
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2307,6 +2387,7 @@ VALUES (
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     ),
+    'blue',
     232,
     222.46921,
     50.35,
@@ -2337,7 +2418,7 @@ VALUES (
     30.787687
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -2348,6 +2429,7 @@ VALUES (
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     ),
+    'blue',
     1231,
     392573,
     14.81,
@@ -2368,11 +2450,11 @@ VALUES (
     2.4619064
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -2383,6 +2465,7 @@ VALUES (
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     ),
+    'blue',
     2589,
     2610,
     2575,
@@ -2412,7 +2495,7 @@ VALUES (
     21.394833
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -2420,6 +2503,7 @@ VALUES (
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     ),
+    'blue',
     1,
     0
 );
@@ -2428,7 +2512,7 @@ VALUES (
 
 -- Player settings for id: Lolo1313s on ps4
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2437,6 +2521,7 @@ VALUES (
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     ),
+    'blue',
     110,
     100,
     -3,
@@ -2447,7 +2532,7 @@ VALUES (
     1.5
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2456,6 +2541,7 @@ VALUES (
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     ),
+    'blue',
     0,
     6,
     0,
@@ -2466,7 +2552,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2479,6 +2565,7 @@ VALUES (
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     ),
+    'blue',
     389,
     391.56604,
     48.53,
@@ -2509,7 +2596,7 @@ VALUES (
     25.079823
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -2520,6 +2607,7 @@ VALUES (
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     ),
+    'blue',
     1341,
     363843,
     22.5,
@@ -2540,11 +2628,11 @@ VALUES (
     2.464465
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -2555,6 +2643,7 @@ VALUES (
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     ),
+    'blue',
     3021,
     2982,
     3068,
@@ -2584,7 +2673,7 @@ VALUES (
     28.490131
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -2592,6 +2681,7 @@ VALUES (
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     ),
+    'blue',
     0,
     0
 );
@@ -2600,7 +2690,7 @@ VALUES (
 
 -- Player settings for id: 837048efe5e14624821daa30d2beaccc on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2609,6 +2699,7 @@ VALUES (
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     ),
+    'blue',
     110,
     110,
     -6,
@@ -2619,7 +2710,7 @@ VALUES (
     1.55
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2628,6 +2719,7 @@ VALUES (
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     ),
+    'blue',
     2,
     6,
     0,
@@ -2638,7 +2730,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2651,6 +2743,7 @@ VALUES (
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     ),
+    'blue',
     378,
     390.8493,
     47.61,
@@ -2681,7 +2774,7 @@ VALUES (
     26.305466
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -2692,6 +2785,7 @@ VALUES (
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     ),
+    'blue',
     1526,
     478261,
     58.1,
@@ -2712,11 +2806,11 @@ VALUES (
     5.986115
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -2727,6 +2821,7 @@ VALUES (
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     ),
+    'blue',
     2651,
     2299,
     3046,
@@ -2756,7 +2851,7 @@ VALUES (
     24.235126
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -2764,6 +2859,7 @@ VALUES (
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     ),
+    'blue',
     1,
     0
 );
@@ -2772,7 +2868,7 @@ VALUES (
 
 -- Player settings for an unnamed user
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2781,6 +2877,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     90,
     100,
     -3,
@@ -2791,7 +2888,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2800,6 +2897,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     0,
     6,
     0,
@@ -2810,7 +2908,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2823,6 +2921,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     104,
     157.11407,
     58.99,
@@ -2853,7 +2952,7 @@ VALUES (
     22.09103
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -2864,6 +2963,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     1136,
     57110,
     1.17,
@@ -2884,11 +2984,11 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -2899,6 +2999,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     3133,
     3526,
     2978,
@@ -2928,7 +3029,7 @@ VALUES (
     24.53763
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -2936,6 +3037,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     0,
     0
 );
@@ -2944,7 +3046,7 @@ VALUES (
 
 -- Player settings for id: 15febf35f7010900 on xbox
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2953,6 +3055,7 @@ VALUES (
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     100,
     110,
     -9,
@@ -2963,7 +3066,7 @@ VALUES (
     3
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -2972,6 +3075,7 @@ VALUES (
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     2,
     6,
     2,
@@ -2982,7 +3086,7 @@ VALUES (
     100
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2995,6 +3099,7 @@ VALUES (
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     256,
     277.85495,
     51.92,
@@ -3025,7 +3130,7 @@ VALUES (
     42.399036
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -3036,6 +3141,7 @@ VALUES (
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     1392,
     414156,
     31.17,
@@ -3056,11 +3162,11 @@ VALUES (
     3.5764313
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -3071,6 +3177,7 @@ VALUES (
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     3074,
     2771,
     3342,
@@ -3100,7 +3207,7 @@ VALUES (
     19.851194
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -3108,6 +3215,7 @@ VALUES (
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     0,
     0
 );
@@ -3116,7 +3224,7 @@ VALUES (
 
 -- Player settings for id: ff6dbfe7fb010900 on xbox
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -3125,6 +3233,7 @@ VALUES (
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     110,
     110,
     -3,
@@ -3135,7 +3244,7 @@ VALUES (
     1.01
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -3144,6 +3253,7 @@ VALUES (
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     1,
     6,
     0,
@@ -3154,7 +3264,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3167,6 +3277,7 @@ VALUES (
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     98,
     140.77985,
     60.95,
@@ -3197,7 +3308,7 @@ VALUES (
     56.159885
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -3208,6 +3319,7 @@ VALUES (
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     974,
     274982,
     9.76,
@@ -3228,11 +3340,11 @@ VALUES (
     1.7974349
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -3243,6 +3355,7 @@ VALUES (
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     3777,
     4032,
     3594,
@@ -3272,7 +3385,7 @@ VALUES (
     30.008335
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -3280,6 +3393,7 @@ VALUES (
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     0,
     1
 );
@@ -3288,7 +3402,7 @@ VALUES (
 
 -- Player settings for id: 58620a77f8010900 on xbox
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -3297,6 +3411,7 @@ VALUES (
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     110,
     110,
     -3,
@@ -3307,7 +3422,7 @@ VALUES (
     3.2
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -3316,6 +3431,7 @@ VALUES (
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     3,
     6,
     0,
@@ -3326,7 +3442,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3339,6 +3455,7 @@ VALUES (
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     126,
     149.30074,
     57.42,
@@ -3369,7 +3486,7 @@ VALUES (
     41.367153
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -3380,6 +3497,7 @@ VALUES (
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     1313,
     410567,
     11.94,
@@ -3400,11 +3518,11 @@ VALUES (
     0.59763974
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -3415,6 +3533,7 @@ VALUES (
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     2685,
     2593,
     2779,
@@ -3444,7 +3563,7 @@ VALUES (
     9.508814
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -3452,6 +3571,7 @@ VALUES (
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     0,
     2
 );
@@ -3460,7 +3580,7 @@ VALUES (
 
 -- Player settings for an unnamed user
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -3469,6 +3589,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'orange',
     90,
     100,
     -3,
@@ -3479,7 +3600,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -3488,6 +3609,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'orange',
     0,
     6,
     0,
@@ -3498,7 +3620,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3511,6 +3633,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'orange',
     147,
     103.55456,
     15.13,
@@ -3541,7 +3664,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -3552,6 +3675,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'orange',
     1079,
     50353,
     0.57,
@@ -3572,11 +3696,11 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -3587,6 +3711,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'orange',
     2320,
     2462,
     2031,
@@ -3616,7 +3741,7 @@ VALUES (
     17.25909
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -3624,6 +3749,7 @@ VALUES (
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'orange',
     0,
     0
 );
@@ -3632,7 +3758,7 @@ VALUES (
 
 -- Player settings for id: 8d43d872fa010900 on xbox
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -3641,6 +3767,7 @@ VALUES (
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     110,
     110,
     -3,
@@ -3651,7 +3778,7 @@ VALUES (
     3.09
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
@@ -3660,6 +3787,7 @@ VALUES (
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     0,
     6,
     0,
@@ -3670,7 +3798,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3683,6 +3811,7 @@ VALUES (
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     183,
     40.251213,
     45.02,
@@ -3713,7 +3842,7 @@ VALUES (
     5.3532014
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -3724,6 +3853,7 @@ VALUES (
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     1086,
     258164,
     0.33,
@@ -3744,11 +3874,11 @@ VALUES (
     35.00933
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -3759,6 +3889,7 @@ VALUES (
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     6270,
     6114,
     6425,
@@ -3788,7 +3919,7 @@ VALUES (
     60.94776
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'fc54e2d6-1c9e-4479-9169-e4d02b185c13',
     (
@@ -3796,6 +3927,7 @@ VALUES (
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     ),
+    'orange',
     0,
     0
 );
@@ -3810,7 +3942,7 @@ VALUES (
 
 -- Player settings for id: 76561198058831591 on steam
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -3819,6 +3951,7 @@ VALUES (
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     ),
+    'blue',
     110,
     80,
     -7,
@@ -3829,7 +3962,7 @@ VALUES (
     1.18
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -3838,6 +3971,7 @@ VALUES (
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     ),
+    'blue',
     0,
     1,
     0,
@@ -3848,7 +3982,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3861,6 +3995,7 @@ VALUES (
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     ),
+    'blue',
     129,
     311.5455,
     41.41,
@@ -3891,7 +4026,7 @@ VALUES (
     15.427928
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -3902,6 +4037,7 @@ VALUES (
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     ),
+    'blue',
     1180,
     14885,
     0,
@@ -3922,11 +4058,11 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -3937,6 +4073,7 @@ VALUES (
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     ),
+    'blue',
     3723,
     4885,
     3700,
@@ -3966,7 +4103,7 @@ VALUES (
     57.422108
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     (
@@ -3974,6 +4111,7 @@ VALUES (
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     ),
+    'blue',
     0,
     0
 );
@@ -3982,7 +4120,7 @@ VALUES (
 
 -- Player settings for an unnamed user
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -3991,6 +4129,7 @@ VALUES (
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     90,
     100,
     -3,
@@ -4001,7 +4140,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4010,6 +4149,7 @@ VALUES (
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     0,
     1,
     0,
@@ -4020,7 +4160,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4033,6 +4173,7 @@ VALUES (
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     222,
     0,
     18.82,
@@ -4063,7 +4204,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -4074,6 +4215,7 @@ VALUES (
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     675,
     4080,
     0,
@@ -4094,11 +4236,11 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -4109,6 +4251,7 @@ VALUES (
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     4324,
     5199,
     2482,
@@ -4138,7 +4281,7 @@ VALUES (
     59.17603
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     (
@@ -4146,6 +4289,7 @@ VALUES (
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     ),
+    'blue',
     0,
     0
 );
@@ -4154,7 +4298,7 @@ VALUES (
 
 -- Player settings for id: 76561198145737268 on steam
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4163,6 +4307,7 @@ VALUES (
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     ),
+    'blue',
     110,
     130,
     -4,
@@ -4173,7 +4318,7 @@ VALUES (
     1.2
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4182,6 +4327,7 @@ VALUES (
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     ),
+    'blue',
     0,
     1,
     0,
@@ -4192,7 +4338,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4205,6 +4351,7 @@ VALUES (
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     ),
+    'blue',
     370,
     307.88025,
     45.14,
@@ -4235,7 +4382,7 @@ VALUES (
     17.699581
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -4246,6 +4393,7 @@ VALUES (
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     ),
+    'blue',
     942,
     14629,
     0,
@@ -4266,11 +4414,11 @@ VALUES (
     11.770779
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -4281,6 +4429,7 @@ VALUES (
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     ),
+    'blue',
     2353,
     3425,
     1864,
@@ -4310,7 +4459,7 @@ VALUES (
     26.267563
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     (
@@ -4318,6 +4467,7 @@ VALUES (
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     ),
+    'blue',
     0,
     0
 );
@@ -4326,7 +4476,7 @@ VALUES (
 
 -- Player settings for id: Classicrunns99 on ps4
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4335,6 +4485,7 @@ VALUES (
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     ),
+    'blue',
     110,
     170,
     0,
@@ -4345,7 +4496,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4354,6 +4505,7 @@ VALUES (
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     ),
+    'blue',
     0,
     1,
     0,
@@ -4364,7 +4516,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4377,6 +4529,7 @@ VALUES (
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     ),
+    'blue',
     598,
     0,
     12.16,
@@ -4407,7 +4560,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -4418,6 +4571,7 @@ VALUES (
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     ),
+    'blue',
     1216,
     9485,
     0,
@@ -4438,11 +4592,11 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -4453,6 +4607,7 @@ VALUES (
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     ),
+    'blue',
     1684,
     0,
     1374,
@@ -4482,7 +4637,7 @@ VALUES (
     17.74398
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     (
@@ -4490,6 +4645,7 @@ VALUES (
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     ),
+    'blue',
     0,
     0
 );
@@ -4498,7 +4654,7 @@ VALUES (
 
 -- Player settings for id: BrttBrck on ps4
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4507,6 +4663,7 @@ VALUES (
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     ),
+    'orange',
     110,
     100,
     -3,
@@ -4517,7 +4674,7 @@ VALUES (
     1.1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4526,6 +4683,7 @@ VALUES (
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     ),
+    'orange',
     1,
     0,
     0,
@@ -4536,7 +4694,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4549,6 +4707,7 @@ VALUES (
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     ),
+    'orange',
     533,
     788.02686,
     49.95,
@@ -4579,7 +4738,7 @@ VALUES (
     22.891565
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -4590,6 +4749,7 @@ VALUES (
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     ),
+    'orange',
     1513,
     23488,
     2,
@@ -4610,11 +4770,11 @@ VALUES (
     9.039256
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -4625,6 +4785,7 @@ VALUES (
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     ),
+    'orange',
     2156,
     1322,
     2564,
@@ -4654,7 +4815,7 @@ VALUES (
     23.213194
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     (
@@ -4662,6 +4823,7 @@ VALUES (
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     ),
+    'orange',
     0,
     0
 );
@@ -4670,7 +4832,7 @@ VALUES (
 
 -- Player settings for id: pat-_attak on ps4
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4679,6 +4841,7 @@ VALUES (
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     ),
+    'orange',
     110,
     100,
     -3,
@@ -4689,7 +4852,7 @@ VALUES (
     1.5
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4698,6 +4861,7 @@ VALUES (
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     ),
+    'orange',
     0,
     0,
     0,
@@ -4708,7 +4872,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4721,6 +4885,7 @@ VALUES (
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     ),
+    'orange',
     333,
     384.8503,
     64.41,
@@ -4751,7 +4916,7 @@ VALUES (
     26.677578
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -4762,6 +4927,7 @@ VALUES (
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     ),
+    'orange',
     1659,
     25334,
     2.58,
@@ -4782,11 +4948,11 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -4797,6 +4963,7 @@ VALUES (
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     ),
+    'orange',
     4194,
     5572,
     3308,
@@ -4826,7 +4993,7 @@ VALUES (
     37.263283
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     (
@@ -4834,6 +5001,7 @@ VALUES (
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     ),
+    'orange',
     0,
     0
 );
@@ -4842,7 +5010,7 @@ VALUES (
 
 -- Player settings for id: GUNSLINGER8978 on ps4
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4851,6 +5019,7 @@ VALUES (
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     ),
+    'orange',
     110,
     100,
     -3,
@@ -4861,7 +5030,7 @@ VALUES (
     1.2
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
@@ -4870,6 +5039,7 @@ VALUES (
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     ),
+    'orange',
     0,
     0,
     0,
@@ -4880,7 +5050,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4893,6 +5063,7 @@ VALUES (
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     ),
+    'orange',
     306,
     432.49844,
     72.99,
@@ -4923,7 +5094,7 @@ VALUES (
     59.93556
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -4934,6 +5105,7 @@ VALUES (
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     ),
+    'orange',
     1450,
     22299,
     0.44,
@@ -4954,11 +5126,11 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -4969,6 +5141,7 @@ VALUES (
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     ),
+    'orange',
     3983,
     5645,
     1675,
@@ -4998,7 +5171,7 @@ VALUES (
     33.598045
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     'a4676587-9373-401b-9de1-5ea48839f574',
     (
@@ -5006,6 +5179,7 @@ VALUES (
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     ),
+    'orange',
     0,
     0
 );
@@ -5020,7 +5194,7 @@ VALUES (
 
 -- Player settings for id: 256cfc97f6010900 on xbox
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -5029,6 +5203,7 @@ VALUES (
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     100,
     100,
     -3,
@@ -5039,7 +5214,7 @@ VALUES (
     1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -5048,6 +5223,7 @@ VALUES (
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     1,
     6,
     0,
@@ -5058,7 +5234,7 @@ VALUES (
     0
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -5071,6 +5247,7 @@ VALUES (
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     234,
     228.0629,
     57.19,
@@ -5101,7 +5278,7 @@ VALUES (
     37.644688
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -5112,6 +5289,7 @@ VALUES (
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     1243,
     349210,
     13.8,
@@ -5132,11 +5310,11 @@ VALUES (
     0.30087256
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -5147,6 +5325,7 @@ VALUES (
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     2444,
     2174,
     2557,
@@ -5176,7 +5355,7 @@ VALUES (
     49.599888
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     (
@@ -5184,6 +5363,7 @@ VALUES (
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     1,
     1
 );
@@ -5192,7 +5372,7 @@ VALUES (
 
 -- Player settings for id: 9bbbb232f7010900 on xbox
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -5201,6 +5381,7 @@ VALUES (
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     110,
     110,
     -4,
@@ -5211,7 +5392,7 @@ VALUES (
     1.25
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -5220,6 +5401,7 @@ VALUES (
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     1,
     6,
     1,
@@ -5230,7 +5412,7 @@ VALUES (
     100
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -5243,6 +5425,7 @@ VALUES (
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     296,
     260.96854,
     49.36,
@@ -5273,7 +5456,7 @@ VALUES (
     30.332144
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -5284,6 +5467,7 @@ VALUES (
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     1338,
     381009,
     16.8,
@@ -5304,11 +5488,11 @@ VALUES (
     1.4530083
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -5319,6 +5503,7 @@ VALUES (
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     2846,
     2747,
     2954,
@@ -5348,7 +5533,7 @@ VALUES (
     49.84133
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     (
@@ -5356,6 +5541,7 @@ VALUES (
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     ),
+    'blue',
     2,
     0
 );
@@ -5364,7 +5550,7 @@ VALUES (
 
 -- Player settings for id: 90b737843ba343c2b02a3a530ffdf825 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -5373,6 +5559,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     110,
     110,
     -4,
@@ -5383,7 +5570,7 @@ VALUES (
     1.1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -5392,6 +5579,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     3,
     2,
     2,
@@ -5402,7 +5590,7 @@ VALUES (
     66.666664
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -5415,6 +5603,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     397,
     401.28308,
     60.57,
@@ -5445,7 +5634,7 @@ VALUES (
     37.40549
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -5456,6 +5645,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     1459,
     411738,
     23.14,
@@ -5476,11 +5666,11 @@ VALUES (
     1.0714878
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -5491,6 +5681,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     2271,
     2123,
     2442,
@@ -5520,7 +5711,7 @@ VALUES (
     46.943985
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     (
@@ -5528,6 +5719,7 @@ VALUES (
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     ),
+    'orange',
     1,
     1
 );
@@ -5536,7 +5728,7 @@ VALUES (
 
 -- Player settings for id: 995a75abf4184485ad59186cd79a3497 on epic
 
-INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (replay_id, player_id, team_color, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -5545,6 +5737,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     110,
     110,
     -4,
@@ -5555,7 +5748,7 @@ VALUES (
     1.1
 );
 
-INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, team_color, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
@@ -5564,6 +5757,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     3,
     2,
     2,
@@ -5574,7 +5768,7 @@ VALUES (
     66.666664
 );
 
-INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, team_color, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -5587,6 +5781,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     264,
     278.35263,
     45.56,
@@ -5617,7 +5812,7 @@ VALUES (
     20.924124
 );
 
-INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, team_color, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -5628,6 +5823,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     1279,
     356759,
     11.49,
@@ -5648,11 +5844,11 @@ VALUES (
     0.30168948
 );
 
-INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
-    avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
-    time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
-    time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
-    goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, team_color, 
+    avg_distance_to_ball, avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, 
+    avg_distance_to_mates, time_defensive_third, time_neutral_third, time_offensive_third, 
+    time_defensive_half, time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, 
+    time_most_forward, goals_against_while_last_defender, time_closest_to_ball, time_farthest_from_ball, 
     percent_defensive_third, percent_neutral_third, percent_offensive_third, percent_defensive_half, 
     percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
@@ -5663,6 +5859,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     2466,
     2594,
     2235,
@@ -5692,7 +5889,7 @@ VALUES (
     54.11837
 );
 
-INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, team_color, inflicted, taken) 
 VALUES (
     '238ca3d7-3b3d-4680-a53b-79516e9066ac',
     (
@@ -5700,6 +5897,7 @@ VALUES (
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     ),
+    'orange',
     0,
     2
 );

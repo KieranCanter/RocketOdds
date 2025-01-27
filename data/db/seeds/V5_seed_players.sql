@@ -176,8 +176,12 @@ SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (display_name) 
-VALUES (
-    'Sabretooth'
+SELECT 'Sabretooth'
+WHERE NOT EXISTS (
+    SELECT 1 FROM ballchasing_data.players 
+    WHERE display_name = 'Sabretooth' 
+    AND platform_id IS NULL 
+    AND platform IS NULL
 );
 
 
@@ -212,8 +216,12 @@ SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (display_name) 
-VALUES (
-    'Sabretooth'
+SELECT 'Sabretooth'
+WHERE NOT EXISTS (
+    SELECT 1 FROM ballchasing_data.players 
+    WHERE display_name = 'Sabretooth' 
+    AND platform_id IS NULL 
+    AND platform IS NULL
 );
 
 
@@ -243,8 +251,12 @@ SET display_name = EXCLUDED.display_name;
 
 
 INSERT INTO ballchasing_data.players (display_name) 
-VALUES (
-    'Shepard'
+SELECT 'Shepard'
+WHERE NOT EXISTS (
+    SELECT 1 FROM ballchasing_data.players 
+    WHERE display_name = 'Shepard' 
+    AND platform_id IS NULL 
+    AND platform IS NULL
 );
 
 
