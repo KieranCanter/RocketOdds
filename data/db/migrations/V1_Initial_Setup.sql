@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.uploaders (
 
 CREATE TABLE IF NOT EXISTS ballchasing_data.replays (
     replay_id UUID PRIMARY KEY,
-    link TEXT NOT NULL,
     created TIMESTAMP WITH TIME ZONE NOT NULL,
     uploader_id VARCHAR(17) REFERENCES ballchasing_data.uploaders(steam_id),
     rocket_league_id TEXT,
@@ -134,10 +133,10 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.players (
 );
 
 CREATE TABLE IF NOT EXISTS ballchasing_data.replay_players (
-    player_id UUID REFERENCES ballchasing_data.players(player_id) ON DELETE CASCADE,
     replay_id UUID REFERENCES ballchasing_data.replays(replay_id) ON DELETE CASCADE,
+    player_id UUID REFERENCES ballchasing_data.players(player_id) ON DELETE CASCADE,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    PRIMARY KEY (player_id, replay_id),
+    PRIMARY KEY (replay_id, player_id),
     rank_id TEXT,
     rank_tier SMALLINT,
     rank_division SMALLINT,
@@ -149,10 +148,10 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.replay_players (
 );
 
 CREATE TABLE IF NOT EXISTS ballchasing_data.player_settings (
-    player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
-    PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES ballchasing_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
+    player_id UUID NOT NULL,
+    PRIMARY KEY (replay_id, player_id),
+    FOREIGN KEY (replay_id, player_id) REFERENCES ballchasing_data.replay_players(replay_id, player_id) ON DELETE CASCADE,
     fov SMALLINT,
     height SMALLINT,
     pitch SMALLINT,
@@ -164,10 +163,10 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_settings (
 );
 
 CREATE TABLE IF NOT EXISTS ballchasing_data.player_core_stats (
-    player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
-    PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES ballchasing_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
+    player_id UUID NOT NULL,
+    PRIMARY KEY (replay_id, player_id),
+    FOREIGN KEY (replay_id, player_id) REFERENCES ballchasing_data.replay_players(replay_id, player_id) ON DELETE CASCADE,
     shots SMALLINT,
     shots_against SMALLINT,
     goals SMALLINT,
@@ -179,10 +178,10 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_core_stats (
 );
 
 CREATE TABLE IF NOT EXISTS ballchasing_data.player_boost_stats (
-    player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
-    PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES ballchasing_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
+    player_id UUID NOT NULL,
+    PRIMARY KEY (replay_id, player_id),
+    FOREIGN KEY (replay_id, player_id) REFERENCES ballchasing_data.replay_players(replay_id, player_id) ON DELETE CASCADE,
     bpm SMALLINT,
     bcpm REAL,
     avg_amount REAL,
@@ -214,10 +213,10 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_boost_stats (
 );
 
 CREATE TABLE IF NOT EXISTS ballchasing_data.player_movement_stats (
-    player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
-    PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES ballchasing_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
+    player_id UUID NOT NULL,
+    PRIMARY KEY (replay_id, player_id),
+    FOREIGN KEY (replay_id, player_id) REFERENCES ballchasing_data.replay_players(replay_id, player_id) ON DELETE CASCADE,
     avg_speed INT,
     total_distance INT,
     time_supersonic_speed REAL,
@@ -239,10 +238,10 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_movement_stats (
 );
 
 CREATE TABLE IF NOT EXISTS ballchasing_data.player_positioning_stats (
-    player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
-    PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES ballchasing_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
+    player_id UUID NOT NULL,
+    PRIMARY KEY (replay_id, player_id),
+    FOREIGN KEY (replay_id, player_id) REFERENCES ballchasing_data.replay_players(replay_id, player_id) ON DELETE CASCADE,
     avg_distance_to_ball INT,
     avg_distance_to_ball_possession INT,
     avg_distance_to_ball_no_possession INT,
@@ -273,10 +272,10 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_positioning_stats (
 );
 
 CREATE TABLE IF NOT EXISTS ballchasing_data.player_demo_stats (
-    player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
-    PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES ballchasing_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
+    player_id UUID NOT NULL,
+    PRIMARY KEY (replay_id, player_id),
+    FOREIGN KEY (replay_id, player_id) REFERENCES ballchasing_data.replay_players(replay_id, player_id) ON DELETE CASCADE,
     inflicted SMALLINT,
     taken SMALLINT
 );
