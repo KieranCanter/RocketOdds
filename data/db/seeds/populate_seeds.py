@@ -73,7 +73,7 @@ class BallchasingSeeder:
         sql = []
         
         sql.append(f"""
-            INSERT INTO uploaders (steam_id, uploader_name, profile_url) 
+            INSERT INTO ballchasing_data.uploaders (steam_id, uploader_name, profile_url) 
             VALUES (
                 '{replay_data['uploader']['steam_id']}',
                 '{replay_data['uploader']['name'].replace("'", "''")}',
@@ -90,7 +90,7 @@ class BallchasingSeeder:
         sql = []
 
         sql.append(f"""
-            INSERT INTO replays (
+            INSERT INTO ballchasing_data.replays (
                 replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
                 title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
                 season, match_date, visibility) 
@@ -125,7 +125,7 @@ class BallchasingSeeder:
             team_name = replay_data[team_color].get('name', 'NULL')
             
             sql.append(f"""
-                INSERT INTO teams (replay_id, team_color, team_name)
+                INSERT INTO ballchasing_data.teams (replay_id, team_color, team_name)
                 VALUES (
                     '{replay_id}',
                     '{team_color}',
@@ -156,7 +156,7 @@ class BallchasingSeeder:
         """]
             
         team_ball_stats_sql.append(f"""
-            INSERT INTO team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
+            INSERT INTO ballchasing_data.team_ball_stats (replay_id, team_color, possession_time, time_in_side) 
             VALUES (
                 '{replay_id}',
                 '{team_color}',
@@ -166,7 +166,7 @@ class BallchasingSeeder:
         """)
 
         team_core_stats_sql.append(f"""
-            INSERT INTO team_core_stats (
+            INSERT INTO ballchasing_data.team_core_stats (
                 replay_id, team_color, shots, shots_against, goals, goals_against, saves, assists, score, 
                 shooting_percentage) 
             VALUES (
@@ -184,7 +184,7 @@ class BallchasingSeeder:
         """)
 
         team_boost_stats_sql.append(f"""
-            INSERT INTO team_boost_stats (
+            INSERT INTO ballchasing_data.team_boost_stats (
                 replay_id, team_color, bpm, bcpm, avg_amount, amount_collected, amount_stolen, 
                 amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
                 count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
@@ -219,7 +219,7 @@ class BallchasingSeeder:
         """)
 
         team_movement_stats_sql.append(f"""
-            INSERT INTO team_movement_stats (replay_id, team_color, total_distance, time_supersonic_speed, 
+            INSERT INTO ballchasing_data.team_movement_stats (replay_id, team_color, total_distance, time_supersonic_speed, 
                 time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
                 count_powerslide) 
             VALUES (
@@ -238,7 +238,7 @@ class BallchasingSeeder:
         """)
 
         team_positioning_stats_sql.append(f"""
-            INSERT INTO team_positioning_stats (replay_id, team_color, time_defensive_third, time_neutral_third, 
+            INSERT INTO ballchasing_data.team_positioning_stats (replay_id, team_color, time_defensive_third, time_neutral_third, 
                 time_offensive_third, time_defensive_half, time_offensive_half, time_behind_ball, 
                 time_infront_ball) 
             VALUES (
@@ -255,7 +255,7 @@ class BallchasingSeeder:
         """)
 
         team_demo_stats_sql.append(f"""
-            INSERT INTO team_demo_stats (replay_id, team_color, inflicted, taken) 
+            INSERT INTO ballchasing_data.team_demo_stats (replay_id, team_color, inflicted, taken) 
             VALUES (
                 '{replay_id}',
                 '{team_color}',
@@ -285,14 +285,14 @@ class BallchasingSeeder:
                 
                 if not platform_id or not platform:
                     sql.append(f"""
-                        INSERT INTO players (display_name) 
+                        INSERT INTO ballchasing_data.players (display_name) 
                         VALUES (
                             '{player['name'].replace("'", "''")}'
                         )
                     """)
                 else:
                     sql.append(f"""
-                        INSERT INTO players (platform_id, platform, display_name) 
+                        INSERT INTO ballchasing_data.players (platform_id, platform, display_name) 
                         VALUES (
                             '{platform_id}',
                             '{platform}',
@@ -317,20 +317,20 @@ class BallchasingSeeder:
         if not platform_id or not platform:
             # For anonymous players, we need to reference their UUID by display name
             player_id = f"""(
-                    SELECT player_id FROM players 
+                    SELECT player_id FROM ballchasing_data.players 
                     WHERE display_name = '{player_data['name'].replace("'", "''")}' 
                     AND platform_id IS NULL AND platform IS NULL
                 )"""
         else:
             # For identified players, we can reference their UUID by player_id and platform
             player_id = f"""(
-                    SELECT player_id FROM players 
+                    SELECT player_id FROM ballchasing_data.players 
                     WHERE platform_id = '{platform_id}' 
                     AND platform = '{platform}'
                 )"""
 
         sql.append(f"""
-            INSERT INTO replay_players (player_id, replay_id, team_color, rank_id, rank_tier, rank_division, 
+            INSERT INTO ballchasing_data.replay_players (player_id, replay_id, team_color, rank_id, rank_tier, rank_division, 
                 mvp, car_id, car_name, start_time, end_time) 
             VALUES (
                 {player_id},
@@ -365,7 +365,7 @@ class BallchasingSeeder:
         if not platform_id or not platform:
             # For anonymous players, we need to reference their UUID by display name
             player_id = f"""(
-                    SELECT player_id FROM players 
+                    SELECT player_id FROM ballchasing_data.players 
                     WHERE display_name = '{player_data['name'].replace("'", "''")}' 
                     AND platform_id IS NULL AND platform IS NULL
                 )"""
@@ -378,7 +378,7 @@ class BallchasingSeeder:
         else:
             # For identified players, we can reference their UUID by player_id and platform
             player_id = f"""(
-                    SELECT player_id FROM players 
+                    SELECT player_id FROM ballchasing_data.players 
                     WHERE platform_id = '{platform_id}' 
                     AND platform = '{platform}'
                 )"""
@@ -390,7 +390,7 @@ class BallchasingSeeder:
             """]
 
         player_settings_sql.append(f"""
-            INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+            INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
                 swivel_speed, transition_speed, steering_sensitivity) 
             VALUES (
                 '{player_id}',
@@ -407,7 +407,7 @@ class BallchasingSeeder:
         """)
 
         player_core_stats_sql.append(f"""
-            INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+            INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
                 assists, score, shooting_percentage) 
             VALUES (
                 '{player_id}',
@@ -424,7 +424,7 @@ class BallchasingSeeder:
         """)
 
         player_boost_stats_sql.append(f"""
-            INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+            INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
                 amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
                 count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
                 amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -465,7 +465,7 @@ class BallchasingSeeder:
         """)
 
         player_movement_stats_sql.append(f"""
-            INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+            INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
                 time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
                 count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
                 percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
@@ -494,7 +494,7 @@ class BallchasingSeeder:
         """)
 
         player_positioning_stats_sql.append(f"""
-            INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+            INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
                 avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
                 time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
                 time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -536,7 +536,7 @@ class BallchasingSeeder:
         """)
 
         player_demo_stats_sql.append(f"""
-            INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+            INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
             VALUES (
                 '{player_id}',
                 '{replay_id}',

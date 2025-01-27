@@ -2,11 +2,11 @@
 
 -- Player settings for id: 63cd259f7edb442188c3059a2da869f4 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     )',
@@ -21,11 +21,11 @@ VALUES (
     1.5
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     )',
@@ -40,7 +40,7 @@ VALUES (
     42.857143
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -48,7 +48,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     )',
@@ -83,13 +83,13 @@ VALUES (
     18.937645
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     )',
@@ -114,7 +114,7 @@ VALUES (
     2.5903203
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -124,7 +124,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     )',
@@ -158,10 +158,10 @@ VALUES (
     98.27691
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '63cd259f7edb442188c3059a2da869f4' 
         AND platform = 'epic'
     )',
@@ -174,11 +174,11 @@ VALUES (
 
 -- Player settings for id: 6ee67185658f4f819a72564d44ac5010 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     )',
@@ -193,11 +193,11 @@ VALUES (
     1.5
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     )',
@@ -212,7 +212,7 @@ VALUES (
     50
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -220,7 +220,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     )',
@@ -255,13 +255,13 @@ VALUES (
     25.245573
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     )',
@@ -286,7 +286,7 @@ VALUES (
     2.410323
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -296,7 +296,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     )',
@@ -330,10 +330,10 @@ VALUES (
     98.30577
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '6ee67185658f4f819a72564d44ac5010' 
         AND platform = 'epic'
     )',
@@ -352,11 +352,11 @@ VALUES (
 
 -- Player settings for id: c23ef2acb4214ca5b76de99337ec1dd0 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     )',
@@ -371,11 +371,11 @@ VALUES (
     2
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     )',
@@ -390,7 +390,7 @@ VALUES (
     80
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -398,7 +398,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     )',
@@ -433,13 +433,13 @@ VALUES (
     24.52824
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     )',
@@ -464,7 +464,7 @@ VALUES (
     1.5765636
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -474,7 +474,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     )',
@@ -508,10 +508,10 @@ VALUES (
     52.735703
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'c23ef2acb4214ca5b76de99337ec1dd0' 
         AND platform = 'epic'
     )',
@@ -524,11 +524,11 @@ VALUES (
 
 -- Player settings for id: eeac7105aca64272b5964be1fc6e1d54 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     )',
@@ -543,11 +543,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     )',
@@ -562,7 +562,7 @@ VALUES (
     100
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -570,7 +570,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     )',
@@ -605,13 +605,13 @@ VALUES (
     30.903238
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     )',
@@ -636,7 +636,7 @@ VALUES (
     2.779446
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -646,7 +646,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     )',
@@ -680,10 +680,10 @@ VALUES (
     47.418854
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'eeac7105aca64272b5964be1fc6e1d54' 
         AND platform = 'epic'
     )',
@@ -696,11 +696,11 @@ VALUES (
 
 -- Player settings for id: 90b737843ba343c2b02a3a530ffdf825 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -715,11 +715,11 @@ VALUES (
     1.1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -734,7 +734,7 @@ VALUES (
     40
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -742,7 +742,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -777,13 +777,13 @@ VALUES (
     32.809093
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -808,7 +808,7 @@ VALUES (
     2.546664
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -818,7 +818,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -852,10 +852,10 @@ VALUES (
     45.873257
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -868,11 +868,11 @@ VALUES (
 
 -- Player settings for id: 995a75abf4184485ad59186cd79a3497 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -887,11 +887,11 @@ VALUES (
     1.1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -906,7 +906,7 @@ VALUES (
     50
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -914,7 +914,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -949,13 +949,13 @@ VALUES (
     22.467962
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -980,7 +980,7 @@ VALUES (
     2.2831843
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -990,7 +990,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -1024,10 +1024,10 @@ VALUES (
     57.341576
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -1046,11 +1046,11 @@ VALUES (
 
 -- Player settings for id: 21e5bc487bd841c99066de9d40674541 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     )',
@@ -1065,11 +1065,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     )',
@@ -1084,7 +1084,7 @@ VALUES (
     100
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1092,7 +1092,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     )',
@@ -1127,13 +1127,13 @@ VALUES (
     40.02471
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     )',
@@ -1158,7 +1158,7 @@ VALUES (
     1.9000905
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -1168,7 +1168,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     )',
@@ -1202,10 +1202,10 @@ VALUES (
     32.384853
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '21e5bc487bd841c99066de9d40674541' 
         AND platform = 'epic'
     )',
@@ -1218,11 +1218,11 @@ VALUES (
 
 -- Player settings for id: d995e51af0010900 on xbox
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     )',
@@ -1237,11 +1237,11 @@ VALUES (
     1.7
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     )',
@@ -1256,7 +1256,7 @@ VALUES (
     66.666664
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1264,7 +1264,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     )',
@@ -1299,13 +1299,13 @@ VALUES (
     35.074505
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     )',
@@ -1330,7 +1330,7 @@ VALUES (
     1.783111
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -1340,7 +1340,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     )',
@@ -1374,10 +1374,10 @@ VALUES (
     41.49136
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'd995e51af0010900' 
         AND platform = 'xbox'
     )',
@@ -1390,11 +1390,11 @@ VALUES (
 
 -- Player settings for id: ea31badbb9344cb2829ba70d930534b0 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     )',
@@ -1409,11 +1409,11 @@ VALUES (
     1.75
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     )',
@@ -1428,7 +1428,7 @@ VALUES (
     50
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1436,7 +1436,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     )',
@@ -1471,13 +1471,13 @@ VALUES (
     31.835014
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     )',
@@ -1502,7 +1502,7 @@ VALUES (
     2.5567453
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -1512,7 +1512,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     )',
@@ -1546,10 +1546,10 @@ VALUES (
     32.800045
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ea31badbb9344cb2829ba70d930534b0' 
         AND platform = 'epic'
     )',
@@ -1562,11 +1562,11 @@ VALUES (
 
 -- Player settings for id: RenzokukenX88 on ps4
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     )',
@@ -1581,11 +1581,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     )',
@@ -1600,7 +1600,7 @@ VALUES (
     50
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1608,7 +1608,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     )',
@@ -1643,13 +1643,13 @@ VALUES (
     17.130766
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     )',
@@ -1674,7 +1674,7 @@ VALUES (
     2.2058313
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -1684,7 +1684,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     )',
@@ -1718,10 +1718,10 @@ VALUES (
     39.441883
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'RenzokukenX88' 
         AND platform = 'ps4'
     )',
@@ -1734,11 +1734,11 @@ VALUES (
 
 -- Player settings for id: E100_C on ps4
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     )',
@@ -1753,11 +1753,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     )',
@@ -1772,7 +1772,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1780,7 +1780,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     )',
@@ -1815,13 +1815,13 @@ VALUES (
     17.377785
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     )',
@@ -1846,7 +1846,7 @@ VALUES (
     2.1853426
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -1856,7 +1856,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     )',
@@ -1890,10 +1890,10 @@ VALUES (
     43.415726
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'E100_C' 
         AND platform = 'ps4'
     )',
@@ -1906,11 +1906,11 @@ VALUES (
 
 -- Player settings for id: ac7992de05de78b0 on psynet
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     )',
@@ -1925,11 +1925,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     )',
@@ -1944,7 +1944,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -1952,7 +1952,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     )',
@@ -1987,13 +1987,13 @@ VALUES (
     17.095123
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     )',
@@ -2018,7 +2018,7 @@ VALUES (
     1.0233766
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -2028,7 +2028,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     )',
@@ -2062,10 +2062,10 @@ VALUES (
     48.494244
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ac7992de05de78b0' 
         AND platform = 'psynet'
     )',
@@ -2084,11 +2084,11 @@ VALUES (
 
 -- Player settings for id: Deadline642 on ps4
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     )',
@@ -2103,11 +2103,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     )',
@@ -2122,7 +2122,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2130,7 +2130,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     )',
@@ -2165,13 +2165,13 @@ VALUES (
     43.655716
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     )',
@@ -2196,7 +2196,7 @@ VALUES (
     0.26814446
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -2206,7 +2206,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     )',
@@ -2240,10 +2240,10 @@ VALUES (
     28.464697
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Deadline642' 
         AND platform = 'ps4'
     )',
@@ -2256,11 +2256,11 @@ VALUES (
 
 -- Player settings for id: 76561198311926297 on steam
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     )',
@@ -2275,11 +2275,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     )',
@@ -2294,7 +2294,7 @@ VALUES (
     33.333332
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2302,7 +2302,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     )',
@@ -2337,13 +2337,13 @@ VALUES (
     30.787687
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     )',
@@ -2368,7 +2368,7 @@ VALUES (
     2.4619064
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -2378,7 +2378,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     )',
@@ -2412,10 +2412,10 @@ VALUES (
     21.394833
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198311926297' 
         AND platform = 'steam'
     )',
@@ -2428,11 +2428,11 @@ VALUES (
 
 -- Player settings for id: Lolo1313s on ps4
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     )',
@@ -2447,11 +2447,11 @@ VALUES (
     1.5
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     )',
@@ -2466,7 +2466,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2474,7 +2474,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     )',
@@ -2509,13 +2509,13 @@ VALUES (
     25.079823
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     )',
@@ -2540,7 +2540,7 @@ VALUES (
     2.464465
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -2550,7 +2550,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     )',
@@ -2584,10 +2584,10 @@ VALUES (
     28.490131
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Lolo1313s' 
         AND platform = 'ps4'
     )',
@@ -2600,11 +2600,11 @@ VALUES (
 
 -- Player settings for id: 837048efe5e14624821daa30d2beaccc on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     )',
@@ -2619,11 +2619,11 @@ VALUES (
     1.55
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     )',
@@ -2638,7 +2638,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2646,7 +2646,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     )',
@@ -2681,13 +2681,13 @@ VALUES (
     26.305466
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     )',
@@ -2712,7 +2712,7 @@ VALUES (
     5.986115
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -2722,7 +2722,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     )',
@@ -2756,10 +2756,10 @@ VALUES (
     24.235126
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '837048efe5e14624821daa30d2beaccc' 
         AND platform = 'epic'
     )',
@@ -2772,11 +2772,11 @@ VALUES (
 
 -- Player settings for an unnamed user
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -2791,11 +2791,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -2810,7 +2810,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2818,7 +2818,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -2853,13 +2853,13 @@ VALUES (
     22.09103
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -2884,7 +2884,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -2894,7 +2894,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -2928,10 +2928,10 @@ VALUES (
     24.53763
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -2944,11 +2944,11 @@ VALUES (
 
 -- Player settings for id: 15febf35f7010900 on xbox
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     )',
@@ -2963,11 +2963,11 @@ VALUES (
     3
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     )',
@@ -2982,7 +2982,7 @@ VALUES (
     100
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -2990,7 +2990,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     )',
@@ -3025,13 +3025,13 @@ VALUES (
     42.399036
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     )',
@@ -3056,7 +3056,7 @@ VALUES (
     3.5764313
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -3066,7 +3066,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     )',
@@ -3100,10 +3100,10 @@ VALUES (
     19.851194
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '15febf35f7010900' 
         AND platform = 'xbox'
     )',
@@ -3116,11 +3116,11 @@ VALUES (
 
 -- Player settings for id: ff6dbfe7fb010900 on xbox
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     )',
@@ -3135,11 +3135,11 @@ VALUES (
     1.01
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     )',
@@ -3154,7 +3154,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3162,7 +3162,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     )',
@@ -3197,13 +3197,13 @@ VALUES (
     56.159885
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     )',
@@ -3228,7 +3228,7 @@ VALUES (
     1.7974349
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -3238,7 +3238,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     )',
@@ -3272,10 +3272,10 @@ VALUES (
     30.008335
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'ff6dbfe7fb010900' 
         AND platform = 'xbox'
     )',
@@ -3288,11 +3288,11 @@ VALUES (
 
 -- Player settings for id: 58620a77f8010900 on xbox
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     )',
@@ -3307,11 +3307,11 @@ VALUES (
     3.2
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     )',
@@ -3326,7 +3326,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3334,7 +3334,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     )',
@@ -3369,13 +3369,13 @@ VALUES (
     41.367153
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     )',
@@ -3400,7 +3400,7 @@ VALUES (
     0.59763974
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -3410,7 +3410,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     )',
@@ -3444,10 +3444,10 @@ VALUES (
     9.508814
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '58620a77f8010900' 
         AND platform = 'xbox'
     )',
@@ -3460,11 +3460,11 @@ VALUES (
 
 -- Player settings for an unnamed user
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -3479,11 +3479,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -3498,7 +3498,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3506,7 +3506,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -3541,13 +3541,13 @@ VALUES (
     0
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -3572,7 +3572,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -3582,7 +3582,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -3616,10 +3616,10 @@ VALUES (
     17.25909
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Sabretooth' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -3632,11 +3632,11 @@ VALUES (
 
 -- Player settings for id: 8d43d872fa010900 on xbox
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     )',
@@ -3651,11 +3651,11 @@ VALUES (
     3.09
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     )',
@@ -3670,7 +3670,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3678,7 +3678,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     )',
@@ -3713,13 +3713,13 @@ VALUES (
     5.3532014
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     )',
@@ -3744,7 +3744,7 @@ VALUES (
     35.00933
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -3754,7 +3754,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     )',
@@ -3788,10 +3788,10 @@ VALUES (
     60.94776
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '8d43d872fa010900' 
         AND platform = 'xbox'
     )',
@@ -3810,11 +3810,11 @@ VALUES (
 
 -- Player settings for id: 76561198058831591 on steam
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     )',
@@ -3829,11 +3829,11 @@ VALUES (
     1.18
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     )',
@@ -3848,7 +3848,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -3856,7 +3856,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     )',
@@ -3891,13 +3891,13 @@ VALUES (
     15.427928
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     )',
@@ -3922,7 +3922,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -3932,7 +3932,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     )',
@@ -3966,10 +3966,10 @@ VALUES (
     57.422108
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198058831591' 
         AND platform = 'steam'
     )',
@@ -3982,11 +3982,11 @@ VALUES (
 
 -- Player settings for an unnamed user
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -4001,11 +4001,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -4020,7 +4020,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4028,7 +4028,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -4063,13 +4063,13 @@ VALUES (
     0
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -4094,7 +4094,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -4104,7 +4104,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -4138,10 +4138,10 @@ VALUES (
     59.17603
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE display_name = 'Shepard' 
         AND platform_id IS NULL AND platform IS NULL
     )',
@@ -4154,11 +4154,11 @@ VALUES (
 
 -- Player settings for id: 76561198145737268 on steam
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     )',
@@ -4173,11 +4173,11 @@ VALUES (
     1.2
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     )',
@@ -4192,7 +4192,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4200,7 +4200,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     )',
@@ -4235,13 +4235,13 @@ VALUES (
     17.699581
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     )',
@@ -4266,7 +4266,7 @@ VALUES (
     11.770779
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -4276,7 +4276,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     )',
@@ -4310,10 +4310,10 @@ VALUES (
     26.267563
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '76561198145737268' 
         AND platform = 'steam'
     )',
@@ -4326,11 +4326,11 @@ VALUES (
 
 -- Player settings for id: Classicrunns99 on ps4
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     )',
@@ -4345,11 +4345,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     )',
@@ -4364,7 +4364,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4372,7 +4372,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     )',
@@ -4407,13 +4407,13 @@ VALUES (
     0
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     )',
@@ -4438,7 +4438,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -4448,7 +4448,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     )',
@@ -4482,10 +4482,10 @@ VALUES (
     17.74398
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'Classicrunns99' 
         AND platform = 'ps4'
     )',
@@ -4498,11 +4498,11 @@ VALUES (
 
 -- Player settings for id: BrttBrck on ps4
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     )',
@@ -4517,11 +4517,11 @@ VALUES (
     1.1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     )',
@@ -4536,7 +4536,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4544,7 +4544,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     )',
@@ -4579,13 +4579,13 @@ VALUES (
     22.891565
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     )',
@@ -4610,7 +4610,7 @@ VALUES (
     9.039256
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -4620,7 +4620,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     )',
@@ -4654,10 +4654,10 @@ VALUES (
     23.213194
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'BrttBrck' 
         AND platform = 'ps4'
     )',
@@ -4670,11 +4670,11 @@ VALUES (
 
 -- Player settings for id: pat-_attak on ps4
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     )',
@@ -4689,11 +4689,11 @@ VALUES (
     1.5
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     )',
@@ -4708,7 +4708,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4716,7 +4716,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     )',
@@ -4751,13 +4751,13 @@ VALUES (
     26.677578
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     )',
@@ -4782,7 +4782,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -4792,7 +4792,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     )',
@@ -4826,10 +4826,10 @@ VALUES (
     37.263283
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'pat-_attak' 
         AND platform = 'ps4'
     )',
@@ -4842,11 +4842,11 @@ VALUES (
 
 -- Player settings for id: GUNSLINGER8978 on ps4
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     )',
@@ -4861,11 +4861,11 @@ VALUES (
     1.2
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     )',
@@ -4880,7 +4880,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -4888,7 +4888,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     )',
@@ -4923,13 +4923,13 @@ VALUES (
     59.93556
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     )',
@@ -4954,7 +4954,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -4964,7 +4964,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     )',
@@ -4998,10 +4998,10 @@ VALUES (
     33.598045
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = 'GUNSLINGER8978' 
         AND platform = 'ps4'
     )',
@@ -5020,11 +5020,11 @@ VALUES (
 
 -- Player settings for id: 256cfc97f6010900 on xbox
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     )',
@@ -5039,11 +5039,11 @@ VALUES (
     1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     )',
@@ -5058,7 +5058,7 @@ VALUES (
     0
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -5066,7 +5066,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     )',
@@ -5101,13 +5101,13 @@ VALUES (
     37.644688
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     )',
@@ -5132,7 +5132,7 @@ VALUES (
     0.30087256
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -5142,7 +5142,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     )',
@@ -5176,10 +5176,10 @@ VALUES (
     49.599888
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '256cfc97f6010900' 
         AND platform = 'xbox'
     )',
@@ -5192,11 +5192,11 @@ VALUES (
 
 -- Player settings for id: 9bbbb232f7010900 on xbox
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     )',
@@ -5211,11 +5211,11 @@ VALUES (
     1.25
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     )',
@@ -5230,7 +5230,7 @@ VALUES (
     100
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -5238,7 +5238,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     )',
@@ -5273,13 +5273,13 @@ VALUES (
     30.332144
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     )',
@@ -5304,7 +5304,7 @@ VALUES (
     1.4530083
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -5314,7 +5314,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     )',
@@ -5348,10 +5348,10 @@ VALUES (
     49.84133
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '9bbbb232f7010900' 
         AND platform = 'xbox'
     )',
@@ -5364,11 +5364,11 @@ VALUES (
 
 -- Player settings for id: 90b737843ba343c2b02a3a530ffdf825 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -5383,11 +5383,11 @@ VALUES (
     1.1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -5402,7 +5402,7 @@ VALUES (
     66.666664
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -5410,7 +5410,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -5445,13 +5445,13 @@ VALUES (
     37.40549
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -5476,7 +5476,7 @@ VALUES (
     1.0714878
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -5486,7 +5486,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -5520,10 +5520,10 @@ VALUES (
     46.943985
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '90b737843ba343c2b02a3a530ffdf825' 
         AND platform = 'epic'
     )',
@@ -5536,11 +5536,11 @@ VALUES (
 
 -- Player settings for id: 995a75abf4184485ad59186cd79a3497 on epic
 
-INSERT INTO player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
     swivel_speed, transition_speed, steering_sensitivity) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -5555,11 +5555,11 @@ VALUES (
     1.1
 );
 
-INSERT INTO player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
     assists, score, shooting_percentage) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -5574,7 +5574,7 @@ VALUES (
     66.666664
 );
 
-INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
     amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
     count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
     amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
@@ -5582,7 +5582,7 @@ INSERT INTO player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amo
     time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -5617,13 +5617,13 @@ VALUES (
     20.924124
 );
 
-INSERT INTO player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
     time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
     count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
     percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -5648,7 +5648,7 @@ VALUES (
     0.30168948
 );
 
-INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
     avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
     time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
     time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -5658,7 +5658,7 @@ INSERT INTO player_positioning_stats (player_id, replay_id, avg_distance_to_ball
     percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
@@ -5692,10 +5692,10 @@ VALUES (
     54.11837
 );
 
-INSERT INTO player_demo_stats (player_id, replay_id, inflicted, taken) 
+INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
 VALUES (
     '(
-        SELECT player_id FROM players 
+        SELECT player_id FROM ballchasing_data.players 
         WHERE platform_id = '995a75abf4184485ad59186cd79a3497' 
         AND platform = 'epic'
     )',
