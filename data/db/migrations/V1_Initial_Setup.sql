@@ -1,16 +1,16 @@
-CREATE SCHEMA IF NOT EXISTS raw_data;
+CREATE SCHEMA IF NOT EXISTS full_data;
 
-CREATE TABLE IF NOT EXISTS uploaders (
+CREATE TABLE IF NOT EXISTS full_data.uploaders (
     steam_id VARCHAR(17) PRIMARY KEY,
     uploader_name TEXT NOT NULL,
     profile_url TEXT
 );
 
-CREATE TABLE IF NOT EXISTS replays (
+CREATE TABLE IF NOT EXISTS full_data.replays (
     replay_id UUID PRIMARY KEY,
     link TEXT NOT NULL,
     created TIMESTAMP WITH TIME ZONE NOT NULL,
-    uploader_id VARCHAR(17) REFERENCES uploaders(steam_id),
+    uploader_id VARCHAR(17) REFERENCES full_data.uploaders(steam_id),
     rocket_league_id TEXT,
     match_guid TEXT UNIQUE,
     title TEXT,
@@ -26,27 +26,27 @@ CREATE TABLE IF NOT EXISTS replays (
     visibility TEXT CHECK (visibility IN ('public', 'unlisted', 'private'))
 );
 
-CREATE TABLE IF NOT EXISTS teams (
-    replay_id UUID REFERENCES replays(replay_id) ON DELETE CASCADE,
+CREATE TABLE IF NOT EXISTS full_data.teams (
+    replay_id UUID REFERENCES full_data.replays(replay_id) ON DELETE CASCADE,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     team_name TEXT,
     PRIMARY KEY (replay_id, team_color)
 );
 
-CREATE TABLE IF NOT EXISTS team_ball_stats (
+CREATE TABLE IF NOT EXISTS full_data.team_ball_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES teams(replay_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, team_color) REFERENCES full_data.teams(replay_id, team_color) ON DELETE CASCADE,
     possession_time REAL,
     time_in_side REAL
 );
 
-CREATE TABLE IF NOT EXISTS team_core_stats (
+CREATE TABLE IF NOT EXISTS full_data.team_core_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES teams(replay_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, team_color) REFERENCES full_data.teams(replay_id, team_color) ON DELETE CASCADE,
     won_match BOOLEAN,
     shots SMALLINT,
     shots_against SMALLINT,
@@ -58,11 +58,11 @@ CREATE TABLE IF NOT EXISTS team_core_stats (
     shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100)
 );
 
-CREATE TABLE IF NOT EXISTS team_boost_stats (
+CREATE TABLE IF NOT EXISTS full_data.team_boost_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES teams(replay_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, team_color) REFERENCES full_data.teams(replay_id, team_color) ON DELETE CASCADE,
     bpm SMALLINT,
     bcpm REAL,
     avg_amount REAL,
@@ -87,11 +87,11 @@ CREATE TABLE IF NOT EXISTS team_boost_stats (
     time_boost_75_100 REAL
 );
 
-CREATE TABLE IF NOT EXISTS team_movement_stats (
+CREATE TABLE IF NOT EXISTS full_data.team_movement_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES teams(replay_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, team_color) REFERENCES full_data.teams(replay_id, team_color) ON DELETE CASCADE,
     total_distance INT,
     time_supersonic_speed REAL,
     time_boost_speed REAL,
@@ -103,11 +103,11 @@ CREATE TABLE IF NOT EXISTS team_movement_stats (
     count_powerslide SMALLINT
 );
 
-CREATE TABLE IF NOT EXISTS team_positioning_stats (
+CREATE TABLE IF NOT EXISTS full_data.team_positioning_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES teams(replay_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, team_color) REFERENCES full_data.teams(replay_id, team_color) ON DELETE CASCADE,
     time_defensive_third REAL,
     time_neutral_third REAL,
     time_offensive_third REAL,
@@ -117,33 +117,26 @@ CREATE TABLE IF NOT EXISTS team_positioning_stats (
     time_infront_ball REAL
 );
 
-CREATE TABLE IF NOT EXISTS team_demo_stats (
+CREATE TABLE IF NOT EXISTS full_data.team_demo_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES teams(replay_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, team_color) REFERENCES full_data.teams(replay_id, team_color) ON DELETE CASCADE,
     inflicted SMALLINT,
     taken SMALLINT
 );
 
-CREATE TABLE IF NOT EXISTS players (
+CREATE TABLE IF NOT EXISTS full_data.players (
     player_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     platform_id TEXT,
     platform TEXT,
     display_name TEXT,
-    UNIQUE (platform_id, platform) WHERE platform_id IS NOT NULL AND platform IS NOT NULL,
-    FOREIGN KEY (platform_id) REFERENCES uploaders(steam_id) 
-        WHERE platform = 'steam',
-    CHECK (
-        (platform = 'steam' AND player_id ~ '^[0-9]{17}$') OR 
-        platform != 'steam' OR 
-        platform IS NULL
-    )
+    UNIQUE (platform_id, platform)
 );
 
-CREATE TABLE IF NOT EXISTS replay_players (
-    player_id UUID REFERENCES players(player_id) ON DELETE CASCADE,
-    replay_id UUID REFERENCES replays(replay_id) ON DELETE CASCADE,
+CREATE TABLE IF NOT EXISTS full_data.replay_players (
+    player_id UUID REFERENCES full_data.players(player_id) ON DELETE CASCADE,
+    replay_id UUID REFERENCES full_data.replays(replay_id) ON DELETE CASCADE,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (player_id, replay_id),
     rank_id TEXT,
@@ -153,14 +146,14 @@ CREATE TABLE IF NOT EXISTS replay_players (
     car_id SMALLINT,
     car_name TEXT,
     start_time REAL,
-    end_time REAL,
+    end_time REAL
 );
 
-CREATE TABLE IF NOT EXISTS player_settings (
+CREATE TABLE IF NOT EXISTS full_data.player_settings (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES replay_players(player_id, replay_id) ON DELETE CASCADE,
+    FOREIGN KEY (player_id, replay_id) REFERENCES full_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
     fov SMALLINT,
     height SMALLINT,
     pitch SMALLINT,
@@ -171,11 +164,11 @@ CREATE TABLE IF NOT EXISTS player_settings (
     steering_sensitivity REAL
 );
 
-CREATE TABLE IF NOT EXISTS player_core_stats (
+CREATE TABLE IF NOT EXISTS full_data.player_core_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES replay_players(player_id, replay_id) ON DELETE CASCADE,
+    FOREIGN KEY (player_id, replay_id) REFERENCES full_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
     shots SMALLINT,
     shots_against SMALLINT,
     goals SMALLINT,
@@ -186,11 +179,11 @@ CREATE TABLE IF NOT EXISTS player_core_stats (
     shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100)
 );
 
-CREATE TABLE IF NOT EXISTS player_boost_stats (
+CREATE TABLE IF NOT EXISTS full_data.player_boost_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES replay_players(player_id, replay_id) ON DELETE CASCADE,
+    FOREIGN KEY (player_id, replay_id) REFERENCES full_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
     bpm SMALLINT,
     bcpm REAL,
     avg_amount REAL,
@@ -221,11 +214,11 @@ CREATE TABLE IF NOT EXISTS player_boost_stats (
     percent_boost_75_100 REAL CHECK (percent_boost_75_100 BETWEEN 0 AND 100)
 );
 
-CREATE TABLE IF NOT EXISTS player_movement_stats (
+CREATE TABLE IF NOT EXISTS full_data.player_movement_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES replay_players(player_id, replay_id) ON DELETE CASCADE,
+    FOREIGN KEY (player_id, replay_id) REFERENCES full_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
     avg_speed INT,
     total_distance INT,
     time_supersonic_speed REAL,
@@ -246,11 +239,11 @@ CREATE TABLE IF NOT EXISTS player_movement_stats (
     percent_high_air REAL CHECK (percent_high_air BETWEEN 0 AND 100)
 );
 
-CREATE TABLE IF NOT EXISTS player_positioning_stats (
+CREATE TABLE IF NOT EXISTS full_data.player_positioning_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES replay_players(player_id, replay_id) ON DELETE CASCADE,
+    FOREIGN KEY (player_id, replay_id) REFERENCES full_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
     avg_distance_to_ball INT,
     avg_distance_to_ball_possession INT,
     avg_distance_to_ball_no_possession INT,
@@ -280,11 +273,11 @@ CREATE TABLE IF NOT EXISTS player_positioning_stats (
     percent_farthest_from_ball REAL CHECK (percent_farthest_from_ball BETWEEN 0 AND 100)
 );
 
-CREATE TABLE IF NOT EXISTS player_demo_stats (
+CREATE TABLE IF NOT EXISTS full_data.player_demo_stats (
     player_id UUID NOT NULL,
     replay_id UUID NOT NULL,
     PRIMARY KEY (player_id, replay_id),
-    FOREIGN KEY (player_id, replay_id) REFERENCES replay_players(player_id, replay_id) ON DELETE CASCADE,
+    FOREIGN KEY (player_id, replay_id) REFERENCES full_data.replay_players(player_id, replay_id) ON DELETE CASCADE,
     inflicted SMALLINT,
     taken SMALLINT
 );
