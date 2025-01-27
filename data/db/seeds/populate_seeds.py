@@ -91,12 +91,11 @@ class BallchasingSeeder:
 
         sql.append(f"""
             INSERT INTO ballchasing_data.replays (
-                replay_id, link, created, uploader_id, rocket_league_id, match_guid, 
+                replay_id, created, uploader_id, rocket_league_id, match_guid, 
                 title, map_code, map_name, team_size, playlist_id, duration, overtime, overtime_seconds, 
                 season, match_date, visibility) 
             VALUES (
                 '{replay_data.get('id')}',
-                '{replay_data.get('link')}',
                 '{self._convert_time_to_sql_est(replay_data.get('created'), is_created_date=True)}',
                 '{replay_data.get('uploader', {}).get('steam_id', 'NULL')}',
                 '{replay_data.get('rocket_league_id', 'NULL')}',
@@ -282,13 +281,15 @@ class BallchasingSeeder:
             for player in replay_data[team_color]['players']:
                 platform_id = player['id'].get('id')
                 platform = player['id'].get('platform')
+                display_name = player['name'].replace("'", "''")
                 
                 if not platform_id or not platform:
                     sql.append(f"""
                         INSERT INTO ballchasing_data.players (display_name) 
-                        VALUES (
-                            '{player['name'].replace("'", "''")}'
-                        )
+                        VALUES ('{display_name}')
+                        ON CONFLICT (display_name) 
+                        WHERE platform_id IS NULL AND platform IS NULL
+                        DO UPDATE SET display_name = EXCLUDED.display_name;
                     """)
                 else:
                     sql.append(f"""
@@ -296,10 +297,10 @@ class BallchasingSeeder:
                         VALUES (
                             '{platform_id}',
                             '{platform}',
-                            '{player['name'].replace("'", "''")}'
+                            '{display_name}'
                         )
                         ON CONFLICT (platform_id, platform) DO UPDATE 
-                        SET display_name = EXCLUDED.display_name
+                        SET display_name = EXCLUDED.display_name;
                     """)
 
                 self.generate_replay_players_sql(replay_id, player, team_color)
@@ -330,18 +331,18 @@ class BallchasingSeeder:
                 )"""
 
         sql.append(f"""
-            INSERT INTO ballchasing_data.replay_players (player_id, replay_id, team_color, rank_id, rank_tier, rank_division, 
+            INSERT INTO ballchasing_data.replay_players (replay_id, player_id, team_color, rank_id, rank_tier, rank_division, 
                 mvp, car_id, car_name, start_time, end_time) 
             VALUES (
-                {player_id},
                 '{replay_id}',
+                {player_id},
                 '{team_color}',
                 '{player_data.get('rank', {}).get('id', 'Unranked')}',
-                '{player_data.get('rank', {}).get('tier', 'NULL')}',
-                '{player_data.get('rank', {}).get('division', 'NULL')}',
+                {player_data.get('rank', {}).get('tier', 'NULL')},
+                {player_data.get('rank', {}).get('division', 'NULL')},
                 {player_data.get('mvp', False)},
                 {player_data.get('car_id', 'NULL')},
-                '{player_data.get('car_name', 'NULL')}',
+                '{player_data.get('car_name', 'NULL').replace("'", "''")}',
                 {player_data.get('start_time', 'NULL')},
                 {player_data.get('end_time', 'NULL')}
             );
@@ -390,11 +391,11 @@ class BallchasingSeeder:
             """]
 
         player_settings_sql.append(f"""
-            INSERT INTO ballchasing_data.player_settings (player_id, replay_id, fov, height, pitch, distance, stiffness, 
+            INSERT INTO ballchasing_data.player_settings (replay_id, player_id, fov, height, pitch, distance, stiffness, 
                 swivel_speed, transition_speed, steering_sensitivity) 
             VALUES (
-                '{player_id}',
                 '{replay_id}',
+                {player_id},
                 {player_data['camera'].get('fov', 'NULL')},
                 {player_data['camera'].get('height', 'NULL')},
                 {player_data['camera'].get('pitch', 'NULL')},
@@ -407,11 +408,11 @@ class BallchasingSeeder:
         """)
 
         player_core_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_core_stats (player_id, replay_id, shots, shots_against, goals, goals_against, saves, 
+            INSERT INTO ballchasing_data.player_core_stats (replay_id, player_id, shots, shots_against, goals, goals_against, saves, 
                 assists, score, shooting_percentage) 
             VALUES (
-                '{player_id}',
                 '{replay_id}',
+                {player_id},
                 {player_stats['core'].get('shots', 'NULL')},
                 {player_stats['core'].get('shots_against', 'NULL')},
                 {player_stats['core'].get('goals', 'NULL')},
@@ -424,15 +425,15 @@ class BallchasingSeeder:
         """)
 
         player_boost_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_boost_stats (player_id, replay_id, bpm, bcpm, avg_amount, amount_collected, 
+            INSERT INTO ballchasing_data.player_boost_stats (replay_id, player_id, bpm, bcpm, avg_amount, amount_collected, 
                 amount_stolen, amount_collected_big, amount_stolen_big, amount_collected_small, amount_stolen_small, 
                 count_collected_big, count_stolen_big, count_collected_small, count_stolen_small, amount_overfill, 
                 amount_overfill_stolen, amount_used_while_supersonic, time_zero_boost, percent_zero_boost, 
                 time_full_boost, percent_full_boost, time_boost_0_25, time_boost_25_50, time_boost_50_75, 
                 time_boost_75_100, percent_boost_0_25, percent_boost_25_50, percent_boost_50_75, percent_boost_75_100) 
             VALUES (
-                '{player_id}',
                 '{replay_id}',
+                {player_id},
                 {player_stats['boost'].get('bpm', 'NULL')},
                 {player_stats['boost'].get('bcpm', 'NULL')},
                 {player_stats['boost'].get('avg_amount', 'NULL')},
@@ -465,36 +466,36 @@ class BallchasingSeeder:
         """)
 
         player_movement_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_movement_stats (player_id, replay_id, avg_speed, total_distance, time_supersonic_speed, 
+            INSERT INTO ballchasing_data.player_movement_stats (replay_id, player_id, avg_speed, total_distance, time_supersonic_speed, 
                 time_boost_speed, time_slow_speed, time_ground, time_low_air, time_high_air, time_powerslide, 
                 count_powerslide, avg_powerslide_duration, avg_speed_percentage, percent_slow_speed, 
                 percent_boost_speed, percent_supersonic_speed, percent_ground, percent_low_air, percent_high_air) 
             VALUES (
-                '{player_id}',
                 '{replay_id}',
-                {player_stats['movement']['avg_speed']},
-                {player_stats['movement']['total_distance']},
-                {player_stats['movement']['time_supersonic_speed']},
-                {player_stats['movement']['time_boost_speed']},
-                {player_stats['movement']['time_slow_speed']},
-                {player_stats['movement']['time_ground']},
-                {player_stats['movement']['time_low_air']},
-                {player_stats['movement']['time_high_air']},
-                {player_stats['movement']['time_powerslide']},
-                {player_stats['movement']['count_powerslide']},
-                {player_stats['movement']['avg_powerslide_duration']},
-                {player_stats['movement']['avg_speed_percentage']},
-                {player_stats['movement']['percent_slow_speed']},
-                {player_stats['movement']['percent_boost_speed']},
-                {player_stats['movement']['percent_supersonic_speed']},
-                {player_stats['movement']['percent_ground']},
-                {player_stats['movement']['percent_low_air']},
-                {player_stats['movement']['percent_high_air']}
+                {player_id},
+                {player_stats['movement'].get('avg_speed', 'NULL')},
+                {player_stats['movement'].get('total_distance', 'NULL')},
+                {player_stats['movement'].get('time_supersonic_speed', 'NULL')},
+                {player_stats['movement'].get('time_boost_speed', 'NULL')},
+                {player_stats['movement'].get('time_slow_speed', 'NULL')},
+                {player_stats['movement'].get('time_ground', 'NULL')},
+                {player_stats['movement'].get('time_low_air', 'NULL')},
+                {player_stats['movement'].get('time_high_air', 'NULL')},
+                {player_stats['movement'].get('time_powerslide', 'NULL')},
+                {player_stats['movement'].get('count_powerslide', 'NULL')},
+                {player_stats['movement'].get('avg_powerslide_duration', 'NULL')},
+                {player_stats['movement'].get('avg_speed_percentage', 'NULL')},
+                {player_stats['movement'].get('percent_slow_speed', 'NULL')},
+                {player_stats['movement'].get('percent_boost_speed', 'NULL')},
+                {player_stats['movement'].get('percent_supersonic_speed', 'NULL')},
+                {player_stats['movement'].get('percent_ground', 'NULL')},
+                {player_stats['movement'].get('percent_low_air', 'NULL')},
+                {player_stats['movement'].get('percent_high_air', 'NULL')}
             );
         """)
 
         player_positioning_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_positioning_stats (player_id, replay_id, avg_distance_to_ball, 
+            INSERT INTO ballchasing_data.player_positioning_stats (replay_id, player_id, avg_distance_to_ball, 
                 avg_distance_to_ball_possession, avg_distance_to_ball_no_possession, avg_distance_to_mates, 
                 time_defensive_third, time_neutral_third, time_offensive_third, time_defensive_half, 
                 time_offensive_half, time_behind_ball, time_infront_ball, time_most_back, time_most_forward, 
@@ -503,45 +504,45 @@ class BallchasingSeeder:
                 percent_offensive_half, percent_behind_ball, percent_infront_ball, percent_most_back, 
                 percent_most_forward, percent_closest_to_ball, percent_farthest_from_ball) 
             VALUES (
-                '{player_id}',
                 '{replay_id}',
-                {player_stats['positioning']['avg_distance_to_ball']},
-                {player_stats['positioning']['avg_distance_to_ball_possession']},
-                {player_stats['positioning']['avg_distance_to_ball_no_possession']},
-                {player_stats['positioning'].get('avg_distance_to_mates', -1)},
-                {player_stats['positioning']['time_defensive_third']},
-                {player_stats['positioning']['time_neutral_third']},
-                {player_stats['positioning']['time_offensive_third']},
-                {player_stats['positioning']['time_defensive_half']},
-                {player_stats['positioning']['time_offensive_half']},
-                {player_stats['positioning']['time_behind_ball']},
-                {player_stats['positioning']['time_infront_ball']},
-                {player_stats['positioning']['time_most_back']},
-                {player_stats['positioning']['time_most_forward']},
+                {player_id},
+                {player_stats['positioning'].get('avg_distance_to_ball', 'NULL')},
+                {player_stats['positioning'].get('avg_distance_to_ball_possession', 'NULL')},
+                {player_stats['positioning'].get('avg_distance_to_ball_no_possession', 'NULL')},
+                {player_stats['positioning'].get('avg_distance_to_mates', 'NULL')},
+                {player_stats['positioning'].get('time_defensive_third', 'NULL')},
+                {player_stats['positioning'].get('time_neutral_third', 'NULL')},
+                {player_stats['positioning'].get('time_offensive_third', 'NULL')},
+                {player_stats['positioning'].get('time_defensive_half', 'NULL')},
+                {player_stats['positioning'].get('time_offensive_half', 'NULL')},
+                {player_stats['positioning'].get('time_behind_ball', 'NULL')},
+                {player_stats['positioning'].get('time_infront_ball', 'NULL')},
+                {player_stats['positioning'].get('time_most_back', 'NULL')},
+                {player_stats['positioning'].get('time_most_forward', 'NULL')},
                 {player_stats['positioning'].get('goals_against_while_last_defender', -1)},
-                {player_stats['positioning']['time_closest_to_ball']},
-                {player_stats['positioning']['time_farthest_from_ball']},
-                {player_stats['positioning']['percent_defensive_third']},
-                {player_stats['positioning']['percent_neutral_third']},
-                {player_stats['positioning']['percent_offensive_third']},
-                {player_stats['positioning']['percent_defensive_half']},
-                {player_stats['positioning']['percent_offensive_half']},
-                {player_stats['positioning']['percent_behind_ball']},
-                {player_stats['positioning']['percent_infront_ball']},
-                {player_stats['positioning']['percent_most_back']},
-                {player_stats['positioning']['percent_most_forward']},
-                {player_stats['positioning']['percent_closest_to_ball']},
-                {player_stats['positioning']['percent_farthest_from_ball']}
+                {player_stats['positioning'].get('time_closest_to_ball', 'NULL')},
+                {player_stats['positioning'].get('time_farthest_from_ball', 'NULL')},
+                {player_stats['positioning'].get('percent_defensive_third', 'NULL')},
+                {player_stats['positioning'].get('percent_neutral_third', 'NULL')},
+                {player_stats['positioning'].get('percent_offensive_third', 'NULL')},
+                {player_stats['positioning'].get('percent_defensive_half', 'NULL')},
+                {player_stats['positioning'].get('percent_offensive_half', 'NULL')},
+                {player_stats['positioning'].get('percent_behind_ball', 'NULL')},
+                {player_stats['positioning'].get('percent_infront_ball', 'NULL')},
+                {player_stats['positioning'].get('percent_most_back', 'NULL')},
+                {player_stats['positioning'].get('percent_most_forward', 'NULL')},
+                {player_stats['positioning'].get('percent_closest_to_ball', 'NULL')},
+                {player_stats['positioning'].get('percent_farthest_from_ball', 'NULL')}
             );
         """)
 
         player_demo_stats_sql.append(f"""
-            INSERT INTO ballchasing_data.player_demo_stats (player_id, replay_id, inflicted, taken) 
+            INSERT INTO ballchasing_data.player_demo_stats (replay_id, player_id, inflicted, taken) 
             VALUES (
-                '{player_id}',
                 '{replay_id}',
-                {player_stats['demo']['inflicted']},
-                {player_stats['demo']['taken']}
+                {player_id},
+                {player_stats['demo'].get('inflicted', 'NULL')},
+                {player_stats['demo'].get('taken', 'NULL')}
             );
         """)
 
