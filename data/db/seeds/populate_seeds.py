@@ -8,7 +8,7 @@ import pytz
 
 load_dotenv(dotenv_path=Path(__file__).parent.parent.parent.parent / ".env")
 
-class BallchasingSeeder:
+class RocketOddsSeeder:
 
     def __init__(self, api_key):
         self.api_key = api_key
@@ -568,7 +568,7 @@ class BallchasingSeeder:
 if __name__ == '__main__':
     
     BALLCHASING_API_KEY = os.getenv("BALLCHASING_API_KEY")
-    seeder = BallchasingSeeder(BALLCHASING_API_KEY)
+    seeder = RocketOddsSeeder(BALLCHASING_API_KEY)
     
     # Clear all seed files before starting
     seed_files = [
