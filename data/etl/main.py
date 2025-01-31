@@ -3,6 +3,8 @@
 ###
 
 import sys
+import yaml
+from pathlib import Path
 
 # Extract imports
 from extract import fetch_replays
@@ -14,53 +16,64 @@ from transform import compress_replays_for_s3
 # Load imports
 from load import load_to_postgres, load_to_s3
 
+def load_config():
+    with open(Path(__file__).parent.parent.parent / "config.yaml", "r") as file:
+        return yaml.safe_load(file)
+    
+
 def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> None:
     ###
     # Step 1: Extract Data from Ballchasing API
     ###
-    playlists = [ 
-        "unranked-duels", "unranked-doubles", "unranked-standard", "unranked-chaos",
-        "ranked-duels", "ranked-doubles", "ranked-standard"
-    ]
-
-    ranks = [
-        "unranked",
-        "bronze-1", "bronze-2", "bronze-3",
-        "silver-1", "silver-2", "silver-3",
-        "gold-1", "gold-2", "gold-3",
-        "platinum-1", "platinum-2", "platinum-3",
-        "diamond-1", "diamond-2", "diamond-3",
-        "champion-1", "champion-2", "champion-3",
-        "grand-champion-1", "grand-champion-2", "grand-champion-3",
-        "supersonic-legend"
-    ]
-
+    
+    config = load_config()
+    playlists = config["ballchasing"]["playlists"]
+    ranks = config["ballchasing"]["ranks"]
     replay_date = datetime.today()
 
     total_replays = 0
-    for days_back in range(days_back):
-        replay_date = datetime.today() - timedelta(days=days_back)
+    for day in range(days_back + 1):
+        replay_date = datetime.today() - timedelta(days=day)
+        daily_replays = []
 
-        for playlist in playlists:    
-            ranks_list = ["unranked"] if playlist.startswith("unranked") else ranks
+        for playlist in playlists:
+            ranks_list = ranks["unranked"] if playlist.startswith("unranked") else ranks["ranked"]
 
             for rank in ranks_list:
                 replays = fetch_replays(replay_date, playlist, rank)
                 total_replays += len(replays)
-                
-                ###
-                # Step 2: Transform Data for Postgres
-                ###
-                # TODO: any proper transformations needed to load into postgres
 
-                ###
-                # Step 3: Load Data into Postgres and S3
-                ###
-                if upload_to_s3:
-                    compressed_replays = compress_replays_for_s3(replays)
-                    load_to_s3(compressed_replays, replay_date, playlist, rank)
-    
-    print(f"Finished fetching: fetched {total_replays} replays\n")
+                print(f"Fetched {len(replays)} replays for {playlist} - {rank} on {replay_date.strftime('%Y-%m-%d')}")
+                
+                if replays:
+                    if upload_to_postgres:
+                        daily_replays.extend(replays)
+
+                    if upload_to_s3:
+                        ###
+                        # Step 2: Transform for S3
+                        ###
+                        compressed_replays = compress_replays_for_s3(replays)
+
+                        ###
+                        # Step 3: Load Data into S3
+                        ###
+                        load_to_s3(compressed_replays, replay_date, playlist, rank)
+
+        if upload_to_postgres:
+            ###
+            # Step 2: Transform for Postgres
+            ###
+            # TODO: any proper transformations needed to load into postgres
+
+            ###
+            # Step 3: Load Data into Postgres
+            ###
+            load_to_postgres(daily_replays)
+
+        print(f"Finished fetching {total_replays} replays for {'today' if day == 0 else {'day back' if day == 1 else 'days back'}} ({replay_date.strftime('%Y-%m-%d')})\n")
+
+    print(f"Finished fetching {total_replays} replays for the past {days_back} {'days' if days_back > 1 else 'day'}")
 
 
 if __name__ == "__main__":
@@ -84,7 +97,7 @@ if __name__ == "__main__":
     if "--s3" in sys.argv:
         upload_to_s3 = True
     
-    print(f"Running pipeline for {days_back} {'days' if days_back > 1 else 'day'} back")
+    print(f"Running pipeline for the past {days_back} {'days' if days_back > 1 else 'day'}")
     if upload_to_postgres and upload_to_s3:
         print("Uploading to Postgres and S3\n")
     elif upload_to_postgres:
