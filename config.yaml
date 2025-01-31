@@ -1,6 +1,6 @@
 ballchasing:
   base_url: https://ballchasing.com/api
-  timeout: 10
+  timeout: 20
   playlists:
     - "unranked-duels"
     - "unranked-doubles"
