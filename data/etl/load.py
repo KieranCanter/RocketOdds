@@ -1,14 +1,14 @@
 import os
 from dotenv import load_dotenv
 from pathlib import Path
-import psycopg2
+import psycopg
 import boto3
 
 load_dotenv(dotenv_path=Path(__file__).parent.parent.parent / ".env")
 
 def load_to_postgres():
 
-    conn = psycopg2.connect(
+    conn = psycopg.connect(
         host=os.getenv("DB_HOST"),
         database=os.getenv("DB_NAME"),
         user=os.getenv("DB_USER"),
@@ -29,7 +29,7 @@ def load_to_s3(data, date, playlist, rank):
 
     filepath = f"{date.strftime('%Y')}/{date.strftime('%m')}/{date.strftime('%d')}/{playlist}/{date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json"
 
-    response = s3_client.put_object(Bucket="rocketodds-data", Key=filepath, Body=data, StorageClass="DEEP_ARCHIVE")
+    response = s3_client.put_object(Bucket="rocketodds-data", Key=filepath, Body=data, StorageClass="STANDARD_IA")
 
     if response["ResponseMetadata"]["HTTPStatusCode"] == 200:
         print(f"Successfully uploaded {filepath} to S3 with ETag: {response['ETag']}\n")
