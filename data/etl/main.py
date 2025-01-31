@@ -7,7 +7,7 @@ import yaml
 from pathlib import Path
 
 # Extract imports
-from extract import fetch_replays
+from extract import fetch_replay_ids, fetch_replays_by_id
 from datetime import datetime, timedelta
 
 # Transform imports
@@ -40,25 +40,30 @@ def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> No
             ranks_list = ranks["unranked"] if playlist.startswith("unranked") else ranks["ranked"]
 
             for rank in ranks_list:
-                replays = fetch_replays(replay_date, playlist, rank)
-                total_replays += len(replays)
+                replay_ids = fetch_replay_ids(replay_date, playlist, rank)
+                total_replays += len(replay_ids)
 
-                print(f"Fetched {len(replays)} replays for {playlist} - {rank} on {replay_date.strftime('%Y-%m-%d')}")
+                print(f"Fetched {len(replay_ids)} replays for {playlist} - {rank} on {replay_date.strftime('%Y-%m-%d')}")
                 
-                if replays:
-                    if upload_to_postgres:
-                        daily_replays.extend(replays)
+                # Get in-depth replay data for each replay ID and add to daily_replays
+                if replay_ids:
+                    filtered_replays = fetch_replays_by_id(replay_ids)
+                    print(filtered_replays)
 
-                    if upload_to_s3:
-                        ###
-                        # Step 2: Transform for S3
-                        ###
-                        compressed_replays = compress_replays_for_s3(replays)
+                    if filtered_replays:
+                        if upload_to_postgres:
+                            daily_replays.extend(filtered_replays)
 
-                        ###
-                        # Step 3: Load Data into S3
-                        ###
-                        load_to_s3(compressed_replays, replay_date, playlist, rank)
+                        if upload_to_s3:
+                            ###
+                            # Step 2: Transform for S3
+                            ###
+                            compressed_replays = compress_replays_for_s3(filtered_replays)
+
+                            ###
+                            # Step 3: Load Data into S3
+                            ###
+                            load_to_s3(compressed_replays, replay_date, playlist, rank)
 
         if upload_to_postgres:
             ###

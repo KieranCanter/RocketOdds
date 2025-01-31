@@ -17,8 +17,8 @@ BASE_URL = config["ballchasing"]["base_url"]
 TIMEOUT = config["ballchasing"]["timeout"]
 BALLCHASING_API_KEY = os.getenv("BALLCHASING_API_KEY")
 
-def fetch_replays(replay_date, playlist, rank):
-    print(f"Fetching replays for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json...")
+def fetch_replay_ids(replay_date, playlist, rank):
+    print(f"Fetching replay IDs for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}...")
 
     formatted_date_start = replay_date.strftime("%Y-%m-%dT00:00:00Z")
     formatted_date_end = replay_date.strftime("%Y-%m-%dT23:59:59Z")
@@ -36,7 +36,7 @@ def fetch_replays(replay_date, playlist, rank):
         "sort-dir": "desc"
     }
 
-    all_replays = []
+    daily_replay_ids = []
     hourly_request_count = 0
     last_request_time = time.time()
     
@@ -61,12 +61,14 @@ def fetch_replays(replay_date, playlist, rank):
         last_request_time = time.time()
         
         if response.status_code == 200:
-            data = response.json()
-            replays = data.get('list', [])  # List of replays on the current page
-            all_replays.extend(replays)
+            replay_data = response.json()
+            replays = replay_data.get('list', [])  # List of replays on the current page
+            for replay in replays:
+                id = replay.get('id')
+                daily_replay_ids.append(id)
             
             # Check if there is a "next" key for pagination
-            url = data.get('next', None)  # If there is a "next" key, update the URL to the next page
+            url = replay_data.get('next', None)  # If there is a "next" key, update the URL to the next page
             if not url:
                 break
 
@@ -75,13 +77,62 @@ def fetch_replays(replay_date, playlist, rank):
 
         elif response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
-            print(f"Rate limit exceeded. Waiting {retry_after} seconds...")
+            print(f"Rate limit exceeded. Waiting {retry_after} seconds...\n")
             time.sleep(retry_after)
             # Dont break, retry same request
 
         else:
-            print(f"Error fetching replays for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.\
-                Status Code: {response.status_code}")
+            print(f"Error fetching replay IDs for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.\
+                Status Code: {response.status_code}\n")
             break
 
-    return all_replays
+    return daily_replay_ids
+
+def fetch_replays_by_id(replay_ids):
+    print(f"Fetching {len(replay_ids)} replays...")
+
+    daily_replays = []
+    headers = {"Authorization": BALLCHASING_API_KEY}
+    hourly_request_count = 0
+    last_request_time = time.time()
+    
+    for replay_id in replay_ids: # Max 1000 calls/hr
+        # Check hourly rate limit
+        if hourly_request_count >= 1000:
+            wait_time = 3600 - (time.time() - last_request_time)
+            if wait_time > 0:
+                print(f"Hourly rate limit reached. Waiting {wait_time:.2f} seconds...")
+                time.sleep(wait_time)
+            hourly_request_count = 0
+            last_request_time = time.time()
+
+        # Max 2 calls/sec
+        elapsed = time.time() - last_request_time
+        if elapsed < 0.5:
+            time.sleep(0.5 - elapsed)
+
+        # Make the request to the current URL
+        url = f"{BASE_URL}/replays/{replay_id}"
+        response = requests.get(url, headers=headers, timeout=TIMEOUT)
+        hourly_request_count += 1
+        last_request_time = time.time()
+        
+        if response.status_code == 200:
+            replay_data = response.json()
+            daily_replays.append(replay_data)
+
+            # Sleep to stay within the 2 call/sec rate limit
+            time.sleep(0.5)  # Adjust this sleep time based on your API rate limit
+
+        elif response.status_code == 429:
+            retry_after = int(response.headers.get('Retry-After', 3600))
+            print(f"Rate limit exceeded. Waiting {retry_after} seconds...\n")
+            time.sleep(retry_after)
+            # Dont break, retry same request
+
+        else:
+            print(f"Error fetching replays.\
+                Status Code: {response.status_code}\n")
+            break
+
+    return daily_replays
