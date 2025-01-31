@@ -72,16 +72,16 @@ def fetch_replays(replay_date, playlist, rank):
 
             # Sleep to stay within the 2 call/sec rate limit
             time.sleep(0.5)  # Adjust this sleep time based on your API rate limit
+
         elif response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
             print(f"Rate limit exceeded. Waiting {retry_after} seconds...")
             time.sleep(retry_after)
             # Dont break, retry same request
+
         else:
             print(f"Error fetching replays for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.\
                 Status Code: {response.status_code}")
             break
-    
-    print(f"Fetched {len(all_replays)} replays")
 
     return all_replays
