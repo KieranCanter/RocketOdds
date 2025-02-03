@@ -18,8 +18,6 @@ TIMEOUT = config["ballchasing"]["timeout"]
 BALLCHASING_API_KEY = os.getenv("BALLCHASING_API_KEY")
 
 def fetch_replay_ids(replay_date, playlist, rank):
-    print(f"Fetching replay IDs for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}...")
-
     formatted_date_start = replay_date.strftime("%Y-%m-%dT00:00:00Z")
     formatted_date_end = replay_date.strftime("%Y-%m-%dT23:59:59Z")
 
@@ -82,15 +80,12 @@ def fetch_replay_ids(replay_date, playlist, rank):
             # Dont break, retry same request
 
         else:
-            print(f"Error fetching replay IDs for {replay_date.strftime('%Y-%m-%d')}_{playlist}_{rank}.\
-                Status Code: {response.status_code}\n")
+            print(f"Error fetching replay IDs for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}. Status Code: {response.status_code}\n")
             break
 
     return daily_replay_ids
 
 def fetch_replays_by_id(replay_ids):
-    print(f"Fetching {len(replay_ids)} replays...")
-
     daily_replays = []
     headers = {"Authorization": BALLCHASING_API_KEY}
     hourly_request_count = 0
@@ -131,8 +126,7 @@ def fetch_replays_by_id(replay_ids):
             # Dont break, retry same request
 
         else:
-            print(f"Error fetching replays.\
-                Status Code: {response.status_code}\n")
+            print(f"Error fetching replays. Status Code: {response.status_code}\n")
             break
 
     return daily_replays
