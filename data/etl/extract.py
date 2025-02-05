@@ -17,7 +17,7 @@ BASE_URL = config["ballchasing"]["base_url"]
 TIMEOUT = config["ballchasing"]["timeout"]
 BALLCHASING_API_KEY = os.getenv("BALLCHASING_API_KEY")
 
-def fetch_replay_ids(replay_date, playlist, rank):
+def fetch_replay_ids(replay_date, playlist, rank, calls_per_second=2, calls_per_hour=500):
     formatted_date_start = replay_date.strftime("%Y-%m-%dT00:00:00Z")
     formatted_date_end = replay_date.strftime("%Y-%m-%dT23:59:59Z")
 
@@ -38,9 +38,9 @@ def fetch_replay_ids(replay_date, playlist, rank):
     hourly_request_count = 0
     last_request_time = time.time()
     
-    while True: # Max 500 calls/hr
+    while True:
         # Check hourly rate limit
-        if hourly_request_count >= 500:
+        if hourly_request_count >= calls_per_hour:
             wait_time = 3600 - (time.time() - last_request_time)
             if wait_time > 0:
                 print(f"Hourly rate limit reached. Waiting {wait_time:.2f} seconds...")
@@ -48,10 +48,11 @@ def fetch_replay_ids(replay_date, playlist, rank):
             hourly_request_count = 0
             last_request_time = time.time()
 
-        # Max 2 calls/sec
+        # Max calls/sec
+        time_between_calls = 1 / calls_per_second
         elapsed = time.time() - last_request_time
-        if elapsed < 0.5:
-            time.sleep(0.5 - elapsed)
+        if elapsed < time_between_calls:
+            time.sleep(time_between_calls - elapsed)
 
         # Make the request to the current URL
         response = requests.get(url, headers=headers, params=params, timeout=TIMEOUT)
@@ -71,7 +72,7 @@ def fetch_replay_ids(replay_date, playlist, rank):
                 break
 
             # Sleep to stay within the 2 call/sec rate limit
-            time.sleep(0.5)  # Adjust this sleep time based on your API rate limit
+            time.sleep(time_between_calls)
 
         elif response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
@@ -85,15 +86,15 @@ def fetch_replay_ids(replay_date, playlist, rank):
 
     return daily_replay_ids
 
-def fetch_replays_by_id(replay_ids):
+def fetch_replays_by_id(replay_ids, calls_per_second=2, calls_per_hour=500):
     daily_replays = []
     headers = {"Authorization": BALLCHASING_API_KEY}
     hourly_request_count = 0
     last_request_time = time.time()
     
-    for replay_id in replay_ids: # Max 1000 calls/hr
+    for replay_id in replay_ids:
         # Check hourly rate limit
-        if hourly_request_count >= 1000:
+        if hourly_request_count >= calls_per_hour:
             wait_time = 3600 - (time.time() - last_request_time)
             if wait_time > 0:
                 print(f"Hourly rate limit reached. Waiting {wait_time:.2f} seconds...")
@@ -101,10 +102,11 @@ def fetch_replays_by_id(replay_ids):
             hourly_request_count = 0
             last_request_time = time.time()
 
-        # Max 2 calls/sec
+        # Max calls/sec
+        time_between_calls = 1 / calls_per_second
         elapsed = time.time() - last_request_time
-        if elapsed < 0.5:
-            time.sleep(0.5 - elapsed)
+        if elapsed < time_between_calls:
+            time.sleep(time_between_calls - elapsed)
 
         # Make the request to the current URL
         url = f"{BASE_URL}/replays/{replay_id}"
@@ -116,8 +118,8 @@ def fetch_replays_by_id(replay_ids):
             replay_data = response.json()
             daily_replays.append(replay_data)
 
-            # Sleep to stay within the 2 call/sec rate limit
-            time.sleep(0.5)  # Adjust this sleep time based on your API rate limit
+            # Sleep to stay within the rate limit
+            time.sleep(time_between_calls)
 
         elif response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
