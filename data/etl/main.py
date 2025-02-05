@@ -14,7 +14,7 @@ from extract import fetch_replay_ids, fetch_replays_by_id
 from datetime import datetime, timedelta
 
 # Transform imports
-from transform import compress_replays_for_s3
+#from transform import compress_replays_for_s3
 
 # Load imports
 from load import load_to_postgres, load_to_s3
@@ -51,7 +51,7 @@ def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> No
                     TextColumn("[progress.description]{task.description}"),
                 ) as progress:
                     progress.add_task(description=fetch_string, total=None)
-                    replay_ids = fetch_replay_ids(replay_date, playlist, rank)
+                    replay_ids = fetch_replay_ids(replay_date, playlist, rank, calls_per_second=2, calls_per_hour=500)
                 
                 total_replays += len(replay_ids)
                 print(f"Fetched {len(replay_ids)} replay IDs for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}")
@@ -67,7 +67,7 @@ def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> No
                         TextColumn("[progress.description]{task.description}"),
                     ) as progress:
                         progress.add_task(description=fetch_string, total=None)
-                        filtered_replays = fetch_replays_by_id(replay_ids)
+                        filtered_replays = fetch_replays_by_id(replay_ids, calls_per_second=2, calls_per_hour=500)
 
                     if filtered_replays:
                         print(f"Fetched {len(filtered_replays)} replays for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n")
