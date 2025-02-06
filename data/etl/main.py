@@ -71,8 +71,7 @@ def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> No
 
                     if filtered_replays:
                         print(f"Fetched {len(filtered_replays)} replays for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n")
-                        if upload_to_postgres or upload_to_s3:
-                            daily_replays.extend(filtered_replays)
+                        daily_replays.extend(filtered_replays)
 
         if upload_to_postgres or upload_to_s3:
             ###
