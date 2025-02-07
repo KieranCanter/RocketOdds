@@ -86,7 +86,7 @@ def pipeline(days_back: int, upload_to_postgres: bool, upload_to_s3: bool) -> No
 
         print(f"Finished fetching {total_replays} replays for {'today' if day == 0 else {'day back' if day == 1 else 'days back'}} ({replay_date.strftime('%Y-%m-%d')})\n")
     
-    with open("test.json", "w") as file:
+    with open("test_data.json", "w") as file:
         json.dump(daily_replays, file)
 
     print(f"Finished fetching {total_replays} replays for the past {days_back} {'days' if days_back > 1 else 'day'}")
