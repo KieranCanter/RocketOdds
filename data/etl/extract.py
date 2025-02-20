@@ -81,8 +81,7 @@ def fetch_replay_ids(replay_date, playlist, rank, calls_per_second=2, calls_per_
             # Dont break, retry same request
 
         else:
-            print(f"Error fetching replay IDs for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}. Status Code: {response.status_code}\n")
-            break
+            raise Exception(f"Error fetching replay IDs for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}. Status Code: {response.status_code}\n")
 
     return daily_replay_ids
 
@@ -128,7 +127,6 @@ def fetch_replays_by_id(replay_ids, calls_per_second=2, calls_per_hour=500):
             # Dont break, retry same request
 
         else:
-            print(f"Error fetching replays. Status Code: {response.status_code}\n")
-            break
+            raise Exception(f"Error fetching replay {replay_id}. Status Code: {response.status_code}\n")
 
     return daily_replays
