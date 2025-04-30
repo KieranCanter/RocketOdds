@@ -1,15 +1,9 @@
-CREATE SCHEMA IF NOT EXISTS ballchasing_data;
+CREATE SCHEMA IF NOT EXISTS rocketodds_data;
 
-CREATE TABLE IF NOT EXISTS ballchasing_data.uploaders (
-    steam_id VARCHAR(17) PRIMARY KEY,
-    uploader_name TEXT NOT NULL,
-    profile_url TEXT
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.replays (
+CREATE TABLE IF NOT EXISTS rocketodds_data.replays (
     replay_id UUID PRIMARY KEY,
     created TIMESTAMP WITH TIME ZONE NOT NULL,
-    uploader_id VARCHAR(17) REFERENCES ballchasing_data.uploaders(steam_id),
+    uploader_id VARCHAR(17),
     rocket_league_id TEXT,
     match_guid TEXT UNIQUE,
     title TEXT,
@@ -25,27 +19,12 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.replays (
     visibility TEXT CHECK (visibility IN ('public', 'unlisted', 'private'))
 );
 
-CREATE TABLE IF NOT EXISTS ballchasing_data.teams (
-    replay_id UUID REFERENCES ballchasing_data.replays(replay_id) ON DELETE CASCADE,
-    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    team_name TEXT,
-    PRIMARY KEY (replay_id, team_color)
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.team_ball_stats (
+CREATE TABLE IF NOT EXISTS rocketodds_data.team_stats (
     replay_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES ballchasing_data.teams(replay_id, team_color) ON DELETE CASCADE,
     possession_time REAL,
-    time_in_side REAL
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.team_core_stats (
-    replay_id UUID NOT NULL,
-    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES ballchasing_data.teams(replay_id, team_color) ON DELETE CASCADE,
+    time_in_side REAL,
     shots SMALLINT,
     shots_against SMALLINT,
     goals SMALLINT,
@@ -53,43 +32,29 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.team_core_stats (
     saves SMALLINT,
     assists SMALLINT,
     score INT,
-    shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100)
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.team_boost_stats (
-    replay_id UUID NOT NULL,
-    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES ballchasing_data.teams(replay_id, team_color) ON DELETE CASCADE,
+    shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100),
     bpm SMALLINT,
     bcpm REAL,
     avg_amount REAL,
-    amount_collected INT,
-    amount_stolen INT,
-    amount_collected_big INT,
-    amount_stolen_big INT,
-    amount_collected_small INT,
-    amount_stolen_small INT,
-    count_collected_big SMALLINT,
-    count_stolen_big SMALLINT,
-    count_collected_small SMALLINT,
-    count_stolen_small SMALLINT,
-    amount_overfill INT,
-    amount_overfill_stolen INT,
-    amount_used_while_supersonic INT,
-    time_zero_boost REAL,
+    boost_amount_collected INT,
+    boost_amount_stolen INT,
+    boost_amount_collected_big INT,
+    boost_amount_stolen_big INT,
+    boost_amount_collected_small INT,
+    boost_amount_stolen_small INT,
+    boost_count_collected_big SMALLINT,
+    boost_count_stolen_big SMALLINT,
+    boost_count_collected_small SMALLINT,
+    boost_count_stolen_small SMALLINT,
+    boost_amount_overfill INT,
+    boost_amount_overfill_stolen INT,
+    boost_amount_used_while_supersonic INT,
+    boost_time_zero_boost REAL,
     time_full_boost REAL,
     time_boost_0_25 REAL,
     time_boost_25_50 REAL,
     time_boost_50_75 REAL,
-    time_boost_75_100 REAL
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.team_movement_stats (
-    replay_id UUID NOT NULL,
-    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES ballchasing_data.teams(replay_id, team_color) ON DELETE CASCADE,
+    time_boost_75_100 REAL,
     total_distance INT,
     time_supersonic_speed REAL,
     time_boost_speed REAL,
@@ -98,33 +63,19 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.team_movement_stats (
     time_low_air REAL,
     time_high_air REAL,
     time_powerslide REAL,
-    count_powerslide SMALLINT
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.team_positioning_stats (
-    replay_id UUID NOT NULL,
-    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES ballchasing_data.teams(replay_id, team_color) ON DELETE CASCADE,
+    count_powerslide SMALLINT,
     time_defensive_third REAL,
     time_neutral_third REAL,
     time_offensive_third REAL,
     time_defensive_half REAL,
     time_offensive_half REAL,
     time_behind_ball REAL,
-    time_infront_ball REAL
+    time_infront_ball REAL,
+    demos_inflicted SMALLINT,
+    demos_taken SMALLINT
 );
 
-CREATE TABLE IF NOT EXISTS ballchasing_data.team_demo_stats (
-    replay_id UUID NOT NULL,
-    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    PRIMARY KEY (replay_id, team_color),
-    FOREIGN KEY (replay_id, team_color) REFERENCES ballchasing_data.teams(replay_id, team_color) ON DELETE CASCADE,
-    inflicted SMALLINT,
-    taken SMALLINT
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.players (
+CREATE TABLE IF NOT EXISTS rocketodds_data.players (
     player_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     platform_id TEXT,
     platform TEXT,
@@ -132,9 +83,9 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.players (
     UNIQUE (platform_id, platform)
 );
 
-CREATE TABLE IF NOT EXISTS ballchasing_data.replay_players (
-    replay_id UUID REFERENCES ballchasing_data.replays(replay_id) ON DELETE CASCADE,
-    player_id UUID REFERENCES ballchasing_data.players(player_id) ON DELETE CASCADE,
+CREATE TABLE IF NOT EXISTS rocketodds_data.replay_players (
+    replay_id UUID REFERENCES rocketodds_data.replays(replay_id) ON DELETE CASCADE,
+    player_id UUID REFERENCES rocketodds_data.players(player_id) ON DELETE CASCADE,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, player_id, team_color),
     rank_id TEXT,
@@ -147,12 +98,12 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.replay_players (
     end_time REAL
 );
 
-CREATE TABLE IF NOT EXISTS ballchasing_data.player_settings (
+CREATE TABLE IF NOT EXISTS rocketodds_data.player_stats (
     replay_id UUID NOT NULL,
     player_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, player_id, team_color),
-    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES ballchasing_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES rocketodds_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
     fov SMALLINT,
     height SMALLINT,
     pitch SMALLINT,
@@ -160,15 +111,7 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_settings (
     stiffness REAL,
     swivel_speed REAL,
     transition_speed REAL,
-    steering_sensitivity REAL
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.player_core_stats (
-    replay_id UUID NOT NULL,
-    player_id UUID NOT NULL,
-    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    PRIMARY KEY (replay_id, player_id, team_color),
-    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES ballchasing_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
+    steering_sensitivity REAL,
     shots SMALLINT,
     shots_against SMALLINT,
     goals SMALLINT,
@@ -176,33 +119,25 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_core_stats (
     saves SMALLINT,
     assists SMALLINT,
     score INT,
-    shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100)
-);
-
-CREATE TABLE IF NOT EXISTS ballchasing_data.player_boost_stats (
-    replay_id UUID NOT NULL,
-    player_id UUID NOT NULL,
-    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
-    PRIMARY KEY (replay_id, player_id, team_color),
-    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES ballchasing_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
+    shooting_percentage SMALLINT CHECK (shooting_percentage BETWEEN 0 AND 100),
     bpm SMALLINT,
     bcpm REAL,
     avg_amount REAL,
-    amount_collected INT,
-    amount_stolen INT,
-    amount_collected_big INT,
-    amount_stolen_big INT,
-    amount_collected_small INT,
-    amount_stolen_small INT,
-    count_collected_big SMALLINT,
-    count_stolen_big SMALLINT,
-    count_collected_small SMALLINT,
-    count_stolen_small SMALLINT,
-    amount_overfill INT,
-    amount_overfill_stolen INT,
-    amount_used_while_supersonic INT,
+    boost_amount_collected INT,
+    boost_amount_stolen INT,
+    boost_amount_collected_big INT,
+    boost_amount_stolen_big INT,
+    boost_amount_collected_small INT,
+    boost_amount_stolen_small INT,
+    boost_count_collected_big SMALLINT,
+    boost_count_stolen_big SMALLINT,
+    boost_count_collected_small SMALLINT,
+    boost_count_stolen_small SMALLINT,
+    boost_amount_overfill INT,
+    boost_amount_overfill_stolen INT,
+    boost_amount_used_while_supersonic INT,
     time_zero_boost REAL,
-    percent_zero_boost REAL CHECK (percent_zero_boost BETWEEN 0 AND 100),
+    percent_zero_boost REAL CHECK (boost_percent_zero_boost BETWEEN 0 AND 100),
     time_full_boost REAL,
     percent_full_boost REAL CHECK (percent_full_boost BETWEEN 0 AND 100),
     time_boost_0_25 REAL,
@@ -215,12 +150,28 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_boost_stats (
     percent_boost_75_100 REAL CHECK (percent_boost_75_100 BETWEEN 0 AND 100)
 );
 
-CREATE TABLE IF NOT EXISTS ballchasing_data.player_movement_stats (
+CREATE TABLE IF NOT EXISTS rocketodds_data.player_core_stats (
     replay_id UUID NOT NULL,
     player_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, player_id, team_color),
-    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES ballchasing_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES rocketodds_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
+);
+
+CREATE TABLE IF NOT EXISTS rocketodds_data.player_boost_stats (
+    replay_id UUID NOT NULL,
+    player_id UUID NOT NULL,
+    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
+    PRIMARY KEY (replay_id, player_id, team_color),
+    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES rocketodds_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
+);
+
+CREATE TABLE IF NOT EXISTS rocketodds_data.player_movement_stats (
+    replay_id UUID NOT NULL,
+    player_id UUID NOT NULL,
+    team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
+    PRIMARY KEY (replay_id, player_id, team_color),
+    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES rocketodds_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
     avg_speed INT,
     total_distance INT,
     time_supersonic_speed REAL,
@@ -241,12 +192,12 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_movement_stats (
     percent_high_air REAL CHECK (percent_high_air BETWEEN 0 AND 100)
 );
 
-CREATE TABLE IF NOT EXISTS ballchasing_data.player_positioning_stats (
+CREATE TABLE IF NOT EXISTS rocketodds_data.player_positioning_stats (
     replay_id UUID NOT NULL,
     player_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, player_id, team_color),
-    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES ballchasing_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES rocketodds_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
     avg_distance_to_ball INT,
     avg_distance_to_ball_possession INT,
     avg_distance_to_ball_no_possession INT,
@@ -276,12 +227,12 @@ CREATE TABLE IF NOT EXISTS ballchasing_data.player_positioning_stats (
     percent_farthest_from_ball REAL CHECK (percent_farthest_from_ball BETWEEN 0 AND 100)
 );
 
-CREATE TABLE IF NOT EXISTS ballchasing_data.player_demo_stats (
+CREATE TABLE IF NOT EXISTS rocketodds_data.player_demo_stats (
     replay_id UUID NOT NULL,
     player_id UUID NOT NULL,
     team_color TEXT NOT NULL CHECK (team_color IN ('blue', 'orange')),
     PRIMARY KEY (replay_id, player_id, team_color),
-    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES ballchasing_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
+    FOREIGN KEY (replay_id, player_id, team_color) REFERENCES rocketodds_data.replay_players(replay_id, player_id, team_color) ON DELETE CASCADE,
     inflicted SMALLINT,
     taken SMALLINT
 );
