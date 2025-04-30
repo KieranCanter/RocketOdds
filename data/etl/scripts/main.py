@@ -22,18 +22,19 @@ from datetime import datetime, timedelta
 # Load imports
 from .load import load_to_postgres, load_to_s3
 
+console = Console()
+
 def load_config():
     with open(Path(__file__).parent.parent.parent.parent / "config.yaml", "r") as file:
         return yaml.safe_load(file)
 
-def run_pipeline(args: ArgumentParser) -> None:
+def run_pipeline(lookback: int, upload_to_s3: bool, verbose: bool) -> None:
     ###
     # Step 1: Extract Data from Ballchasing API
     ###
-    rprint("Running ETL pipeline")
-    return
-    lookback = args.lookback
-    upload_to_s3 = args.upload_to_s3
+    console.log(f"Running ETL pipeline for {lookback} days{' and uploading to S3' if upload_to_s3 else ''}.")
+    if verbose:
+        console.log(locals())
     
     config = load_config()
     playlists = config["ballchasing"]["playlists"]
@@ -61,7 +62,7 @@ def run_pipeline(args: ArgumentParser) -> None:
                     replay_ids = fetch_replay_ids(replay_date, playlist, rank, calls_per_second=2, calls_per_hour=500)
                 
                 total_replays += len(replay_ids)
-                rprint(f"Fetched {len(replay_ids)} replay IDs for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}")
+                console.log(f"Fetched {len(replay_ids)} replay IDs for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}")
                 
                 # Get in-depth replay data for each replay ID
                 if replay_ids:
@@ -77,7 +78,7 @@ def run_pipeline(args: ArgumentParser) -> None:
                         filtered_replays = fetch_replays_by_id(replay_ids, calls_per_second=2, calls_per_hour=500)
 
                     if filtered_replays:
-                        rprint(f"Fetched {len(filtered_replays)} replays for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n")
+                        console.log(f"Fetched {len(filtered_replays)} replays for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n")
                         daily_replays.extend(filtered_replays)
 
         if upload_to_s3:
@@ -91,21 +92,21 @@ def run_pipeline(args: ArgumentParser) -> None:
             ###
             load_to_postgres(daily_replays)
 
-        rprint(f"Finished fetching {total_replays} replays for {'today' if day == 0 else {'day back' if day == 1 else 'days back'}} ({replay_date.strftime('%Y-%m-%d')})\n")
+        console.log(f"Finished fetching {total_replays} replays for {'today' if day == 0 else {'day back' if day == 1 else 'days back'}} ({replay_date.strftime('%Y-%m-%d')})\n")
     
     with open("test_data.json", "w") as file:
         json.dump(daily_replays, file)
 
-    rprint(f"Finished fetching {total_replays} replays for the past {lookback} {'days' if lookback > 1 else 'day'}")
+    console.log(f"Finished fetching {total_replays} replays for the past {lookback} {'days' if lookback > 1 else 'day'}")
 
-def clean_pipeline(args: ArgumentParser):
-    rprint("Cleaning artifacts")
+def clean_pipeline(verbose: bool):
+    console.log("Cleaning artifacts")
 
-def pipeline_status(args: ArgumentParser):
-    rprint("Showing ETL status")
+def pipeline_status(verbose: bool):
+    console.log("Showing ETL status")
 
-def run_tests(args: ArgumentParser):
-    rprint("Running ETL tests")
+def run_tests(verbose: bool):
+    console.log("Running ETL tests")
 
 def main():
     parser = ArgumentParser(description="ETL CLI tool")
@@ -119,26 +120,36 @@ def main():
                             help="Upload to S3")
     run_parser.add_argument("-v", "--verbose", action="store_true", 
                             help="Enable verbose logging")
-    run_parser.set_defaults(func=run_pipeline)
 
     # clean subcommand
     clean_parser = subparsers.add_parser("clean", help="Clean artifacts")
-    clean_parser.set_defaults(func=clean_pipeline)
+    clean_parser.add_argument("-v", "--verbose", action="store_true", 
+                            help="Enable verbose logging")
 
     # status subcommand
     status_parser = subparsers.add_parser("status", help="Show ETL status")
-    status_parser.set_defaults(func=pipeline_status)
+    status_parser.add_argument("-v", "--verbose", action="store_true", 
+                            help="Enable verbose logging")
 
     # test subcommand
     test_parser = subparsers.add_parser("test", help="Run ETL tests")
-    test_parser.set_defaults(func=run_tests)
+    test_parser.add_argument("-v", "--verbose", action="store_true", 
+                            help="Enable verbose logging")
 
     args = parser.parse_args()
-    args.func(args)
+    match args.subcommand:
+        case "run":
+            run_pipeline(args.lookback, args.upload_to_s3, args.verbose)
+        case "clean":
+            clean_pipeline(args.verbose)
+        case "status":
+            pipeline_status(args.verbose)
+        case "test":
+            run_tests(args.verbose)
+        case _:
+            parser.print_help()
 
-    rprint("Finished running pipeline")
-    console = Console()
-    console.log("Finished running pipeline")
+    console.log("Finished running etl {args.subcommand}.")
 
 if __name__ == "__main__":
     main()
