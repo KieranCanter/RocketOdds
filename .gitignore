@@ -4,3 +4,7 @@
 
 # Environment variables
 .env
+
+# Package artifacts
+dist/
+*.egg-info/
