@@ -35,7 +35,7 @@ def run_pipeline(lookback: int, upload_to_s3: bool, verbose: bool) -> None:
     ###
     # Step 1: Extract Data from Ballchasing API
     ###
-    console.log(f"Running ETL pipeline for {lookback} days{' and uploading to S3' if upload_to_s3 else ''}.")
+    console.log(f"Running ETL pipeline for {lookback} {'day' if lookback == 1 else 'days'}{' and uploading to S3' if upload_to_s3 else ''}.")
     if verbose:
         console.log(locals())
     
