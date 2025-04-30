@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "etl"
+version = "0.1"
+authors = [
+    { name="Kieran Canter", email="contact@kierancanter.dev" }
+]
+description = "ETL pipeline CLI"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "boto3==1.35.99",
+    "botocore==1.35.99",
+    "certifi==2024.12.14",
+    "charset-normalizer==3.4.1",
+    "idna==3.10",
+    "jmespath==1.0.1",
+    "psycopg==3.2.4",
+    "psycopg-binary==3.2.4",
+    "python-dateutil==2.9.0.post0",
+    "python-dotenv==1.0.1",
+    "pytz==2024.2",
+    "PyYAML==6.0.2",
+    "requests==2.32.3",
+    "rich==14.0.0",
+    "s3transfer==0.10.4",
+    "six==1.17.0",
+    "typing_extensions==4.12.2",
+    "urllib3==2.3.0"
+]
+
+[project.scripts]
+etl = "scripts.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts"]
