@@ -96,7 +96,7 @@ def run_pipeline(lookback: int, upload_to_s3: bool, verbose: bool) -> None:
     with open("test_data.json", "w") as file:
         json.dump(daily_replays, file)
 
-    console.log(f"Finished fetching {total_replays} replays for the past {lookback} {'days' if lookback > 1 else 'day'}")
+    console.log(f"Finished fetching {total_replays} replays for the past {lookback} {'day' if lookback == 1 else 'days'}")
 
 def clean_pipeline(verbose: bool):
     console.log("Cleaning artifacts")
