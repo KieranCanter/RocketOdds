@@ -4,11 +4,12 @@ from dotenv import load_dotenv
 from pathlib import Path
 import yaml
 import time
-
+from rich.console import Console
 from .config import load_config, load_env
 
 load_env()
 config = load_config()
+console = Console()
 
 BASE_URL = config["ballchasing"]["base_url"]
 TIMEOUT = config["ballchasing"]["timeout"]
@@ -40,7 +41,7 @@ def fetch_replay_ids(replay_date, playlist, rank, calls_per_second=2, calls_per_
         if hourly_request_count >= calls_per_hour:
             wait_time = 3600 - (time.time() - last_request_time)
             if wait_time > 0:
-                print(f"Hourly rate limit reached. Waiting {wait_time:.2f} seconds...")
+                console.log(f"Hourly rate limit reached after {len(daily_replay_ids)} replays. Waiting {wait_time:.2f} seconds...", style="yellow")
                 time.sleep(wait_time)
             hourly_request_count = 0
             last_request_time = time.time()
@@ -73,7 +74,7 @@ def fetch_replay_ids(replay_date, playlist, rank, calls_per_second=2, calls_per_
 
         elif response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
-            print(f"Rate limit exceeded. Waiting {retry_after} seconds...\n")
+            console.log(f"Rate limit exceeded. Waiting {retry_after} seconds...\n", style="yellow")
             time.sleep(retry_after)
             # Dont break, retry same request
 
@@ -93,7 +94,7 @@ def fetch_replays_by_id(replay_ids, calls_per_second=2, calls_per_hour=500):
         if hourly_request_count >= calls_per_hour:
             wait_time = 3600 - (time.time() - last_request_time)
             if wait_time > 0:
-                print(f"Hourly rate limit reached. Waiting {wait_time:.2f} seconds...")
+                console.log(f"Hourly rate limit reached after {len(daily_replays)} replays. Waiting {wait_time:.2f} seconds...", style="yellow")
                 time.sleep(wait_time)
             hourly_request_count = 0
             last_request_time = time.time()
@@ -119,7 +120,7 @@ def fetch_replays_by_id(replay_ids, calls_per_second=2, calls_per_hour=500):
 
         elif response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
-            print(f"Rate limit exceeded. Waiting {retry_after} seconds...\n")
+            console.log(f"Rate limit exceeded. Waiting {retry_after} seconds...\n", style="yellow")
             time.sleep(retry_after)
             # Dont break, retry same request
 

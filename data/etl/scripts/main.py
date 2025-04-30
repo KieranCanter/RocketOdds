@@ -82,21 +82,21 @@ def run_pipeline(lookback: int, upload_to_s3: bool, verbose: bool) -> None:
 
         if upload_to_s3:
             ###
-            # Step 2: Transform for Postgres
+            # Step 2: Transform for S3
             ###
             # TODO: Transform data to prepare for bulk insert
 
             ###
-            # Step 3: Load Data into Postgres
+            # Step 3: Load Data into S3
             ###
             load_to_s3(daily_replays, replay_date, playlist, rank)
 
-        console.log(f"Finished fetching {total_replays} replays for {'today' if day == 0 else {'day back' if day == 1 else 'days back'}} ({replay_date.strftime('%Y-%m-%d')})\n")
+        console.log(f"Successfully fetched {total_replays} replays for {'today' if day == 0 else {'day back' if day == 1 else 'days back'}} ({replay_date.strftime('%Y-%m-%d')})\n", style="green")
     
     with open("test_data.json", "w") as file:
         json.dump(daily_replays, file)
 
-    console.log(f"Finished fetching {total_replays} replays for the past {lookback} {'day' if lookback == 1 else 'days'}")
+    console.log(f"Successfully fetched {total_replays} replays for the past {lookback} {'day' if lookback == 1 else 'days'}", style="green")
 
 def clean_pipeline(verbose: bool):
     console.log("Cleaning artifacts")

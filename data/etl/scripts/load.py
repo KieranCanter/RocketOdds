@@ -1,10 +1,12 @@
 import os
 from pathlib import Path
 import boto3
+from rich.console import Console
 
 from .config import load_env
 
 load_env()
+console = Console()
 
 def load_to_s3(data, date, playlist, rank):
     s3_client = boto3.client(
@@ -19,6 +21,6 @@ def load_to_s3(data, date, playlist, rank):
     response = s3_client.put_object(Bucket="rocketodds-data", Key=filepath, Body=data, StorageClass="STANDARD_IA")
 
     if response["ResponseMetadata"]["HTTPStatusCode"] == 200:
-        print(f"Successfully uploaded {filepath} to S3 with ETag: {response['ETag']}\n")
+        console.log(f"Successfully uploaded {filepath} to S3 with ETag: {response['ETag']}\n", style="green")
     else:
-        print(f"Failed to upload {filepath} to S3. Status Code: {response['ResponseMetadata']['HTTPStatusCode']}\n")
+        console.log(f"Failed to upload {filepath} to S3. Status Code: {response['ResponseMetadata']['HTTPStatusCode']}\n", style="red")
