@@ -5,12 +5,9 @@ from pathlib import Path
 import yaml
 import time
 
-load_dotenv(dotenv_path=Path(__file__).parent.parent.parent / ".env")
+from .config import load_config, load_env
 
-def load_config():
-    with open(Path(__file__).parent.parent.parent.parent / "config.yaml", "r") as file:
-        return yaml.safe_load(file)
-    
+load_env()
 config = load_config()
 
 BASE_URL = config["ballchasing"]["base_url"]

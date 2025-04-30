@@ -1,9 +1,10 @@
 import os
-from dotenv import load_dotenv
 from pathlib import Path
 import boto3
 
-load_dotenv(dotenv_path=Path(__file__).parent.parent.parent.parent / ".env")
+from .config import load_env
+
+load_env()
 
 def load_to_s3(data, date, playlist, rank):
     s3_client = boto3.client(

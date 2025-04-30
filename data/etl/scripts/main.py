@@ -12,6 +12,9 @@ from rich import print as rprint
 from rich.console import Console
 from argparse import ArgumentParser
 
+# Config import
+from .config import load_config
+
 # Extract imports
 from .extract import fetch_replay_ids, fetch_replays_by_id
 from datetime import datetime, timedelta
@@ -20,7 +23,7 @@ from datetime import datetime, timedelta
 #from transform import compress_replays_for_s3
 
 # Load imports
-from .load import load_to_postgres, load_to_s3
+from .load import load_to_s3
 
 console = Console()
 
@@ -90,7 +93,7 @@ def run_pipeline(lookback: int, upload_to_s3: bool, verbose: bool) -> None:
             ###
             # Step 3: Load Data into Postgres
             ###
-            load_to_postgres(daily_replays)
+            load_to_s3(daily_replays, replay_date, playlist, rank)
 
         console.log(f"Finished fetching {total_replays} replays for {'today' if day == 0 else {'day back' if day == 1 else 'days back'}} ({replay_date.strftime('%Y-%m-%d')})\n")
     
