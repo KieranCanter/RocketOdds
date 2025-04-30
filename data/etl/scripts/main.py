@@ -108,7 +108,7 @@ def run_tests(verbose: bool):
     console.log("Running ETL tests")
 
 def main():
-    parser = ArgumentParser(description="ETL CLI tool")
+    parser = ArgumentParser(description="RocketOdds ETL CLI tool")
     subparsers = parser.add_subparsers(dest="subcommand", required=True)
 
     # run subcommand
