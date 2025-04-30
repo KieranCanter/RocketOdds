@@ -27,10 +27,6 @@ from .load import load_to_s3
 
 console = Console()
 
-def load_config():
-    with open(Path(__file__).parent.parent.parent.parent / "config.yaml", "r") as file:
-        return yaml.safe_load(file)
-
 def run_pipeline(lookback: int, upload_to_s3: bool, verbose: bool) -> None:
     ###
     # Step 1: Extract Data from Ballchasing API
