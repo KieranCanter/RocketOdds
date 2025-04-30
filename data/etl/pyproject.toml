@@ -18,8 +18,6 @@ dependencies = [
     "charset-normalizer==3.4.1",
     "idna==3.10",
     "jmespath==1.0.1",
-    "psycopg==3.2.4",
-    "psycopg-binary==3.2.4",
     "python-dateutil==2.9.0.post0",
     "python-dotenv==1.0.1",
     "pytz==2024.2",

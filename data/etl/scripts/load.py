@@ -1,23 +1,9 @@
 import os
 from dotenv import load_dotenv
 from pathlib import Path
-import psycopg
 import boto3
 
 load_dotenv(dotenv_path=Path(__file__).parent.parent.parent.parent / ".env")
-
-def load_to_postgres():
-
-    conn = psycopg.connect(
-        host=os.getenv("DB_HOST"),
-        database=os.getenv("DB_NAME"),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD"),
-    )
-
-    print("Connected to database")
-    conn.close()
-
 
 def load_to_s3(data, date, playlist, rank):
     s3_client = boto3.client(
