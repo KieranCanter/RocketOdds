@@ -38,7 +38,7 @@ def fetch_replay_ids(replay_date, playlist, rank, calls_per_second=2, calls_per_
     
     while True:
         # Check hourly rate limit
-        if hourly_request_count >= calls_per_hour:
+        if calls_per_hour and hourly_request_count >= calls_per_hour:
             wait_time = 3600 - (time.time() - last_request_time)
             if wait_time > 0:
                 console.log(f"Hourly rate limit reached after {len(daily_replay_ids)} replays. Waiting {wait_time:.2f} seconds...", style="yellow")
@@ -74,7 +74,7 @@ def fetch_replay_ids(replay_date, playlist, rank, calls_per_second=2, calls_per_
 
         elif response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
-            console.log(f"Rate limit exceeded. Waiting {retry_after} seconds...\n", style="yellow")
+            console.log(f"Rate limit exceeded. Waiting {retry_after} seconds...", style="yellow")
             time.sleep(retry_after)
             # Dont break, retry same request
 
@@ -91,7 +91,7 @@ def fetch_replays_by_id(replay_ids, calls_per_second=2, calls_per_hour=500):
     
     for replay_id in replay_ids:
         # Check hourly rate limit
-        if hourly_request_count >= calls_per_hour:
+        if calls_per_hour and hourly_request_count >= calls_per_hour:
             wait_time = 3600 - (time.time() - last_request_time)
             if wait_time > 0:
                 console.log(f"Hourly rate limit reached after {len(daily_replays)} replays. Waiting {wait_time:.2f} seconds...", style="yellow")
@@ -120,7 +120,7 @@ def fetch_replays_by_id(replay_ids, calls_per_second=2, calls_per_hour=500):
 
         elif response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
-            console.log(f"Rate limit exceeded. Waiting {retry_after} seconds...\n", style="yellow")
+            console.log(f"Rate limit exceeded. Waiting {retry_after} seconds...", style="yellow")
             time.sleep(retry_after)
             # Dont break, retry same request
 
