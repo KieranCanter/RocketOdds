@@ -2,18 +2,19 @@ import os
 from pathlib import Path
 import boto3
 from rich.console import Console
+from .config import Config
 
-from .config import load_env
-
-load_env()
+config = Config()
 console = Console()
 
 def load_to_s3(data, date, playlist, rank):
+    aws_credentials = config.get_aws_credentials()
+    
     s3_client = boto3.client(
         's3',
-        aws_access_key_id=os.getenv("AWS_ACCESS_KEY"),
-        aws_secret_access_key=os.getenv("AWS_SECRET_KEY"),
-        region_name=os.getenv("AWS_REGION")
+        aws_access_key_id=aws_credentials["AWS_ACCESS_KEY"],
+        aws_secret_access_key=aws_credentials["AWS_SECRET_KEY"],
+        region_name=aws_credentials["AWS_REGION"]
     )
 
     filepath = f"{date.strftime('%Y')}/{date.strftime('%m')}/{date.strftime('%d')}/{playlist}/{date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json"
