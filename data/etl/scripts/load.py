@@ -1,27 +1,24 @@
-import os
-from pathlib import Path
 import boto3
-from rich.console import Console
+import logging
+
 from .config import Config
 
-config = Config()
-console = Console()
+class ReplayLoader:
+    def __init__(self, config: Config, log: logging.Logger):
+        self.s3_client = boto3.client(
+            's3',
+            aws_access_key_id=config.get_aws_credentials()["aws_data_access_key"],
+            aws_secret_access_key=config.get_aws_credentials()["aws_data_secret_key"],
+            region_name=config.get_aws_credentials()["aws_region"]
+        )
+        self.log = log
 
-def load_to_s3(data, date, playlist, rank):
-    aws_credentials = config.get_aws_credentials()
-    
-    s3_client = boto3.client(
-        's3',
-        aws_access_key_id=aws_credentials["AWS_ACCESS_KEY"],
-        aws_secret_access_key=aws_credentials["AWS_SECRET_KEY"],
-        region_name=aws_credentials["AWS_REGION"]
-    )
+    def load(self, data, date, playlist, rank):
+        filepath = f"{date.strftime('%Y')}/{date.strftime('%m')}/{date.strftime('%d')}/{playlist}/{date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json"
 
-    filepath = f"{date.strftime('%Y')}/{date.strftime('%m')}/{date.strftime('%d')}/{playlist}/{date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json"
+        response = self.s3_client.put_object(Bucket="rocketodds-data", Key=filepath, Body=data, StorageClass="STANDARD")
 
-    response = s3_client.put_object(Bucket="rocketodds-data", Key=filepath, Body=data, StorageClass="STANDARD_IA")
-
-    if response["ResponseMetadata"]["HTTPStatusCode"] == 200:
-        console.log(f"Successfully uploaded {filepath} to S3 with ETag: {response['ETag']}\n", style="green")
-    else:
-        console.log(f"Failed to upload {filepath} to S3. Status Code: {response['ResponseMetadata']['HTTPStatusCode']}\n", style="red")
+        if response["ResponseMetadata"]["HTTPStatusCode"] == 200:
+            self.log.info(f"Successfully uploaded {filepath} to S3 with ETag: {response['ETag']}\n")
+        else:
+            self.log.error(f"Failed to upload {filepath} to S3. Status Code: {response['ResponseMetadata']['HTTPStatusCode']}\n")
