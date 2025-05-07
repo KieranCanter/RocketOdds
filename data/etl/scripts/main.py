@@ -1,4 +1,3 @@
-import json
 ###
 # Run ETL pipeline
 ###
@@ -98,7 +97,7 @@ async def run_pipeline(
                             ###
                             # Step 2: Transform for S3
                             ###
-                            transformed_replay = replay_transformer.transform(parameterized_replay)
+                            transformed_replay = replay_transformer.run(parameterized_replay)
                             transformed_replays.append(transformed_replay)
                             del parameterized_replay
 
@@ -113,15 +112,15 @@ async def run_pipeline(
                     load_string = f"Loading {len(transformed_replays)} "\
                                 f"{'replay' if len(transformed_replays) == 1 else 'replays'} "\
                                 f"for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')} to S3"
+
                     with Progress(
                         TimeElapsedColumn(),
                         SpinnerColumn(),
                         TextColumn("[progress.description]{task.description}"),
                     ) as progress:
                         progress.add_task(description=load_string, total=None)
-                        replay_loader.load(transformed_replays)
+                        replay_loader.run(transformed_replays, replay_date, playlist, rank)
                         del transformed_replays
-
 
     if lookback == 1:
         time_span = f"{(datetime.today() - timedelta(days=1)).strftime('%d/%m/%Y')}"
