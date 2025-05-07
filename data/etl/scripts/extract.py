@@ -5,11 +5,16 @@ import logging
 from contextlib import AsyncExitStack
 from urllib.parse import urlparse, parse_qs
 
+from .config import Config
+
 class ReplayFetcher:
-    def __init__(self, base_url: str, headers: dict, timeout: int, replay_rate_limit: tuple, id_rate_limit: tuple, log: logging.Logger):
-        self.base_url = base_url
-        self.headers = headers
-        self.timeout = timeout
+    def __init__(self, config: Config, rate_limit: str, log: logging.Logger):
+        self.base_url = config.get_yaml()["ballchasing"]["base_url"]
+        headers = {"Authorization": f"{config.get_ballchasing_api_key()}"}
+        timeout = config.get_yaml()["ballchasing"]["timeout"]
+        
+        replay_rate_limit = self._get_replay_call_limits(rate_limit)
+        id_rate_limit = self._get_id_call_limits(rate_limit)
         
         self.replay_secondly_limiter = AsyncLimiter(replay_rate_limit[0], 1)
         self.replay_hourly_limiter = AsyncLimiter(replay_rate_limit[1], 3600) if replay_rate_limit[1] else None
@@ -116,6 +121,36 @@ class ReplayFetcher:
             
             self.log.debug(f"Fetched replay ID {replay_id}")
             return id_response.json()
+        
+    def _get_replay_call_limits(self, rate_limit: str) -> tuple[int, int]:
+        match rate_limit:
+            case "grand champion":
+                return (16, None)
+            case "champion":
+                return (8, None)
+            case "diamond":
+                return (4, 2000)
+            case "gold":
+                return (2, 1000)
+            case "base":
+                return (2, 500)
+            case _:
+                raise ValueError(f"Invalid rate limit entered: {rate_limit}")
+
+    def _get_id_call_limits(self, rate_limit: str) -> tuple[int, int]:
+        match rate_limit:
+            case "grand champion":
+                return (16, None)
+            case "champion":
+                return (8, None)
+            case "diamond":
+                return (4, 5000)
+            case "gold":
+                return (2, 2000)
+            case "base":
+                return (2, 1000)
+            case _:
+                raise ValueError(f"Invalid rate limit entered: {rate_limit}")
 
     async def run(self):
         return await self._fetch_replays()
