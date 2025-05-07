@@ -8,13 +8,20 @@ from argparse import ArgumentParser, ArgumentTypeError
 from datetime import datetime, timedelta
 import asyncio
 import logging
+from pathlib import Path
 
 from .config import Config
 from .extract import ReplayFetcher
 from .transform import ReplayTransformer
 from .load import ReplayLoader
 
-async def run_extract(lookback: int, playlists: list[str], ranks: list[str], rate_limit: str, log: logging.Logger) -> None:
+async def _run_extract(lookback: int, playlists: list[str], ranks: list[str], rate_limit: str, log: logging.Logger) -> None:
+    pass
+
+async def _run_transform(lookback: int, playlists: list[str], ranks: list[str], rate_limit: str, log: logging.Logger) -> None:
+    pass
+
+async def _run_load(lookback: int, playlists: list[str], ranks: list[str], rate_limit: str, log: logging.Logger) -> None:
     pass
 
 async def run_pipeline(
@@ -75,9 +82,9 @@ async def run_pipeline(
                                     f"on {replay_date.strftime('%Y-%m-%d')}")
                         continue
 
-                    log.info(f"[green] Successfully fetched {len(parameterized_replays)} "\
+                    log.info(f"[green]Successfully fetched {len(parameterized_replays)} "\
                             f"{'replay' if len(parameterized_replays) == 1 else 'replays'} "\
-                            f"for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n[/green]")
+                            f"for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}[/green]")
                     total_replays += len(parameterized_replays)
 
                 if upload_to_s3:
@@ -102,7 +109,7 @@ async def run_pipeline(
                             del parameterized_replay
 
                         del parameterized_replays
-                        log.info(f"[green] Successfully transformed {len(transformed_replays)} "\
+                        log.info(f"[green]Successfully transformed {len(transformed_replays)} "\
                                 f"{'replay' if len(transformed_replays) == 1 else 'replays'} "\
                                 f"for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n[/green]")
 
@@ -151,6 +158,33 @@ def _validate_lookback(lookback: int) -> int:
         raise ArgumentTypeError(f"Invalid lookback value: {val}. Please enter a value between 1 and 90, inclusive.")
     return val
 
+def _setup_logger(log_path: str, verbose: bool) -> logging.Logger:
+    Path(log_path).parent.mkdir(parents=True, exist_ok=True)
+
+    log = logging.getLogger()
+    log.setLevel(logging.DEBUG if verbose else logging.INFO)
+
+    log.handlers.clear()
+
+    rich_handler = RichHandler(
+        rich_tracebacks=True,
+        markup=True,
+        log_time_format="%Y-%m-%d %H:%M:%S"
+    )
+
+    file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
+    file_handler.setLevel(logging.DEBUG if verbose else logging.INFO)
+    file_formatter = logging.Formatter(
+        fmt="%(asctime)s    %(levelname)s    %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+    file_handler.setFormatter(file_formatter)
+
+    log.addHandler(rich_handler)
+    log.addHandler(file_handler)
+
+    return log
+
 def main():
     config_yaml = Config().get_yaml()
     
@@ -181,8 +215,11 @@ def main():
                             help="Rate limit for Ballchasing API calls (default: base)")
     run_parser.add_argument("-s3", "--upload-to-s3", action="store_true", 
                             help="Upload to S3")
+    run_parser.add_argument("-L", "--log-path", type=str, default="./log/etl.log",
+                            help="Path to log file (default: ./log/etl.log)")
     run_parser.add_argument("-v", "--verbose", action="store_true", 
                             help="Enable verbose logging")
+
     # clean subcommand
     clean_parser = subparsers.add_parser("clean", help="Clean artifacts")
     clean_parser.add_argument("-v", "--verbose", action="store_true", 
@@ -218,12 +255,7 @@ def main():
 
     args = parser.parse_args()
 
-    logging.basicConfig(
-        level=logging.DEBUG if args.verbose else logging.INFO,
-        format="%(message)s",
-        handlers=[RichHandler(markup=True)]
-    )
-    log = logging.getLogger("rich")
+    log = _setup_logger(args.log_path, args.verbose)
 
     match args.subcommand:
         case "run":
