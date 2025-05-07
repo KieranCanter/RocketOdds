@@ -5,6 +5,9 @@
 # Environment variables
 .env
 
+# Log files
+*.log
+
 # Package artifacts
 dist/
 *.egg-info/
