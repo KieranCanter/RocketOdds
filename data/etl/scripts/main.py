@@ -1,55 +1,22 @@
+import json
 ###
 # Run ETL pipeline
 ###
 
 from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn, TextColumn
-import logging
 from rich.logging import RichHandler
 from argparse import ArgumentParser, ArgumentTypeError
-
-# Config import
-from .config import Config
-
-# Extract imports
-from .extract import ReplayFetcher
 from datetime import datetime, timedelta
 import asyncio
+import logging
 
-# Transform imports
-#from transform import compress_replays_for_s3
+from .config import Config
+from .extract import ReplayFetcher
+from .transform import ReplayTransformer
+from .load import ReplayLoader
 
-# Load imports
-from .load import load_to_s3
-
-def _get_replay_call_limits(rate_limit: str) -> tuple[int, int]:
-    match rate_limit:
-        case "grand champion":
-            return (16, None)
-        case "champion":
-            return (8, None)
-        case "diamond":
-            return (4, 2000)
-        case "gold":
-            return (2, 1000)
-        case "base":
-            return (2, 500)
-        case _:
-            raise ValueError(f"Invalid rate limit entered: {rate_limit}")
-
-def _get_id_call_limits(rate_limit: str) -> tuple[int, int]:
-    match rate_limit:
-        case "grand champion":
-            return (16, None)
-        case "champion":
-            return (8, None)
-        case "diamond":
-            return (4, 5000)
-        case "gold":
-            return (2, 2000)
-        case "base":
-            return (2, 1000)
-        case _:
-            raise ValueError(f"Invalid rate limit entered: {rate_limit}")
+async def run_extract(lookback: int, playlists: list[str], ranks: list[str], rate_limit: str, log: logging.Logger) -> None:
+    pass
 
 async def run_pipeline(
         lookback: int,
@@ -60,16 +27,22 @@ async def run_pipeline(
         log: logging.Logger
     ) -> None:
     config = Config()
-    base_url = config.get_yaml()["ballchasing"]["base_url"]
-    headers = {"Authorization": f"{config.get_ballchasing_api_key()}"}
-    timeout = config.get_yaml()["ballchasing"]["timeout"]
-    replay_rate_limit = _get_replay_call_limits(rate_limit)
-    id_rate_limit = _get_id_call_limits(rate_limit)
+
+    replay_fetcher = ReplayFetcher(
+        config=config,
+        rate_limit=rate_limit,
+        log=log
+    )
+
+    replay_transformer = ReplayTransformer(config, log)
+
+    replay_loader = ReplayLoader(config, log)
 
     ###
     # Step 1: Extract Data from Ballchasing API
     ###
-    log.info(f"Running ETL test for {lookback} {'day' if lookback == 1 else 'days'} at the {rate_limit.title()} rate limit{' and uploading to S3' if upload_to_s3 else ''}.")
+    log.info(f"Running ETL test for {lookback} {'day' if lookback == 1 else 'days'} at the "\
+            f"{rate_limit.title()} rate limit{' and uploading to S3' if upload_to_s3 else ''}.")
     log.info(f"Included playlists: {', '.join(f'{playlist}' for playlist in playlists)}")
     log.info(f"Included ranks: {', '.join(f'{rank}' for rank in ranks)}")
 
@@ -77,7 +50,6 @@ async def run_pipeline(
     replay_date = datetime.today()
     for day in range(1, lookback + 1):
         replay_date = datetime.today() - timedelta(days=day)
-        daily_replays = []
 
         for playlist in playlists:
             if playlist.startswith("unranked"):
@@ -86,51 +58,77 @@ async def run_pipeline(
                 ranks_list = [rank for rank in ranks if rank != "unranked"]
 
             for rank in ranks_list:
-                fetch_string = f"Fetching parameterized replay data for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}"
+                fetch_string = f"Fetching parameterized replay data for {rank} in {playlist} "\
+                                f"on {replay_date.strftime('%Y-%m-%d')}"
 
-                # Fetch the parameterized replay data with progress spinner
+                # Fetch the parameterized replay data
                 with Progress(
                     TimeElapsedColumn(),
                     SpinnerColumn(),
                     TextColumn("[progress.description]{task.description}"),
                 ) as progress:
                     progress.add_task(description=fetch_string, total=None)
-                    replay_fetcher = ReplayFetcher(
-                        base_url=base_url,
-                        headers=headers,
-                        timeout=timeout,
-                        replay_rate_limit=replay_rate_limit,
-                        id_rate_limit=id_rate_limit,
-                        log=log
-                    )
-                    log.info(f"Playlist: {playlist}, Rank: {rank}, Replay date: {replay_date}")
                     replay_fetcher.set_params(playlist, rank, replay_date, 200, "replay-date", "desc")
-                    parameterized_replay_data = await replay_fetcher.run()
+                    parameterized_replays = await replay_fetcher.run()
 
-                if not parameterized_replay_data:
-                    log.warning(f"No parameterized replay data found for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}")
-                    continue
+                    if not parameterized_replays:
+                        log.warning(f"No parameterized replay data found for {rank} in {playlist} "\
+                                    f"on {replay_date.strftime('%Y-%m-%d')}")
+                        continue
 
-                log.info(f"[green] Successfully fetched {len(parameterized_replay_data)} replays for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n[/green]")
-                total_replays += len(parameterized_replay_data)
-        
-        if upload_to_s3:
-            ###
-            # Step 2: Transform for S3
-            ###
-            # TODO: Transform data to prepare for bulk insert
+                    log.info(f"[green] Successfully fetched {len(parameterized_replays)} "\
+                            f"{'replay' if len(parameterized_replays) == 1 else 'replays'} "\
+                            f"for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n[/green]")
+                    total_replays += len(parameterized_replays)
 
-            ###
-            # Step 3: Load Data into S3
-            ###
-            load_to_s3(daily_replays, replay_date, playlist, rank)
+                if upload_to_s3:
+                    transform_string = f"Transforming {len(parameterized_replays)} "\
+                                    f"{'replay' if len(parameterized_replays) == 1 else 'replays'} "\
+                                    f"for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}"
+
+                    # Transform the parameterized replay data
+                    with Progress(
+                        TimeElapsedColumn(),
+                        SpinnerColumn(),
+                        TextColumn("[progress.description]{task.description}"),
+                    ) as progress:
+                        progress.add_task(description=transform_string, total=None)
+                        transformed_replays = []
+                        for parameterized_replay in parameterized_replays:
+                            ###
+                            # Step 2: Transform for S3
+                            ###
+                            transformed_replay = replay_transformer.transform(parameterized_replay)
+                            transformed_replays.append(transformed_replay)
+                            del parameterized_replay
+
+                        del parameterized_replays
+                        log.info(f"[green] Successfully transformed {len(transformed_replays)} "\
+                                f"{'replay' if len(transformed_replays) == 1 else 'replays'} "\
+                                f"for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')}\n[/green]")
+
+                    ###
+                    # Step 3: Load Data into S3
+                    ###
+                    load_string = f"Loading {len(transformed_replays)} "\
+                                f"{'replay' if len(transformed_replays) == 1 else 'replays'} "\
+                                f"for {rank} in {playlist} on {replay_date.strftime('%Y-%m-%d')} to S3"
+                    with Progress(
+                        TimeElapsedColumn(),
+                        SpinnerColumn(),
+                        TextColumn("[progress.description]{task.description}"),
+                    ) as progress:
+                        progress.add_task(description=load_string, total=None)
+                        replay_loader.load(transformed_replays)
+                        del transformed_replays
+
 
     if lookback == 1:
         time_span = f"{(datetime.today() - timedelta(days=1)).strftime('%d/%m/%Y')}"
     else:
         time_span = f"{(datetime.today() - timedelta(days=lookback)).strftime('%d/%m/%Y')}-{(datetime.today() - timedelta(days=1)).strftime('%d/%m/%Y')}"
 
-    log.info(f"[green]Successfully fetched {total_replays} replays for the past {lookback} " \
+    log.info(f"[green]Successfully processed {total_replays} replays for the past {lookback} " \
                 f"{'day' if lookback == 1 else 'days'} ({time_span})[/green]")
 
 def clean_pipeline(log: logging.Logger):
@@ -166,8 +164,8 @@ def main():
 
     # run subcommand
     run_parser = subparsers.add_parser("run", help="Run the ETL pipeline")
-    run_parser.add_argument("-l", "--lookback", type=_validate_lookback, default=90, 
-                            help="Number of days back to fetch replays for (default: 90)")
+    run_parser.add_argument("-l", "--lookback", type=_validate_lookback, default=1, 
+                            help="Number of days back to fetch replays for (default: 1)")
     run_parser.add_argument("-p", "--playlists", type=str, default=playlists,
                             nargs="*",
                             choices=playlists,
@@ -198,8 +196,8 @@ def main():
 
     # test subcommand
     test_parser = subparsers.add_parser("test", help="Run ETL tests")
-    test_parser.add_argument("-l", "--lookback", type=_validate_lookback, default=90, 
-                            help="Number of days back to fetch replays for (default: 90)")
+    test_parser.add_argument("-l", "--lookback", type=_validate_lookback, default=1, 
+                            help="Number of days back to fetch replays for (default: 1)")
     test_parser.add_argument("-p", "--playlists", type=str, default=playlists,
                             nargs="*",
                             choices=playlists,
@@ -230,13 +228,13 @@ def main():
 
     match args.subcommand:
         case "run":
-            run_pipeline(args.lookback, args.playlists, args.ranks, args.rate_limit, args.upload_to_s3, log=log)
+            asyncio.run(run_pipeline(args.lookback, args.playlists, args.ranks, args.rate_limit, args.upload_to_s3, log=log))
         case "clean":
             clean_pipeline(args.verbose, log=log)
         case "status":
             pipeline_status(args.verbose, log=log)
         case "test":
-            asyncio.run(run_tests(args.lookback, args.playlists, args.ranks, args.rate_limit, args.upload_to_s3, log=log))
+            run_tests(args.lookback, args.playlists, args.ranks, args.rate_limit, args.upload_to_s3, log=log)
         case _:
             parser.print_help()
 
