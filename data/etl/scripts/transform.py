@@ -50,5 +50,5 @@ class ReplayTransformer:
 
         return replay
 
-    def transform(self, replay: dict) -> dict:
+    def run(self, replay: dict) -> dict:
         return self._transform_replay(replay)
