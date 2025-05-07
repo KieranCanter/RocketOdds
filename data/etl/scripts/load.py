@@ -1,5 +1,8 @@
 import boto3
 import logging
+import pyarrow as pa
+import pyarrow.parquet as pq
+import io
 
 from .config import Config
 
@@ -13,12 +16,21 @@ class ReplayLoader:
         )
         self.log = log
 
-    def load(self, data, date, playlist, rank):
-        filepath = f"{date.strftime('%Y')}/{date.strftime('%m')}/{date.strftime('%d')}/{playlist}/{date.strftime('%Y-%m-%d')}_{playlist}_{rank}.json"
+    def _load(self, data_buffer, filepath):
+        try:
+            response = self.s3_client.put_object(Bucket="rocketodds-data", Key=filepath, Body=data_buffer, StorageClass="STANDARD")
+        except Exception as e:
+            self.log.error(f"Failed to upload {filepath} to S3. Status Code: "\
+                            f"{response['ResponseMetadata']['HTTPStatusCode']}\n")
+            raise e
 
-        response = self.s3_client.put_object(Bucket="rocketodds-data", Key=filepath, Body=data, StorageClass="STANDARD")
+        self.log.info(f"[green]Successfully uploaded {filepath} to S3 with ETag: {response['ETag']}[/green]\n")
 
-        if response["ResponseMetadata"]["HTTPStatusCode"] == 200:
-            self.log.info(f"Successfully uploaded {filepath} to S3 with ETag: {response['ETag']}\n")
-        else:
-            self.log.error(f"Failed to upload {filepath} to S3. Status Code: {response['ResponseMetadata']['HTTPStatusCode']}\n")
+    def run(self, transformed_replays, date, playlist, rank):
+        data_table = pa.Table.from_pylist(transformed_replays)
+        data_buffer = io.BytesIO()
+        pq.write_table(data_table, data_buffer)
+        data_buffer.seek(0)
+        filepath = f"{date.strftime('%Y')}/{date.strftime('%m')}/{date.strftime('%d')}"\
+                    f"/{playlist}/{date.strftime('%Y-%m-%d')}_{playlist}_{rank}.parquet"
+        self._load(data_buffer, filepath)
