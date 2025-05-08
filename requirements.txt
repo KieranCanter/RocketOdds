@@ -1,4 +1,4 @@
 # All dependencies
 
 ## ETL Pipeline
-pip install -r data/etl/requirements.txt
+pip install -r data/rocketl/requirements.txt

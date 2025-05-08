@@ -8,19 +8,19 @@ class Config:
         self.env = self._load_env()
 
     def _load_yaml(self) -> dict:
-        config_path = Path(__file__).parent.parent.parent.parent
-        config_file = config_path / "config.yaml"
+        config_file = Path.cwd() / "config.yaml"
+        print(config_file)
 
         if not config_file.exists():
             raise FileNotFoundError(
-                f"Could not find config.yaml in {config_path}"
+                f"Could not find config.yaml in {config_file}"
             )
 
         with open(config_file, "r") as file:
             return yaml.safe_load(file) 
 
     def _load_env(self) -> dict:
-        env_path = Path(__file__).parent.parent.parent.parent / ".env"
+        env_path = Path.cwd() / ".env"
         if not env_path.exists():
             raise FileNotFoundError(
                 f"Could not find .env in {env_path}"
