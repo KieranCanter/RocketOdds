@@ -1,9 +1,0 @@
-services:
-  data:
-    build: ./data/Dockerfile
-    volumes:
-      - ./data:/data
-  api:
-    build: ./api/Dockerfile
-    volumes:
-      - ./api:/api

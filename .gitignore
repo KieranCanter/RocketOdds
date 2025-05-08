@@ -3,4 +3,11 @@
 **/__pycache__/
 
 # Environment variables
-/data/.env
+.env
+
+# Log files
+*.log
+
+# Package artifacts
+dist/
+*.egg-info/
