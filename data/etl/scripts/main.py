@@ -97,7 +97,7 @@ class Pipeline:
 
     async def run(self) -> None:
         # Step 1: Extract Data from Ballchasing API
-        self.log.info(f"Running ETL test for {self.lookback} {'day' if self.lookback == 1 else 'days'} at the "\
+        self.log.info(f"Running ETL pipeline for {self.lookback} {'day' if self.lookback == 1 else 'days'} at the "\
                 f"{self.rate_limit.title()} rate limit{' and uploading to S3' if self.upload_to_s3 else ''}.")
         self.log.info(f"Included playlists: {', '.join(f'{playlist}' for playlist in self.playlists)}")
         self.log.info(f"Included ranks: {', '.join(f'{rank}' for rank in self.ranks)}")
@@ -197,8 +197,8 @@ def main():
                             help="Rate limit for Ballchasing API calls (default: base)")
     run_parser.add_argument("-s3", "--upload-to-s3", action="store_true", 
                             help="Upload to S3")
-    run_parser.add_argument("-L", "--log-path", type=str, default="./log/etl.log",
-                            help="Path to log file (default: ./log/etl.log)")
+    run_parser.add_argument("-L", "--log-path", type=str, default="./log/rocketl.log",
+                            help="Path to log file (default: ./log/rocketl.log)")
     run_parser.add_argument("-v", "--verbose", action="store_true", 
                             help="Enable verbose logging")
 
@@ -216,7 +216,7 @@ def main():
         case _:
             parser.print_help()
 
-    log.info(f"[green]Finished running etl {args.subcommand}.[/green]")
+    log.info(f"[green]Finished running rocketl {args.subcommand}.[/green]")
 
 if __name__ == "__main__":
     main()

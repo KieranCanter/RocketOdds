@@ -1,4 +1,4 @@
-. # Install etl package from same directory
+. # Install rocketl package from same directory
 aiolimiter==1.2.1
 anyio==4.9.0
 asyncio==3.4.3

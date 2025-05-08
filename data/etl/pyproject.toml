@@ -3,12 +3,12 @@ requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
 
 [project]
-name = "etl"
+name = "rocketl"
 version = "0.1"
 authors = [
     { name="Kieran Canter", email="contact@kierancanter.dev" }
 ]
-description = "ETL pipeline CLI"
+description = "RocketOdds ETL pipeline CLI"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
@@ -43,7 +43,7 @@ dependencies = [
 ]
 
 [project.scripts]
-etl = "scripts.main:main"
+rocketl = "scripts.main:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["scripts"]
