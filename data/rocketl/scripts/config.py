@@ -9,7 +9,6 @@ class Config:
 
     def _load_yaml(self) -> dict:
         config_file = Path.cwd() / "config.yaml"
-        print(config_file)
 
         if not config_file.exists():
             raise FileNotFoundError(

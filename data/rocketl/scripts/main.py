@@ -4,10 +4,11 @@
 
 from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn, TextColumn
 from rich.logging import RichHandler
+import logging
+from logging.handlers import RotatingFileHandler
 from argparse import ArgumentParser, ArgumentTypeError
 from datetime import datetime, timedelta
 import asyncio
-import logging
 from pathlib import Path
 
 from .config import Config
@@ -110,7 +111,6 @@ class Pipeline:
 
                 # Fetch the parameterized replay data
                 parameterized_replays = await self._run_extract(playlist, replay_date, log_suffix)
-                total_replays += len(parameterized_replays)
 
                 if self.upload_to_s3:
                     # Step 2: Transform the parameterized replay data
@@ -146,7 +146,8 @@ def _setup_logger(log_path: str, verbose: bool) -> logging.Logger:
         log_time_format="%Y-%m-%d %H:%M:%S"
     )
 
-    file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
+    max_file_size = 10 * 1024 * 1024  # 10 MB
+    file_handler = RotatingFileHandler(log_path, mode="a", maxBytes=max_file_size, backupCount=3, encoding="utf-8")
     file_handler.setLevel(logging.DEBUG if verbose else logging.INFO)
     file_formatter = logging.Formatter(
         fmt="%(asctime)s    %(levelname)s    %(message)s",
@@ -188,7 +189,6 @@ def main():
                             help="Enable verbose logging")
 
     # More subcommands can go here
-
     args = parser.parse_args()
 
     log = _setup_logger(args.log_path, args.verbose)
