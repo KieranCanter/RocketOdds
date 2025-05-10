@@ -32,8 +32,7 @@ run-args:
 
 - `-l`, `--lookback`: Number of days back to fetch replays for (default: 1)
 - `-p`, `--playlists`: Playlists to fetch replays for (default: all)
-- `-r`, `--ranks`: Ranks to fetch replays for (default: all)
-- `-rl`, `--rate-limit`: Rate limit for Ballchasing API calls (default: base)
+- `-r`, `--rate-limit`: Rate limit for Ballchasing API calls (default: base)
 - `-s3`, `--upload-to-s3`: Upload to S3
 - `-L`, `--log-path`: Path to log file (default: `./log/rocketl.log`)
 - `-v`, `--verbose`: Enable verbose logging
