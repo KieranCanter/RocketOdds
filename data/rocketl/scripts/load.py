@@ -24,11 +24,11 @@ class ReplayLoader:
                             f"{response['ResponseMetadata']['HTTPStatusCode']}\n")
             raise e
 
-    def run(self, transformed_replays, date, playlist, rank):
+    def run(self, transformed_replays, date, playlist):
         data_table = pa.Table.from_pylist(transformed_replays)
         data_buffer = io.BytesIO()
         pq.write_table(data_table, data_buffer)
         data_buffer.seek(0)
         key_path = f"{date.strftime('%Y')}/{date.strftime('%m')}/{date.strftime('%d')}"\
-                    f"/{playlist}/{date.strftime('%Y-%m-%d')}_{playlist}_{rank}.parquet"
+                    f"/{date.strftime('%Y-%m-%d')}-{playlist}.parquet"
         self._load(data_buffer, key_path)

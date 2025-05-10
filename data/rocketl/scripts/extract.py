@@ -25,14 +25,12 @@ class ReplayFetcher:
         
         self.log = log
 
-    def set_params(self, playlist, rank, replay_date, count, sort_by, sort_dir):
+    def set_params(self, playlist, replay_date, count, sort_by, sort_dir):
         formatted_date_start = replay_date.strftime("%Y-%m-%dT00:00:00Z")
         formatted_date_end = replay_date.strftime("%Y-%m-%dT23:59:59Z")
         
         self.params = {
             "playlist": playlist,
-            "min-rank": rank,
-            "max-rank": rank,
             "replay-date-after": formatted_date_start,
             "replay-date-before": formatted_date_end,
             "count": count,
@@ -86,7 +84,7 @@ class ReplayFetcher:
                 else:
                     url = None
 
-        self.log.info(f"Fetched {len(replay_data)} replays for {self.params['playlist']} in {self.params['min-rank']} on {self.params['replay-date-after'][:10]}")
+        self.log.info(f"Fetched {len(replay_data)} replays for {self.params['playlist']} on {self.params['replay-date-after'][:10]}")
         return replay_data
 
     async def _fetch_id_stats(self, replay_id):
