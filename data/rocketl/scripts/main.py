@@ -111,11 +111,11 @@ class Pipeline:
 
                 # Fetch the parameterized replay data
                 parameterized_replays = await self._run_extract(playlist, replay_date, log_suffix)
+                total_replays += len(parameterized_replays)
 
                 if self.upload_to_s3:
                     # Step 2: Transform the parameterized replay data
                     transformed_replays = self._run_transform(parameterized_replays, log_suffix)
-
                     # Step 3: Load the transformed replay data into S3
                     self._run_load(transformed_replays, replay_date, playlist, log_suffix)
 
