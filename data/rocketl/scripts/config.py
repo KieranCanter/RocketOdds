@@ -38,5 +38,4 @@ class Config:
             "aws_data_secret_key": self.env["AWS_DATA_SECRET_KEY"],
             "aws_region": self.env["AWS_REGION"],
             "aws_data_bucket_name": self.env["AWS_DATA_BUCKET_NAME"],
-            "aws_models_bucket_name": self.env["AWS_MODELS_BUCKET_NAME"]
         }
