@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "calculateda"
+version = "0.1"
+authors = [
+    { name="Kieran Canter", email="contact@kierancanter.dev" }
+]
+description = "RocketOdds exploratory data analysis CLI"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "dotenv==0.9.9",
+    "markdown-it-py==3.0.0",
+    "mdurl==0.1.2",
+    "pathlib==1.0.1",
+    "polars==1.29.0",
+    "Pygments==2.19.1",
+    "rich==14.0.0",
+    "typing_extensions==4.13.2",
+]
+
+[project.scripts]
+calculateda = "scripts.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts"]
