@@ -1,4 +1,4 @@
-# ETL Pipeline
+# Rocketl
 
 This `rocketl` pipeline CLI tool is used to fetch replays from [ballchasing.com](https://ballchasing.com), transform them, and load them into an S3 bucket as parquet files in order to perform exploratory data analysis and modeling. Edit `config.yaml` to change the list of playlists and ranks that may be collected.
 
